@@ -10,7 +10,7 @@ import Foundation
 
 struct Data {
     static let plantStatus = ["PP" : 80, "FP" : 15, "CP" : 45, "UFP" : 87, "SA" : 80]
-    static let groupStatus = ["Month" : 20, "6Months" : 15, "Avg1Y" : 45, "FULL" : 65]
+    static let groupStatus = ["Month" : 20, "6Months" : 15, "Avg1Y" : 45]
 
 }
 

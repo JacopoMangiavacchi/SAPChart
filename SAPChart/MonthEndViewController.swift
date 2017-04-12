@@ -21,6 +21,8 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var publishButton: UIButton!
     
+    @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,7 +62,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         pieChartView.delegate = self
         
         pieChartView.entryLabelColor = UIColor.white
-        pieChartView.entryLabelFont = UIFont(name: "HelveticaNeue-Light", size: 12.0)
+        pieChartView.entryLabelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)
 
         pieChartView.usePercentValuesEnabled = true
         pieChartView.drawSlicesUnderHoleEnabled = false
@@ -94,26 +96,30 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         HorizontalBarChartView.dragEnabled = false
         HorizontalBarChartView.setScaleEnabled(false)
         HorizontalBarChartView.pinchZoomEnabled = false
-        HorizontalBarChartView.xAxis.labelPosition = .bottom
-        HorizontalBarChartView.xAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
+        HorizontalBarChartView.xAxis.labelPosition = .top
+        HorizontalBarChartView.xAxis.labelTextColor  = UIColor.white
+        HorizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
         HorizontalBarChartView.xAxis.drawAxisLineEnabled = true
         HorizontalBarChartView.xAxis.drawGridLinesEnabled = false
         HorizontalBarChartView.xAxis.granularity = 10.0
 
         HorizontalBarChartView.drawBarShadowEnabled = false
         HorizontalBarChartView.drawValueAboveBarEnabled = false
-        HorizontalBarChartView.maxVisibleCount = 60;
+        HorizontalBarChartView.maxVisibleCount = 100;
         
+        HorizontalBarChartView.leftAxis.enabled = true
         HorizontalBarChartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
         HorizontalBarChartView.leftAxis.drawAxisLineEnabled = true
         HorizontalBarChartView.leftAxis.drawGridLinesEnabled = true
         HorizontalBarChartView.leftAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
+        HorizontalBarChartView.leftAxis.axisMaximum = 100.0
         
         HorizontalBarChartView.rightAxis.enabled = true
         HorizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
         HorizontalBarChartView.rightAxis.drawAxisLineEnabled = true
         HorizontalBarChartView.rightAxis.drawGridLinesEnabled = false
         HorizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
+        HorizontalBarChartView.rightAxis.axisMaximum = 100.0
         
         HorizontalBarChartView.fitBars = true
     }
@@ -133,8 +139,8 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     
 
     internal func updateBarChartWithData(_ HorizontalBarChartView: HorizontalBarChartView, value: Int) {
-        let dataEntries = [BarChartDataEntry(x: 0.0, yValues: [Double(value), Double(100-value)])]
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: nil)
+        let dataEntries = [BarChartDataEntry(x: 1.0, yValues: [Double(value), Double(100-value)], label: "")]
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
         chartDataSet.drawValuesEnabled = false
@@ -143,19 +149,21 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         HorizontalBarChartView.data = chartData
     }
     
+    @IBAction func onChangingGroupSelection(_ sender: Any) {
+        switch groupSelectionSegment.selectedSegmentIndex {
+        case 0:
+            updateBarChartWithData(groupAccountingChart, value: Data.groupStatus["Month"]!)
+        case 1:
+            updateBarChartWithData(groupAccountingChart, value: Data.groupStatus["6Months"]!)
+        case 2:
+            updateBarChartWithData(groupAccountingChart, value: Data.groupStatus["Avg1Y"]!)
+        default:
+            print("wrong!")
+        }
+        
+        groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+    }
 
-    @IBAction func onMonthGroup(_ sender: Any) {
-    }
-    
-    @IBAction func onSixMonthGroup(_ sender: Any) {
-    }
-    
-    @IBAction func onAvgOneYearGroup(_ sender: Any) {
-    }
-    
-    @IBAction func onFullGroup(_ sender: Any) {
-    }
-    
     @IBAction func onPublish(_ sender: Any) {
     }
     

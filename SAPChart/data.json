@@ -1,0 +1,14 @@
+{
+    "plantStatus" : {
+        "PP" : 80,
+        "FP" : 15,
+        "CP" : 45,
+        "UFP" : 87,
+        "SA" : 80
+    },
+    "groupStatus" : {
+        "Month" : 20,
+        "6Months" : 15,
+        "Avg1Y" : 45
+    }
+}

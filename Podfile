@@ -7,5 +7,6 @@ target 'SAPChart' do
 
   # Pods for SAPChart
   pod 'Charts', '~> 3.0.1'
+  pod 'SwiftyJSON'
   
 end

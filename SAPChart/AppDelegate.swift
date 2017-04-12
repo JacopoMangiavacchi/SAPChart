@@ -7,15 +7,32 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    var jsonData: JSON?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if let path = Bundle.main.path(forResource: "data", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                jsonData = JSON(data: data)
+                if jsonData != JSON.null {
+                    print("jsonData:\(jsonData)")
+                } else {
+                    print("Could not get json from file, make sure that file contains valid json.")
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        
         return true
     }
 

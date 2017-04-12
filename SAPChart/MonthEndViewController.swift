@@ -8,6 +8,8 @@
 
 import UIKit
 import Charts
+import SwiftyJSON
+
 
 class MonthEndViewController: UIViewController, ChartViewDelegate {
 
@@ -23,8 +25,14 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
     
+    var jsonData: JSON!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        jsonData = appDelegate.jsonData
         
         configPieChart(ppChart, label: "PP")
         configPieChart(fpChart, label: "FP")
@@ -34,13 +42,13 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
 
         configBarChart(groupAccountingChart)
         
-        updatePieChartWithData(ppChart, value: Data.plantStatus["PP"]!, label: "PP")
-        updatePieChartWithData(fpChart, value: Data.plantStatus["FP"]!, label: "FP")
-        updatePieChartWithData(cpChart, value: Data.plantStatus["CP"]!, label: "CP")
-        updatePieChartWithData(ufpChart, value: Data.plantStatus["UFP"]!, label: "UFP")
-        updatePieChartWithData(saChart, value: Data.plantStatus["SA"]!, label: "SA")
+        updatePieChartWithData(ppChart, value: jsonData["plantStatus"]["PP"].intValue, label: "PP")
+        updatePieChartWithData(fpChart, value: jsonData["plantStatus"]["FP"].intValue, label: "FP")
+        updatePieChartWithData(cpChart, value: jsonData["plantStatus"]["CP"].intValue, label: "CP")
+        updatePieChartWithData(ufpChart, value: jsonData["plantStatus"]["UFP"].intValue, label: "UFP")
+        updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"].intValue, label: "SA")
 
-        updateBarChartWithData(groupAccountingChart, value: Data.groupStatus["Month"]!)
+        updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +70,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         pieChartView.delegate = self
         
         pieChartView.entryLabelColor = UIColor.white
-        pieChartView.entryLabelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)
+        pieChartView.entryLabelFont = UIFont(name: "HelveticaNeue-Light", size: 20.0)
 
         pieChartView.usePercentValuesEnabled = true
         pieChartView.drawSlicesUnderHoleEnabled = false
@@ -77,7 +85,20 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         pieChartView.chartDescription?.text = nil
     
         pieChartView.drawCenterTextEnabled = true
-        pieChartView.centerText = label
+        //pieChartView.centerText = label
+        
+        let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        paragraphStyle.lineBreakMode = NSLineBreakMode.byTruncatingTail
+        paragraphStyle.alignment = .center
+        
+        let attrString = NSMutableAttributedString(string: label)
+        attrString.setAttributes([
+            NSForegroundColorAttributeName: NSUIColor.black,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20.0)!,
+            NSParagraphStyleAttributeName: paragraphStyle
+            ], range: NSMakeRange(0, attrString.length))
+
+        pieChartView.centerAttributedText = attrString
     
         pieChartView.legend.setCustom(entries: [])
     }
@@ -152,11 +173,11 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     @IBAction func onChangingGroupSelection(_ sender: Any) {
         switch groupSelectionSegment.selectedSegmentIndex {
         case 0:
-            updateBarChartWithData(groupAccountingChart, value: Data.groupStatus["Month"]!)
+            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
         case 1:
-            updateBarChartWithData(groupAccountingChart, value: Data.groupStatus["6Months"]!)
+            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["6Months"].intValue)
         case 2:
-            updateBarChartWithData(groupAccountingChart, value: Data.groupStatus["Avg1Y"]!)
+            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Avg1Y"].intValue)
         default:
             print("wrong!")
         }

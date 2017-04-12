@@ -21,8 +21,6 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var groupAccountingChart: HorizontalBarChartView!
     
-    @IBOutlet weak var publishButton: UIButton!
-    
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
     
     var jsonData: JSON!
@@ -193,9 +191,11 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     }
 
     @IBAction func onPublish(_ sender: Any) {
+        print("Publish")
     }
     
     @IBAction func onDiagnostics(_ sender: Any) {
+        print("Diagnostic")
     }
 
     

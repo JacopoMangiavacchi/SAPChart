@@ -22,27 +22,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gyV-qi-Tp9">
-                                <rect key="frame" x="10" y="113" width="1350" height="192"/>
+                                <rect key="frame" x="8" y="90" width="1350" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-CT-Zsv" userLabel="PP" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="192"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="270"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-Xy-gKd" userLabel="FP" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="270" y="0.0" width="270" height="192"/>
+                                        <rect key="frame" x="270" y="0.0" width="270" height="270"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tf6-AG-f1M" userLabel="CP" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="540" y="0.0" width="270" height="192"/>
+                                        <rect key="frame" x="540" y="0.0" width="270" height="270"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wme-xJ-rdx" userLabel="UFP" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="810" y="0.0" width="270" height="192"/>
+                                        <rect key="frame" x="810" y="0.0" width="270" height="270"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2d8-a4-1fA" userLabel="SA" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="1080" y="0.0" width="270" height="192"/>
+                                        <rect key="frame" x="1080" y="0.0" width="270" height="270"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -67,7 +67,7 @@
         <scene sceneID="csJ-xT-cqG">
             <objects>
                 <navigationController id="0nO-jU-fm9" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Z4v-BN-82Q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z4v-BN-82Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.99813157320022583" green="0.41040986776351929" blue="0.0026881264057010412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

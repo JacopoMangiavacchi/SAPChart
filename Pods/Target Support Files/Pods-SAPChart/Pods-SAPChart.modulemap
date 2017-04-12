@@ -1,0 +1,6 @@
+framework module Pods_SAPChart {
+  umbrella header "Pods-SAPChart-umbrella.h"
+
+  export *
+  module * { export * }
+}

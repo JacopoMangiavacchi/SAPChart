@@ -116,6 +116,7 @@
                         <outlet property="publishButton" destination="43C-bD-UQB" id="UOh-LD-Tby"/>
                         <outlet property="saChart" destination="2d8-a4-1fA" id="Jj5-NJ-QhS"/>
                         <outlet property="ufpChart" destination="wme-xJ-rdx" id="nNo-z3-yns"/>
+                        <segue destination="Eov-K8-Stz" kind="show" identifier="showPlantDetails" id="1cP-mf-E8O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,9 +127,10 @@
         <scene sceneID="csJ-xT-cqG">
             <objects>
                 <navigationController id="0nO-jU-fm9" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z4v-BN-82Q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Z4v-BN-82Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.99813157320022583" green="0.41040986776351929" blue="0.0026881264057010412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,6 +143,119 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAA-HU-DWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-235" y="-83"/>
+        </scene>
+        <!--Plant Details-->
+        <scene sceneID="Dvd-xZ-8Cf">
+            <objects>
+                <viewController id="Eov-K8-Stz" customClass="PlantDetailViewController" customModule="SAPChart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fbe-gd-02x"/>
+                        <viewControllerLayoutGuide type="bottom" id="f0T-yb-2hJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x0U-8j-iJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mG6-q2-SVf">
+                                <rect key="frame" x="8" y="90" width="1350" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0R7-Uc-l6K" userLabel="PP" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="270"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pkh-g0-3HG" userLabel="FP" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="270" y="0.0" width="270" height="270"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tiL-62-LgN" userLabel="CP" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="540" y="0.0" width="270" height="270"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDH-7L-Ygi" userLabel="UFP" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="810" y="0.0" width="270" height="270"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K12-Qr-HRZ" userLabel="SA" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="1080" y="0.0" width="270" height="270"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tzv-wD-Snf">
+                                <rect key="frame" x="0.0" y="383" width="1366" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Accounting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GX-a3-Gx9">
+                                        <rect key="frame" x="535" y="17" width="295" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ade-wN-2BU">
+                                <rect key="frame" x="63" y="914" width="260" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Diagnostics">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDiagnostics:" destination="Eov-K8-Stz" eventType="touchUpInside" id="6Wx-6d-NSb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbQ-mF-Zoz">
+                                <rect key="frame" x="1045" y="914" width="260" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Publish">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPublish:" destination="Eov-K8-Stz" eventType="touchUpInside" id="luH-2y-eoh"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uze-Ln-uod" customClass="HorizontalBarChartView" customModule="Charts">
+                                <rect key="frame" x="63" y="550" width="1242" height="328"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dPM-9b-jPG">
+                                <rect key="frame" x="298" y="478" width="772" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Current Month"/>
+                                    <segment title="6 Months"/>
+                                    <segment title="Average 1 Year"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="onChangingGroupSelection:" destination="Eov-K8-Stz" eventType="valueChanged" id="4aW-V0-QNG"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Plant Details" id="uzO-CU-S91"/>
+                    <connections>
+                        <outlet property="cpChart" destination="tiL-62-LgN" id="bXM-6M-2vg"/>
+                        <outlet property="fpChart" destination="Pkh-g0-3HG" id="kH1-QV-Fh2"/>
+                        <outlet property="groupAccountingChart" destination="Uze-Ln-uod" id="smw-Ub-ld2"/>
+                        <outlet property="groupSelectionSegment" destination="dPM-9b-jPG" id="rlC-28-OVP"/>
+                        <outlet property="ppChart" destination="0R7-Uc-l6K" id="Fyk-gu-v1r"/>
+                        <outlet property="publishButton" destination="cbQ-mF-Zoz" id="rxu-hh-FOp"/>
+                        <outlet property="saChart" destination="K12-Qr-HRZ" id="ETi-KD-rin"/>
+                        <outlet property="ufpChart" destination="LDH-7L-Ygi" id="4Ll-16-BJk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpZ-jy-7B8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1206" y="-93"/>
         </scene>
     </scenes>
 </document>

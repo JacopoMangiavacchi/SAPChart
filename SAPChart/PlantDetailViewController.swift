@@ -1,8 +1,8 @@
 //
-//  MonthEndViewController.swift
+//  PlantDetailViewController.swift
 //  SAPChart
 //
-//  Created by Jacopo Mangiavacchi on 4/10/17.
+//  Created by Jacopo Mangiavacchi on 4/12/17.
 //  Copyright © 2017 Jacopo. All rights reserved.
 //
 
@@ -11,8 +11,8 @@ import Charts
 import SwiftyJSON
 
 
-class MonthEndViewController: UIViewController, ChartViewDelegate {
-
+class PlantDetailViewController: UIViewController, ChartViewDelegate {
+    
     @IBOutlet weak var ppChart: PieChartView!
     @IBOutlet weak var fpChart: PieChartView!
     @IBOutlet weak var cpChart: PieChartView!
@@ -26,7 +26,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
     
     var jsonData: JSON!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,17 +39,8 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         configPieChart(cpChart, label: "CP")
         configPieChart(ufpChart, label: "UFP")
         configPieChart(saChart, label: "SA")
-
+        
         configBarChart(groupAccountingChart)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        ppChart.clear()
-        fpChart.clear()
-        cpChart.clear()
-        ufpChart.clear()
-        saChart.clear()
-        groupAccountingChart.clear()
         
         updatePieChartWithData(ppChart, value: jsonData["plantStatus"]["PP"].intValue, label: "PP")
         updatePieChartWithData(fpChart, value: jsonData["plantStatus"]["FP"].intValue, label: "FP")
@@ -58,7 +49,9 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"].intValue, label: "SA")
         
         updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         ppChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         fpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         cpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
@@ -72,13 +65,13 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     internal func configPieChart(_ pieChartView: PieChartView, label: String) {
         pieChartView.delegate = self
         
         pieChartView.entryLabelColor = UIColor.white
         pieChartView.entryLabelFont = UIFont(name: "HelveticaNeue-Light", size: 20.0)
-
+        
         pieChartView.usePercentValuesEnabled = true
         pieChartView.drawSlicesUnderHoleEnabled = false
         pieChartView.holeRadiusPercent = 0.58
@@ -90,7 +83,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         pieChartView.highlightPerTapEnabled = true
         
         pieChartView.chartDescription?.text = nil
-    
+        
         pieChartView.drawCenterTextEnabled = true
         //pieChartView.centerText = label
         
@@ -104,12 +97,12 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
             NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20.0)!,
             NSParagraphStyleAttributeName: paragraphStyle
             ], range: NSMakeRange(0, attrString.length))
-
+        
         pieChartView.centerAttributedText = attrString
-    
+        
         pieChartView.legend.setCustom(entries: [])
     }
-
+    
     
     internal func configBarChart(_ HorizontalBarChartView: HorizontalBarChartView) {
         HorizontalBarChartView.delegate = self
@@ -130,7 +123,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         HorizontalBarChartView.xAxis.drawAxisLineEnabled = true
         HorizontalBarChartView.xAxis.drawGridLinesEnabled = false
         HorizontalBarChartView.xAxis.granularity = 10.0
-
+        
         HorizontalBarChartView.drawBarShadowEnabled = false
         HorizontalBarChartView.drawValueAboveBarEnabled = false
         HorizontalBarChartView.maxVisibleCount = 100;
@@ -151,7 +144,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         
         HorizontalBarChartView.fitBars = true
     }
-
+    
     
     internal func updatePieChartWithData(_ pieChartView: PieChartView, value: Int, label: String) {
         let dataEntries = [PieChartDataEntry(value: Double(value), label: "\(value)%"), PieChartDataEntry(value: Double(100-value), label: "\(100-value)%")]
@@ -165,7 +158,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         pieChartView.data = chartData
     }
     
-
+    
     internal func updateBarChartWithData(_ HorizontalBarChartView: HorizontalBarChartView, value: Int) {
         let dataEntries = [BarChartDataEntry(x: 1.0, yValues: [Double(value), Double(100-value)], label: "")]
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
@@ -191,24 +184,21 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         
         groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
     }
-
+    
     @IBAction func onPublish(_ sender: Any) {
     }
     
     @IBAction func onDiagnostics(_ sender: Any) {
     }
-
+    
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        performSegue(withIdentifier: "showPlantDetails", sender: nil)
+        print("selected")
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        print("unselected")
     }
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "showPlantDetails" {
-            let vc: PlantDetailViewController = segue.destination as! PlantDetailViewController
-        }
-    }
+    
 }

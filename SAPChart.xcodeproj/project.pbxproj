@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B80AC4D13241B8784C3B9F9A /* Pods_SAPChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F81FDEE7EDB645DADC1403 /* Pods_SAPChart.framework */; };
+		EA048BD01E9EA46300C3D429 /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA048BCF1E9EA46300C3D429 /* PlantDetailViewController.swift */; };
 		EAAB4EEF1E9E251F002DF3DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB4EEE1E9E251F002DF3DB /* Constants.swift */; };
 		EAAB4EF41E9E7D81002DF3DB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = EAAB4EF31E9E7C9F002DF3DB /* data.json */; };
 		EAD791641E9BA97300CA208B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD791631E9BA97300CA208B /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 		84F81FDEE7EDB645DADC1403 /* Pods_SAPChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAPChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3806FAD878EBC6450363CE4 /* Pods-SAPChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPChart.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAPChart/Pods-SAPChart.release.xcconfig"; sourceTree = "<group>"; };
 		CDE3B6D64B52B1952A4E5FBB /* Pods-SAPChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPChart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAPChart/Pods-SAPChart.debug.xcconfig"; sourceTree = "<group>"; };
+		EA048BCF1E9EA46300C3D429 /* PlantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
 		EAAB4EEE1E9E251F002DF3DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAAB4EF31E9E7C9F002DF3DB /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		EAD791601E9BA97300CA208B /* SAPChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAPChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 				EAAB4EF31E9E7C9F002DF3DB /* data.json */,
 				EAD791631E9BA97300CA208B /* AppDelegate.swift */,
 				EAD791651E9BA97300CA208B /* MonthEndViewController.swift */,
+				EA048BCF1E9EA46300C3D429 /* PlantDetailViewController.swift */,
 				EAD791671E9BA97300CA208B /* Main.storyboard */,
 				EAD7916A1E9BA97300CA208B /* Assets.xcassets */,
 				EAD7916C1E9BA97300CA208B /* LaunchScreen.storyboard */,
@@ -221,6 +224,7 @@
 			files = (
 				EAD791661E9BA97300CA208B /* MonthEndViewController.swift in Sources */,
 				EAD791641E9BA97300CA208B /* AppDelegate.swift in Sources */,
+				EA048BD01E9EA46300C3D429 /* PlantDetailViewController.swift in Sources */,
 				EAAB4EEF1E9E251F002DF3DB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

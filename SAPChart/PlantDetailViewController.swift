@@ -177,7 +177,8 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate, IAxisValue
         let intValue = Int(round(value))
         
         if intValue > 0 && intValue <= numPlants {
-            return " Plant \(intValue)  "
+            return jsonData["plantStatus"][plant]["plants"][intValue-1]["name"].stringValue
+            //return " Plant \(intValue)  "
         }
         
         return ""

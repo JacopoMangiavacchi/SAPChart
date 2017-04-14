@@ -21,43 +21,23 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var groupAccountingChart: HorizontalBarChartView!
     
-    @IBOutlet weak var publishButton: UIButton!
-    
-    @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
-    
     var jsonData: JSON!
-    
+    var plant: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        jsonData = appDelegate.jsonData
-        
-        configPieChart(ppChart, label: "PP")
-        configPieChart(fpChart, label: "FP")
-        configPieChart(cpChart, label: "CP")
-        configPieChart(ufpChart, label: "UFP")
-        configPieChart(saChart, label: "SA")
+
+        configPieChart(ppChart, label: plant)
         
         configBarChart(groupAccountingChart)
         
-        updatePieChartWithData(ppChart, value: jsonData["plantStatus"]["PP"].intValue, label: "PP")
-        updatePieChartWithData(fpChart, value: jsonData["plantStatus"]["FP"].intValue, label: "FP")
-        updatePieChartWithData(cpChart, value: jsonData["plantStatus"]["CP"].intValue, label: "CP")
-        updatePieChartWithData(ufpChart, value: jsonData["plantStatus"]["UFP"].intValue, label: "UFP")
-        updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"].intValue, label: "SA")
+        updatePieChartWithData(ppChart, value: jsonData["plantStatus"][plant].intValue, label: plant)
         
         updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         ppChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-        fpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-        cpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-        ufpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-        saChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-        
         groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
     }
     
@@ -168,27 +148,6 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
         
         let chartData = BarChartData(dataSet: chartDataSet)
         HorizontalBarChartView.data = chartData
-    }
-    
-    @IBAction func onChangingGroupSelection(_ sender: Any) {
-        switch groupSelectionSegment.selectedSegmentIndex {
-        case 0:
-            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
-        case 1:
-            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["6Months"].intValue)
-        case 2:
-            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Avg1Y"].intValue)
-        default:
-            print("wrong!")
-        }
-        
-        groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-    }
-    
-    @IBAction func onPublish(_ sender: Any) {
-    }
-    
-    @IBAction func onDiagnostics(_ sender: Any) {
     }
     
     

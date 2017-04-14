@@ -24,7 +24,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
     
     var jsonData: JSON!
-
+    var selectedPlant: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -200,15 +200,32 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
 
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        switch chartView {
+        case ppChart:
+            selectedPlant = "PP"
+        case fpChart:
+            selectedPlant = "FP"
+        case cpChart:
+            selectedPlant = "CP"
+        case ufpChart:
+            selectedPlant = "UFP"
+        case saChart:
+            selectedPlant = "SA"
+        default:
+            selectedPlant = nil
+        }
+        
         performSegue(withIdentifier: "showPlantDetails", sender: nil)
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
     }
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPlantDetails" {
             let vc: PlantDetailViewController = segue.destination as! PlantDetailViewController
+            vc.jsonData = jsonData
+            vc.plant = selectedPlant!
         }
     }
 }

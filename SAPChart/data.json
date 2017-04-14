@@ -1,19 +1,434 @@
 {
     "plantStatus" : {
         "PP" : {
-            "completition" : 80
+            "completition" : 80,
+            "plants" : [
+                        {
+                        "name" : "Plant1",
+                        "completition" : 20,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant2",
+                        "completition" : 30,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant3",
+                        "completition" : 40,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant4",
+                        "completition" : 60,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant5",
+                        "completition" : 50,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant6",
+                        "completition" : 65,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant7",
+                        "completition" : 90,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant8",
+                        "completition" : 70,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant9",
+                        "completition" : 80,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        }
+            ]
         },
         "FP" : {
-            "completition" : 15
+            "completition" : 15,
+            "plants" : [
+                        {
+                        "name" : "Plant1",
+                        "completition" : 20,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant2",
+                        "completition" : 30,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant3",
+                        "completition" : 40,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant4",
+                        "completition" : 60,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant5",
+                        "completition" : 50,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant6",
+                        "completition" : 65,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant7",
+                        "completition" : 90,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant8",
+                        "completition" : 70,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant9",
+                        "completition" : 80,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        }
+                        ]
         },
         "CP" : {
-            "completition" : 45
+            "completition" : 45,
+            "plants" : [
+                        {
+                        "name" : "Plant1",
+                        "completition" : 20,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant2",
+                        "completition" : 30,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant3",
+                        "completition" : 40,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant4",
+                        "completition" : 60,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant5",
+                        "completition" : 50,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant6",
+                        "completition" : 65,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant7",
+                        "completition" : 90,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant8",
+                        "completition" : 70,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant9",
+                        "completition" : 80,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        }
+                        ]
         },
         "UFP" : {
-            "completition" : 87
+            "completition" : 87,
+            "plants" : [
+                        {
+                        "name" : "Plant1",
+                        "completition" : 20,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant2",
+                        "completition" : 30,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant3",
+                        "completition" : 40,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant4",
+                        "completition" : 60,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant5",
+                        "completition" : 50,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant6",
+                        "completition" : 65,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant7",
+                        "completition" : 90,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant8",
+                        "completition" : 70,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant9",
+                        "completition" : 80,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        }
+                        ]
         },
         "SA" : {
-            "completition" : 80
+            "completition" : 80,
+            "plants" : [
+                        {
+                        "name" : "Plant1",
+                        "completition" : 20,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant2",
+                        "completition" : 30,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant3",
+                        "completition" : 40,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant4",
+                        "completition" : 60,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant5",
+                        "completition" : 50,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant6",
+                        "completition" : 65,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant7",
+                        "completition" : 90,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant8",
+                        "completition" : 70,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        },
+                        {
+                        "name" : "Plant9",
+                        "completition" : 80,
+                        "messages" : [
+                                      "Message 1",
+                                      "Message 2",
+                                      "Message 3"
+                                      ]
+                        }
+                        ]
         }
     },
     "groupStatus" : {

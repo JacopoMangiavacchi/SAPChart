@@ -29,7 +29,7 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
         
         updatePieChartWithData(plantPieChart, value: jsonData["plantStatus"][plant]["completition"].intValue, label: plant)
         
-        updateBarChartWithData(plantsBarChart, value: jsonData["groupStatus"]["Month"].intValue)
+        updateBarChart(plantsBarChart)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,8 +135,18 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
     }
     
     
-    internal func updateBarChartWithData(_ HorizontalBarChartView: HorizontalBarChartView, value: Int) {
-        let dataEntries = [BarChartDataEntry(x: 1.0, yValues: [Double(value), Double(100-value)], label: "")]
+    internal func updateBarChart(_ HorizontalBarChartView: HorizontalBarChartView) {
+        var dataEntries: [BarChartDataEntry] = []
+
+        if let plantsArray = jsonData["plantStatus"][plant]["plants"].array {
+            var plantX = 1.0
+            for plantJson in plantsArray {
+                let value = plantJson["completition"].intValue
+                dataEntries.append(BarChartDataEntry(x: plantX, yValues: [Double(value), Double(100-value)], label: plantJson["name"].stringValue))
+                plantX += 1
+            }
+        }
+        
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.colors = [Constants.darkColor, Constants.lightColor]

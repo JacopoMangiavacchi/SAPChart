@@ -409,24 +409,6 @@
                                       "Message 2",
                                       "Message 3"
                                       ]
-                        },
-                        {
-                        "name" : "Plant8",
-                        "completition" : 70,
-                        "messages" : [
-                                      "Message 1",
-                                      "Message 2",
-                                      "Message 3"
-                                      ]
-                        },
-                        {
-                        "name" : "Plant9",
-                        "completition" : 80,
-                        "messages" : [
-                                      "Message 1",
-                                      "Message 2",
-                                      "Message 3"
-                                      ]
                         }
                         ]
         }

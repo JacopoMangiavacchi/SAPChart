@@ -11,7 +11,7 @@ import Charts
 import SwiftyJSON
 
 
-class PlantDetailViewController: UIViewController, ChartViewDelegate {
+class PlantDetailViewController: UIViewController, ChartViewDelegate, IAxisValueFormatter {
     
     @IBOutlet weak var plantPieChart: PieChartView!
     
@@ -19,10 +19,13 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
     
     var jsonData: JSON!
     var plant: String!
+    var numPlants:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        numPlants = jsonData["plantStatus"][plant]["plants"].array!.count
+        
         configPieChart(plantPieChart, label: plant)
         
         configBarChart(plantsBarChart)
@@ -80,45 +83,49 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
     }
     
     
-    internal func configBarChart(_ HorizontalBarChartView: HorizontalBarChartView) {
-        HorizontalBarChartView.delegate = self
+    internal func configBarChart(_ horizontalBarChartView: HorizontalBarChartView) {
+        horizontalBarChartView.delegate = self
         
-        HorizontalBarChartView.highlightPerTapEnabled = false
+        horizontalBarChartView.highlightPerTapEnabled = true
         
-        HorizontalBarChartView.chartDescription?.text = nil
-        HorizontalBarChartView.legend.setCustom(entries: [])
+        horizontalBarChartView.chartDescription?.text = nil
+        horizontalBarChartView.legend.setCustom(entries: [])
         
         
-        HorizontalBarChartView.drawGridBackgroundEnabled = false
-        HorizontalBarChartView.dragEnabled = false
-        HorizontalBarChartView.setScaleEnabled(false)
-        HorizontalBarChartView.pinchZoomEnabled = false
-        HorizontalBarChartView.xAxis.labelPosition = .top
-        HorizontalBarChartView.xAxis.labelTextColor  = UIColor.white
-        HorizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
-        HorizontalBarChartView.xAxis.drawAxisLineEnabled = true
-        HorizontalBarChartView.xAxis.drawGridLinesEnabled = false
-        HorizontalBarChartView.xAxis.granularity = 10.0
+        horizontalBarChartView.drawGridBackgroundEnabled = false
+        horizontalBarChartView.dragEnabled = false
+        horizontalBarChartView.setScaleEnabled(false)
+        horizontalBarChartView.pinchZoomEnabled = false
+        horizontalBarChartView.xAxis.labelPosition = .bottom
+        horizontalBarChartView.xAxis.labelTextColor  = UIColor.black
+        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 14.0)!
+        horizontalBarChartView.xAxis.labelCount = numPlants + 2
+        horizontalBarChartView.xAxis.drawLabelsEnabled = true
+        horizontalBarChartView.xAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.xAxis.drawGridLinesEnabled = false
+        horizontalBarChartView.xAxis.granularity = 10.0
+        horizontalBarChartView.xAxis.valueFormatter = self
+        horizontalBarChartView.xAxis.forceLabelsEnabled = true
         
-        HorizontalBarChartView.drawBarShadowEnabled = false
-        HorizontalBarChartView.drawValueAboveBarEnabled = false
-        HorizontalBarChartView.maxVisibleCount = 100;
+        horizontalBarChartView.drawBarShadowEnabled = false
+        horizontalBarChartView.drawValueAboveBarEnabled = false
+        horizontalBarChartView.maxVisibleCount = 100;
         
-        HorizontalBarChartView.leftAxis.enabled = true
-        HorizontalBarChartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
-        HorizontalBarChartView.leftAxis.drawAxisLineEnabled = true
-        HorizontalBarChartView.leftAxis.drawGridLinesEnabled = true
-        HorizontalBarChartView.leftAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
-        HorizontalBarChartView.leftAxis.axisMaximum = 100.0
+        horizontalBarChartView.leftAxis.enabled = true
+        horizontalBarChartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
+        horizontalBarChartView.leftAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.leftAxis.drawGridLinesEnabled = true
+        horizontalBarChartView.leftAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
+        horizontalBarChartView.leftAxis.axisMaximum = 100.0
         
-        HorizontalBarChartView.rightAxis.enabled = true
-        HorizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
-        HorizontalBarChartView.rightAxis.drawAxisLineEnabled = true
-        HorizontalBarChartView.rightAxis.drawGridLinesEnabled = false
-        HorizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
-        HorizontalBarChartView.rightAxis.axisMaximum = 100.0
+        horizontalBarChartView.rightAxis.enabled = true
+        horizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
+        horizontalBarChartView.rightAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.rightAxis.drawGridLinesEnabled = false
+        horizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
+        horizontalBarChartView.rightAxis.axisMaximum = 100.0
         
-        HorizontalBarChartView.fitBars = true
+        horizontalBarChartView.fitBars = true
     }
     
     
@@ -135,15 +142,15 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
     }
     
     
-    internal func updateBarChart(_ HorizontalBarChartView: HorizontalBarChartView) {
+    internal func updateBarChart(_ horizontalBarChartView: HorizontalBarChartView) {
         var dataEntries: [BarChartDataEntry] = []
 
         if let plantsArray = jsonData["plantStatus"][plant]["plants"].array {
-            var plantX = 1.0
+            var plantX = Double(1.0)
             for plantJson in plantsArray {
                 let value = plantJson["completition"].intValue
-                dataEntries.append(BarChartDataEntry(x: plantX, yValues: [Double(value), Double(100-value)], label: plantJson["name"].stringValue))
-                plantX += 1
+                dataEntries.append(BarChartDataEntry(x: plantX, yValues: [Double(value), Double(100-value)]))
+                plantX += Double(1.0)
             }
         }
         
@@ -153,7 +160,7 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
         chartDataSet.drawValuesEnabled = false
         
         let chartData = BarChartData(dataSet: chartDataSet)
-        HorizontalBarChartView.data = chartData
+        horizontalBarChartView.data = chartData
     }
     
     
@@ -165,5 +172,16 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
         print("unselected")
     }
     
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+    
+        let intValue = Int(round(value))
+        
+        if intValue > 0 && intValue <= numPlants {
+            return " Plant \(intValue)  "
+        }
+        
+        return ""
+        
+    }
     
 }

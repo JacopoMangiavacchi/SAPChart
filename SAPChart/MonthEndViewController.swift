@@ -109,45 +109,45 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     }
 
     
-    internal func configBarChart(_ HorizontalBarChartView: HorizontalBarChartView) {
-        HorizontalBarChartView.delegate = self
+    internal func configBarChart(_ horizontalBarChartView: HorizontalBarChartView) {
+        horizontalBarChartView.delegate = self
         
-        HorizontalBarChartView.highlightPerTapEnabled = false
+        horizontalBarChartView.highlightPerTapEnabled = false
         
-        HorizontalBarChartView.chartDescription?.text = nil
-        HorizontalBarChartView.legend.setCustom(entries: [])
+        horizontalBarChartView.chartDescription?.text = nil
+        horizontalBarChartView.legend.setCustom(entries: [])
         
         
-        HorizontalBarChartView.drawGridBackgroundEnabled = false
-        HorizontalBarChartView.dragEnabled = false
-        HorizontalBarChartView.setScaleEnabled(false)
-        HorizontalBarChartView.pinchZoomEnabled = false
-        HorizontalBarChartView.xAxis.labelPosition = .top
-        HorizontalBarChartView.xAxis.labelTextColor  = UIColor.white
-        HorizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
-        HorizontalBarChartView.xAxis.drawAxisLineEnabled = true
-        HorizontalBarChartView.xAxis.drawGridLinesEnabled = false
-        HorizontalBarChartView.xAxis.granularity = 10.0
+        horizontalBarChartView.drawGridBackgroundEnabled = false
+        horizontalBarChartView.dragEnabled = false
+        horizontalBarChartView.setScaleEnabled(false)
+        horizontalBarChartView.pinchZoomEnabled = false
+        horizontalBarChartView.xAxis.labelPosition = .top
+        horizontalBarChartView.xAxis.labelTextColor  = UIColor.white
+        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
+        horizontalBarChartView.xAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.xAxis.drawGridLinesEnabled = false
+        horizontalBarChartView.xAxis.granularity = 10.0
 
-        HorizontalBarChartView.drawBarShadowEnabled = false
-        HorizontalBarChartView.drawValueAboveBarEnabled = false
-        HorizontalBarChartView.maxVisibleCount = 100;
+        horizontalBarChartView.drawBarShadowEnabled = false
+        horizontalBarChartView.drawValueAboveBarEnabled = false
+        horizontalBarChartView.maxVisibleCount = 100;
         
-        HorizontalBarChartView.leftAxis.enabled = true
-        HorizontalBarChartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
-        HorizontalBarChartView.leftAxis.drawAxisLineEnabled = true
-        HorizontalBarChartView.leftAxis.drawGridLinesEnabled = true
-        HorizontalBarChartView.leftAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
-        HorizontalBarChartView.leftAxis.axisMaximum = 100.0
+        horizontalBarChartView.leftAxis.enabled = true
+        horizontalBarChartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
+        horizontalBarChartView.leftAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.leftAxis.drawGridLinesEnabled = true
+        horizontalBarChartView.leftAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
+        horizontalBarChartView.leftAxis.axisMaximum = 100.0
         
-        HorizontalBarChartView.rightAxis.enabled = true
-        HorizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
-        HorizontalBarChartView.rightAxis.drawAxisLineEnabled = true
-        HorizontalBarChartView.rightAxis.drawGridLinesEnabled = false
-        HorizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
-        HorizontalBarChartView.rightAxis.axisMaximum = 100.0
+        horizontalBarChartView.rightAxis.enabled = true
+        horizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
+        horizontalBarChartView.rightAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.rightAxis.drawGridLinesEnabled = false
+        horizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
+        horizontalBarChartView.rightAxis.axisMaximum = 100.0
         
-        HorizontalBarChartView.fitBars = true
+        horizontalBarChartView.fitBars = true
     }
 
     
@@ -164,7 +164,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     }
     
 
-    internal func updateBarChartWithData(_ HorizontalBarChartView: HorizontalBarChartView, value: Int) {
+    internal func updateBarChartWithData(_ horizontalBarChartView: HorizontalBarChartView, value: Int) {
         let dataEntries = [BarChartDataEntry(x: 1.0, yValues: [Double(value), Double(100-value)], label: "")]
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
@@ -172,7 +172,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         chartDataSet.drawValuesEnabled = false
         
         let chartData = BarChartData(dataSet: chartDataSet)
-        HorizontalBarChartView.data = chartData
+        horizontalBarChartView.data = chartData
     }
     
     @IBAction func onChangingGroupSelection(_ sender: Any) {

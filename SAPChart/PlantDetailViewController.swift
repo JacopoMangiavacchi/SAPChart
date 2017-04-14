@@ -13,13 +13,9 @@ import SwiftyJSON
 
 class PlantDetailViewController: UIViewController, ChartViewDelegate {
     
-    @IBOutlet weak var ppChart: PieChartView!
-    @IBOutlet weak var fpChart: PieChartView!
-    @IBOutlet weak var cpChart: PieChartView!
-    @IBOutlet weak var ufpChart: PieChartView!
-    @IBOutlet weak var saChart: PieChartView!
+    @IBOutlet weak var plantPieChart: PieChartView!
     
-    @IBOutlet weak var groupAccountingChart: HorizontalBarChartView!
+    @IBOutlet weak var plantsBarChart: HorizontalBarChartView!
     
     var jsonData: JSON!
     var plant: String!
@@ -27,18 +23,18 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configPieChart(ppChart, label: plant)
+        configPieChart(plantPieChart, label: plant)
         
-        configBarChart(groupAccountingChart)
+        configBarChart(plantsBarChart)
         
-        updatePieChartWithData(ppChart, value: jsonData["plantStatus"][plant]["completition"].intValue, label: plant)
+        updatePieChartWithData(plantPieChart, value: jsonData["plantStatus"][plant]["completition"].intValue, label: plant)
         
-        updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
+        updateBarChartWithData(plantsBarChart, value: jsonData["groupStatus"]["Month"].intValue)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        ppChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-        groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        plantPieChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
     }
     
     override func didReceiveMemoryWarning() {

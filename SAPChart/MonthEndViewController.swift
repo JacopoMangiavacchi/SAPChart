@@ -49,11 +49,11 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         saChart.clear()
         groupAccountingChart.clear()
         
-        updatePieChartWithData(ppChart, value: jsonData["plantStatus"]["PP"].intValue, label: "PP")
-        updatePieChartWithData(fpChart, value: jsonData["plantStatus"]["FP"].intValue, label: "FP")
-        updatePieChartWithData(cpChart, value: jsonData["plantStatus"]["CP"].intValue, label: "CP")
-        updatePieChartWithData(ufpChart, value: jsonData["plantStatus"]["UFP"].intValue, label: "UFP")
-        updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"].intValue, label: "SA")
+        updatePieChartWithData(ppChart, value: jsonData["plantStatus"]["PP"]["completition"].intValue, label: "PP")
+        updatePieChartWithData(fpChart, value: jsonData["plantStatus"]["FP"]["completition"].intValue, label: "FP")
+        updatePieChartWithData(cpChart, value: jsonData["plantStatus"]["CP"]["completition"].intValue, label: "CP")
+        updatePieChartWithData(ufpChart, value: jsonData["plantStatus"]["UFP"]["completition"].intValue, label: "UFP")
+        updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"]["completition"].intValue, label: "SA")
         
         updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
 

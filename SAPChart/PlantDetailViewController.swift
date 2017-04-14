@@ -31,7 +31,7 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate {
         
         configBarChart(groupAccountingChart)
         
-        updatePieChartWithData(ppChart, value: jsonData["plantStatus"][plant].intValue, label: plant)
+        updatePieChartWithData(ppChart, value: jsonData["plantStatus"][plant]["completition"].intValue, label: plant)
         
         updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
     }

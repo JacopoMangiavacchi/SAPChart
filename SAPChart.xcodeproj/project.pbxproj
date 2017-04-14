@@ -84,8 +84,8 @@
 		EAD791621E9BA97300CA208B /* SAPChart */ = {
 			isa = PBXGroup;
 			children = (
-				EAAB4EEE1E9E251F002DF3DB /* Constants.swift */,
 				EAAB4EF31E9E7C9F002DF3DB /* data.json */,
+				EAAB4EEE1E9E251F002DF3DB /* Constants.swift */,
 				EAD791631E9BA97300CA208B /* AppDelegate.swift */,
 				EAD791651E9BA97300CA208B /* MonthEndViewController.swift */,
 				EA048BCF1E9EA46300C3D429 /* PlantDetailViewController.swift */,

@@ -1,10 +1,20 @@
 {
     "plantStatus" : {
-        "PP" : 80,
-        "FP" : 15,
-        "CP" : 45,
-        "UFP" : 87,
-        "SA" : 80
+        "PP" : {
+            "completition" : 80
+        },
+        "FP" : {
+            "completition" : 15
+        },
+        "CP" : {
+            "completition" : 45
+        },
+        "UFP" : {
+            "completition" : 87
+        },
+        "SA" : {
+            "completition" : 80
+        }
     },
     "groupStatus" : {
         "Month" : 20,

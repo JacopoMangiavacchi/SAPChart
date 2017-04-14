@@ -83,7 +83,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         pieChartView.transparentCircleRadiusPercent = 0.61
         pieChartView.setExtraOffsets(left: 5.0, top: 10.0, right: 5.0, bottom: 5.0)
         pieChartView.drawHoleEnabled = true
-        pieChartView.rotationAngle = 0.0
+        pieChartView.rotationAngle = 270.0
         pieChartView.rotationEnabled = true
         pieChartView.highlightPerTapEnabled = true
         

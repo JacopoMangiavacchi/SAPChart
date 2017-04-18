@@ -9,9 +9,10 @@
 import UIKit
 import Charts
 import SwiftyJSON
+import MessageUI
 
 
-class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChartViewDelegate, IAxisValueFormatter {
+class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, ChartViewDelegate, IAxisValueFormatter {
     
     @IBOutlet weak var plantPieChart: PieChartView!
     
@@ -60,12 +61,27 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         actionSheetController.addAction(cancelActionButton)
         
         let saveActionButton = UIAlertAction(title: "Via Email", style: .default) { action -> Void in
-            print("Email")
+            let mailVC = MFMailComposeViewController()
+            
+            mailVC.mailComposeDelegate = self
+            
+            // Configure the fields of the interface.
+            mailVC.setToRecipients([])
+            mailVC.setSubject("")
+            mailVC.setMessageBody("", isHTML: false)
+            
+            self.present(mailVC, animated: false, completion: nil)
         }
         actionSheetController.addAction(saveActionButton)
         
         let deleteActionButton = UIAlertAction(title: "Via iMessage", style: .default) { action -> Void in
-            print("iMessage")
+            let messageVC = MFMessageComposeViewController()
+            
+            messageVC.body = "";
+            messageVC.recipients = []
+            messageVC.messageComposeDelegate = self;
+            
+            self.present(messageVC, animated: false, completion: nil)
         }
         actionSheetController.addAction(deleteActionButton)
         
@@ -254,5 +270,38 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         cell.textLabel?.text = plantMessages?[indexPath.row].stringValue ?? ""
         
         return cell
+    }
+    
+    // MARK: - Table view data source
+
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch (result) {
+        case .cancelled:
+            print("Message was cancelled")
+            self.dismiss(animated: true, completion: nil)
+        case .failed:
+            print("Message failed")
+            self.dismiss(animated: true, completion: nil)
+        case .sent:
+            print("Message was sent")
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch (result) {
+        case .cancelled:
+            print("Mail was cancelled")
+            self.dismiss(animated: true, completion: nil)
+        case .saved:
+            print("Mail saved")
+            self.dismiss(animated: true, completion: nil)
+        case .failed:
+            print("Mail failed")
+            self.dismiss(animated: true, completion: nil)
+        case .sent:
+            print("Mail was sent")
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

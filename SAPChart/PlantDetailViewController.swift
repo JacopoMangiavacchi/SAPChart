@@ -11,6 +11,11 @@ import Charts
 import SwiftyJSON
 import MessageUI
 
+extension UIDevice {
+    static var isSimulator: Bool {
+        return ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil
+    }
+}
 
 class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, ChartViewDelegate, IAxisValueFormatter {
     
@@ -61,27 +66,37 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         actionSheetController.addAction(cancelActionButton)
         
         let saveActionButton = UIAlertAction(title: "Via Email", style: .default) { action -> Void in
-            let mailVC = MFMailComposeViewController()
-            
-            mailVC.mailComposeDelegate = self
-            
-            // Configure the fields of the interface.
-            mailVC.setToRecipients([])
-            mailVC.setSubject("")
-            mailVC.setMessageBody("", isHTML: false)
-            
-            self.present(mailVC, animated: false, completion: nil)
+            if !UIDevice.isSimulator {
+                let mailVC = MFMailComposeViewController()
+                
+                mailVC.mailComposeDelegate = self
+                
+                // Configure the fields of the interface.
+                mailVC.setToRecipients([])
+                mailVC.setSubject("")
+                mailVC.setMessageBody("", isHTML: false)
+                
+                self.present(mailVC, animated: false, completion: nil)
+            }
+            else {
+                print("No Mail on Simulator")
+            }
         }
         actionSheetController.addAction(saveActionButton)
         
         let deleteActionButton = UIAlertAction(title: "Via iMessage", style: .default) { action -> Void in
-            let messageVC = MFMessageComposeViewController()
-            
-            messageVC.body = "";
-            messageVC.recipients = []
-            messageVC.messageComposeDelegate = self;
-            
-            self.present(messageVC, animated: false, completion: nil)
+            if !UIDevice.isSimulator {
+                let messageVC = MFMessageComposeViewController()
+                
+                messageVC.body = "";
+                messageVC.recipients = []
+                messageVC.messageComposeDelegate = self;
+                
+                self.present(messageVC, animated: false, completion: nil)
+            }
+            else {
+                print("No iMessage on Simulator")
+            }
         }
         actionSheetController.addAction(deleteActionButton)
         

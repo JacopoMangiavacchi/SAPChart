@@ -165,7 +165,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     
 
     internal func updateBarChartWithData(_ horizontalBarChartView: HorizontalBarChartView, value: Int) {
-        let dataEntries = [BarChartDataEntry(x: 1.0, yValues: [Double(value), Double(100-value)], label: "")]
+        let dataEntries = [BarChartDataEntry(x: 1.0, yValues: [Double(value), Double(100-value)])]
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.colors = [Constants.darkColor, Constants.lightColor]

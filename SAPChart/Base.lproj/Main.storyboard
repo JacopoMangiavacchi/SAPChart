@@ -222,7 +222,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="910.5" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz8-d5-3Tu">
-                                                        <rect key="frame" x="429" y="4" width="52.5" height="23"/>
+                                                        <rect key="frame" x="429.5" y="4" width="52.5" height="23"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -286,8 +286,36 @@
                                             <constraint firstAttribute="width" constant="1" id="NLc-6h-f3k"/>
                                         </constraints>
                                     </view>
+                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ptR-eb-hbV">
+                                        <rect key="frame" x="2" y="0.0" width="453.5" height="960"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" textLabel="rtQ-0A-Li0" style="IBUITableViewCellStyleDefault" id="dMN-Yq-CTo">
+                                                <rect key="frame" x="0.0" y="28" width="453.5" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dMN-Yq-CTo" id="t5L-on-6Ag">
+                                                    <rect key="frame" x="0.0" y="0.0" width="453.5" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rtQ-0A-Li0">
+                                                            <rect key="frame" x="15" y="0.0" width="423.5" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Eov-K8-Stz" id="MnU-Um-SRd"/>
+                                            <outlet property="delegate" destination="Eov-K8-Stz" id="NXf-Qe-RJ6"/>
+                                        </connections>
+                                    </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="← Select a Plant Bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF3-rX-PbK">
-                                        <rect key="frame" x="151.5" y="470" width="154" height="21"/>
+                                        <rect key="frame" x="150.5" y="470" width="154" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -297,9 +325,13 @@
                                 <constraints>
                                     <constraint firstItem="zF3-rX-PbK" firstAttribute="centerX" secondItem="jya-uM-t0M" secondAttribute="centerX" id="37L-U9-fKn"/>
                                     <constraint firstItem="zF3-rX-PbK" firstAttribute="centerY" secondItem="jya-uM-t0M" secondAttribute="centerY" id="8Cn-u9-muv"/>
+                                    <constraint firstAttribute="bottom" secondItem="ptR-eb-hbV" secondAttribute="bottom" id="B8Y-x1-9NX"/>
                                     <constraint firstItem="wkL-cF-FrN" firstAttribute="leading" secondItem="jya-uM-t0M" secondAttribute="leading" id="OJp-15-tN6"/>
                                     <constraint firstItem="wkL-cF-FrN" firstAttribute="top" secondItem="jya-uM-t0M" secondAttribute="top" id="SmU-e8-bHy"/>
                                     <constraint firstAttribute="bottom" secondItem="wkL-cF-FrN" secondAttribute="bottom" id="mPb-Fl-o9N"/>
+                                    <constraint firstItem="ptR-eb-hbV" firstAttribute="top" secondItem="jya-uM-t0M" secondAttribute="top" id="mWM-Ga-z8d"/>
+                                    <constraint firstAttribute="trailing" secondItem="ptR-eb-hbV" secondAttribute="trailing" id="yBO-Ek-4gp"/>
+                                    <constraint firstItem="ptR-eb-hbV" firstAttribute="leading" secondItem="jya-uM-t0M" secondAttribute="leading" constant="2" id="yMc-T4-B4f"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -320,6 +352,8 @@
                     <connections>
                         <outlet property="plantPieChart" destination="ibh-ZC-a6T" id="fU4-Qk-5im"/>
                         <outlet property="plantsBarChart" destination="Y9h-66-ji2" id="0Kc-F1-x4P"/>
+                        <outlet property="rightBackgroundLabel" destination="zF3-rX-PbK" id="xL4-dV-NaF"/>
+                        <outlet property="tableView" destination="ptR-eb-hbV" id="ycw-Kj-LD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpZ-jy-7B8" sceneMemberID="firstResponder"/>

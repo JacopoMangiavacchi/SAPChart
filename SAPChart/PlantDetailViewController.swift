@@ -11,15 +11,20 @@ import Charts
 import SwiftyJSON
 
 
-class PlantDetailViewController: UIViewController, ChartViewDelegate, IAxisValueFormatter {
+class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChartViewDelegate, IAxisValueFormatter {
     
     @IBOutlet weak var plantPieChart: PieChartView!
     
     @IBOutlet weak var plantsBarChart: HorizontalBarChartView!
     
+    @IBOutlet weak var rightBackgroundLabel: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var jsonData: JSON!
     var plant: String!
     var numPlants:Int = 0
+    var plantMessages:[JSON]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -165,11 +170,32 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate, IAxisValue
     
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print("selected")
+        if chartView == plantsBarChart {
+            rightBackgroundLabel.isHidden = true
+            tableView.isHidden = false
+
+            plantMessages = nil
+            animateTableView()
+            
+            if let messagesArray = jsonData["plantStatus"][plant]["plants"][Int(entry.x)-1]["messages"].array {
+                plantMessages = messagesArray
+            }
+
+            animateTableView()
+        }
+    }
+    
+    internal func animateTableView() {
+        let range = NSMakeRange(0, self.tableView.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        tableView.reloadSections(sections as IndexSet, with: .automatic)
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        print("unselected")
+        if chartView == plantsBarChart {
+            rightBackgroundLabel.isHidden = false
+            tableView.isHidden = true
+        }
     }
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
@@ -185,4 +211,22 @@ class PlantDetailViewController: UIViewController, ChartViewDelegate, IAxisValue
         
     }
     
+    
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return plantMessages?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
+        
+        cell.textLabel?.text = plantMessages?[indexPath.row].stringValue ?? ""
+        
+        return cell
+    }
 }

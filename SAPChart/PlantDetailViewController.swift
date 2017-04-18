@@ -50,6 +50,32 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onAction(_ sender: Any) {
+        // Create the AlertController and add its actions like button in ActionSheet
+        let actionSheetController = UIAlertController(title: "Please select", message: "Take Actions", preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+        
+        let saveActionButton = UIAlertAction(title: "Via Email", style: .default) { action -> Void in
+            print("Email")
+        }
+        actionSheetController.addAction(saveActionButton)
+        
+        let deleteActionButton = UIAlertAction(title: "Via iMessage", style: .default) { action -> Void in
+            print("iMessage")
+        }
+        actionSheetController.addAction(deleteActionButton)
+        
+        // We need to provide a popover sourceView when using it on iPad
+        actionSheetController.popoverPresentationController?.sourceView = (sender as! UIBarButtonItem).value(forKey: "view") as? UIView
+        
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    
     internal func configPieChart(_ pieChartView: PieChartView, label: String) {
         pieChartView.delegate = self
         

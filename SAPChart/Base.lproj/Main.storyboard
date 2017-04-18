@@ -348,7 +348,13 @@
                             <constraint firstItem="f0T-yb-2hJ" firstAttribute="top" secondItem="jYi-we-lsU" secondAttribute="bottom" id="nge-FO-oUr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Plant Details" id="uzO-CU-S91"/>
+                    <navigationItem key="navigationItem" title="Plant Details" id="uzO-CU-S91">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="A4l-4P-Udg">
+                            <connections>
+                                <action selector="onAction:" destination="Eov-K8-Stz" id="66s-0x-dgi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="plantPieChart" destination="ibh-ZC-a6T" id="fU4-Qk-5im"/>
                         <outlet property="plantsBarChart" destination="Y9h-66-ji2" id="0Kc-F1-x4P"/>

@@ -121,7 +121,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         pieChartView.drawHoleEnabled = true
         pieChartView.rotationAngle = 270.0
         pieChartView.rotationEnabled = true
-        pieChartView.highlightPerTapEnabled = true
+        pieChartView.highlightPerTapEnabled = false
         
         pieChartView.chartDescription?.text = nil
         
@@ -208,11 +208,11 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         var dataEntries: [BarChartDataEntry] = []
 
         if let plantsArray = jsonData["plantStatus"][plant]["plants"].array {
-            var plantX = Double(1.0)
+            var plantX = Double(numPlants)
             for plantJson in plantsArray {
                 let value = plantJson["completition"].intValue
                 dataEntries.append(BarChartDataEntry(x: plantX, yValues: [Double(value), Double(100-value)]))
-                plantX += Double(1.0)
+                plantX -= Double(1.0)
             }
         }
         
@@ -260,7 +260,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let intValue = Int(round(value))
         
         if intValue > 0 && intValue <= numPlants {
-            return jsonData["plantStatus"][plant]["plants"][intValue-1]["name"].stringValue
+            return jsonData["plantStatus"][plant]["plants"][numPlants - intValue]["name"].stringValue
             //return " Plant \(intValue)  "
         }
         

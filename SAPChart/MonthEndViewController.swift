@@ -55,7 +55,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         updatePieChartWithData(ufpChart, value: jsonData["plantStatus"]["UFP"]["completition"].intValue, label: "UFP")
         updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"]["completition"].intValue, label: "SA")
         
-        updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
+        updateBarChart(groupAccountingChart)
 
         ppChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         fpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
@@ -164,8 +164,16 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     }
     
 
-    internal func updateBarChartWithData(_ horizontalBarChartView: HorizontalBarChartView, value: Int) {
-        let dataEntries = [BarChartDataEntry(x: 1.0, yValues: [Double(value), Double(100-value)])]
+    internal func updateBarChart(_ horizontalBarChartView: HorizontalBarChartView) {
+        
+        let currentMonth = jsonData["groupStatus"]["Month"].intValue
+        let sixMonth = jsonData["groupStatus"]["6Months"].intValue
+        let averageYear = jsonData["groupStatus"]["Avg1Y"].intValue
+        
+        let dataEntries = [BarChartDataEntry(x: 3.0, yValues: [Double(currentMonth), Double(100-currentMonth)]),
+                           BarChartDataEntry(x: 2.0, yValues: [Double(sixMonth), Double(100-sixMonth)]),
+                           BarChartDataEntry(x: 1.0, yValues: [Double(averageYear), Double(100-averageYear)])]
+        
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
@@ -176,28 +184,24 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
     }
     
     @IBAction func onChangingGroupSelection(_ sender: Any) {
-        switch groupSelectionSegment.selectedSegmentIndex {
-        case 0:
-            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
-        case 1:
-            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["6Months"].intValue)
-        case 2:
-            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Avg1Y"].intValue)
-        default:
-            print("wrong!")
-        }
-        
-        groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+//        switch groupSelectionSegment.selectedSegmentIndex {
+//        case 0:
+//            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
+//        case 1:
+//            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["6Months"].intValue)
+//        case 2:
+//            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Avg1Y"].intValue)
+//        default:
+//            print("wrong!")
+//        }
+//        
+//        groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
     }
 
     @IBAction func onPublish(_ sender: Any) {
         print("Publish")
     }
     
-    @IBAction func onDiagnostics(_ sender: Any) {
-        print("Diagnostic")
-    }
-
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         switch chartView {

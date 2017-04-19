@@ -23,6 +23,14 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
     
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
     
+    @IBOutlet weak var dayOfMonthLabel: UILabel!
+    @IBOutlet weak var ticketsOpenedLabel: UILabel!
+    @IBOutlet weak var ticketClosedLabel: UILabel!
+    @IBOutlet weak var ticketMissedLabel: UILabel!
+    @IBOutlet weak var completitionLabel: UILabel!
+    
+    
+    
     var jsonData: JSON!
     var selectedPlant: String?
     
@@ -39,6 +47,13 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         configPieChart(saChart, label: "\(jsonData["plantStatus"]["SA"]["completition"].intValue) %")
 
         configBarChart(groupAccountingChart)
+        
+
+        dayOfMonthLabel.text = jsonData["monthValues"]["dayOfMonthLabel"].stringValue
+        ticketsOpenedLabel.text = jsonData["monthValues"]["ticketsOpenedLabel"].stringValue
+        ticketClosedLabel.text = jsonData["monthValues"]["ticketClosedLabel"].stringValue
+        ticketMissedLabel.text = jsonData["monthValues"]["ticketMissedLabel"].stringValue
+        completitionLabel.text = jsonData["monthValues"]["completitionLabel"].stringValue
     }
 
     override func viewDidAppear(_ animated: Bool) {

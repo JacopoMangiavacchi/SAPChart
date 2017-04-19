@@ -421,5 +421,12 @@
         "Month" : 20,
         "6Months" : 15,
         "Avg1Y" : 45
+    },
+    "monthValues" : {
+        "dayOfMonthLabel" : "2",
+        "ticketsOpenedLabel" : "40",
+        "ticketClosedLabel" : "20",
+        "ticketMissedLabel" : "5",
+        "completitionLabel" : "20%"
     }
 }

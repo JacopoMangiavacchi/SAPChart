@@ -28,4 +28,13 @@ class CurrentMonthView: UIView {
         self.addSubview(view)
         view.frame = self.bounds
     }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        Bundle.main.loadNibNamed("CurrentMonthView", owner: self, options: nil)?.first as! UIView
+        view.frame = frame
+        self.addSubview(view)
+    }
 }
+
+

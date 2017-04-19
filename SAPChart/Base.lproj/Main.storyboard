@@ -199,73 +199,46 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="2X5-br-46F"/>
-                                            <constraint firstItem="r1E-Pf-adt" firstAttribute="centerX" secondItem="9gS-3H-xf4" secondAttribute="centerX" id="LxU-x9-cNm"/>
-                                            <constraint firstItem="r1E-Pf-adt" firstAttribute="top" secondItem="9gS-3H-xf4" secondAttribute="top" id="TMj-2a-gRo"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="Z5w-rE-BSU"/>
+                                            <constraint firstItem="r1E-Pf-adt" firstAttribute="centerX" secondItem="9gS-3H-xf4" secondAttribute="centerX" id="Jvo-VX-6ZC"/>
+                                            <constraint firstAttribute="height" constant="34" id="RFk-4m-Hmi"/>
+                                            <constraint firstItem="r1E-Pf-adt" firstAttribute="top" secondItem="9gS-3H-xf4" secondAttribute="top" id="yzP-8I-Vhu"/>
                                         </constraints>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oT-q6-4jq" userLabel="SegmentContentScrollView">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbL-MA-inh">
                                         <rect key="frame" x="0.0" y="34" width="1366" height="572"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgY-NB-fmv" userLabel="ScrollInternalView">
-                                                <rect key="frame" x="0.0" y="0.0" width="1366" height="572"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iW-zV-G5Y" userLabel="CurrentMonthView" customClass="CurrentMonthView" customModule="SAPChart" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="572"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="1366" id="5sZ-v9-B7P"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="9iW-zV-G5Y" firstAttribute="leading" secondItem="LgY-NB-fmv" secondAttribute="leading" id="NnY-Ai-eVO"/>
-                                                    <constraint firstItem="9iW-zV-G5Y" firstAttribute="top" secondItem="LgY-NB-fmv" secondAttribute="top" id="ebo-fQ-9HP"/>
-                                                    <constraint firstAttribute="bottom" secondItem="9iW-zV-G5Y" secondAttribute="bottom" id="iQu-cu-SuR"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="LgY-NB-fmv" firstAttribute="leading" secondItem="8oT-q6-4jq" secondAttribute="leading" id="4VK-cp-xWg"/>
-                                            <constraint firstItem="LgY-NB-fmv" firstAttribute="height" secondItem="8oT-q6-4jq" secondAttribute="height" id="F88-lQ-RzK"/>
-                                            <constraint firstItem="LgY-NB-fmv" firstAttribute="width" secondItem="8oT-q6-4jq" secondAttribute="width" id="Pxp-ef-zfo"/>
-                                            <constraint firstItem="LgY-NB-fmv" firstAttribute="top" secondItem="8oT-q6-4jq" secondAttribute="top" id="ckA-2r-5CM"/>
-                                        </constraints>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Ywo-el-Iq8"/>
+                                        </connections>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4L-H6-HXv" userLabel="PageControlView">
                                         <rect key="frame" x="0.0" y="606" width="1366" height="34"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-yn-GoW">
-                                                <rect key="frame" x="671" y="-2" width="23" height="37"/>
+                                                <rect key="frame" x="671" y="0.0" width="23" height="37"/>
                                                 <color key="pageIndicatorTintColor" red="0.94509803920000002" green="0.65490196079999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="kaa-yn-GoW" firstAttribute="centerY" secondItem="L4L-H6-HXv" secondAttribute="centerY" id="Brj-D4-NYM"/>
-                                            <constraint firstAttribute="height" constant="34" id="CvX-Ja-5l8"/>
-                                            <constraint firstItem="kaa-yn-GoW" firstAttribute="centerX" secondItem="L4L-H6-HXv" secondAttribute="centerX" id="fCC-FW-XTI"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="m2g-15-OUd"/>
+                                            <constraint firstItem="kaa-yn-GoW" firstAttribute="centerX" secondItem="L4L-H6-HXv" secondAttribute="centerX" id="Lcv-8G-feL"/>
+                                            <constraint firstAttribute="height" constant="34" id="Yr0-ew-czj"/>
+                                            <constraint firstItem="kaa-yn-GoW" firstAttribute="top" secondItem="L4L-H6-HXv" secondAttribute="top" id="pwx-Sw-B7h"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="9gS-3H-xf4" firstAttribute="leading" secondItem="5EM-Xp-hi3" secondAttribute="leading" id="14G-iw-dVK"/>
-                                    <constraint firstItem="8oT-q6-4jq" firstAttribute="top" secondItem="9gS-3H-xf4" secondAttribute="bottom" id="7aI-gb-hFV"/>
-                                    <constraint firstAttribute="trailing" secondItem="8oT-q6-4jq" secondAttribute="trailing" id="7eo-Bv-rv7"/>
-                                    <constraint firstAttribute="trailing" secondItem="9gS-3H-xf4" secondAttribute="trailing" id="Ejv-X8-1CI"/>
-                                    <constraint firstItem="8oT-q6-4jq" firstAttribute="leading" secondItem="5EM-Xp-hi3" secondAttribute="leading" id="FRy-8Y-u4o"/>
-                                    <constraint firstItem="9gS-3H-xf4" firstAttribute="top" secondItem="5EM-Xp-hi3" secondAttribute="top" id="H1W-Z2-bxE"/>
-                                    <constraint firstItem="L4L-H6-HXv" firstAttribute="top" secondItem="8oT-q6-4jq" secondAttribute="bottom" id="JDT-9s-mwM"/>
-                                    <constraint firstItem="L4L-H6-HXv" firstAttribute="leading" secondItem="5EM-Xp-hi3" secondAttribute="leading" id="KnG-XQ-zlo"/>
-                                    <constraint firstItem="8oT-q6-4jq" firstAttribute="top" secondItem="9gS-3H-xf4" secondAttribute="bottom" id="LFD-7j-46y"/>
-                                    <constraint firstItem="9gS-3H-xf4" firstAttribute="leading" secondItem="8oT-q6-4jq" secondAttribute="leading" id="ViE-Tr-fLD"/>
-                                    <constraint firstAttribute="bottom" secondItem="L4L-H6-HXv" secondAttribute="bottom" id="X2K-Yx-KTz"/>
-                                    <constraint firstAttribute="trailing" secondItem="L4L-H6-HXv" secondAttribute="trailing" id="tVB-gi-OgR"/>
+                                    <constraint firstItem="qbL-MA-inh" firstAttribute="top" secondItem="9gS-3H-xf4" secondAttribute="bottom" id="Cz4-pI-UGc"/>
+                                    <constraint firstItem="9gS-3H-xf4" firstAttribute="leading" secondItem="5EM-Xp-hi3" secondAttribute="leading" id="Dkr-8M-vOV"/>
+                                    <constraint firstAttribute="bottom" secondItem="L4L-H6-HXv" secondAttribute="bottom" id="GkN-1l-eTS"/>
+                                    <constraint firstAttribute="trailing" secondItem="qbL-MA-inh" secondAttribute="trailing" id="Iaq-xm-5uz"/>
+                                    <constraint firstItem="9gS-3H-xf4" firstAttribute="top" secondItem="5EM-Xp-hi3" secondAttribute="top" id="Psf-71-Jc9"/>
+                                    <constraint firstItem="qbL-MA-inh" firstAttribute="leading" secondItem="5EM-Xp-hi3" secondAttribute="leading" id="VHP-lY-2xD"/>
+                                    <constraint firstItem="L4L-H6-HXv" firstAttribute="top" secondItem="qbL-MA-inh" secondAttribute="bottom" id="dlQ-2v-nwi"/>
+                                    <constraint firstAttribute="trailing" secondItem="L4L-H6-HXv" secondAttribute="trailing" id="mGh-lv-ZcH"/>
+                                    <constraint firstItem="L4L-H6-HXv" firstAttribute="leading" secondItem="5EM-Xp-hi3" secondAttribute="leading" id="smZ-o9-GdP"/>
+                                    <constraint firstAttribute="trailing" secondItem="9gS-3H-xf4" secondAttribute="trailing" id="uax-zV-hy9"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -291,11 +264,12 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="cpChart" destination="tf6-AG-f1M" id="5vG-4j-POi"/>
-                        <outlet property="currentMonthView" destination="9iW-zV-G5Y" id="e9M-8e-FgT"/>
                         <outlet property="fpChart" destination="Sh4-Xy-gKd" id="D6g-dI-r2K"/>
                         <outlet property="groupSelectionSegment" destination="r1E-Pf-adt" id="k8t-6S-FvM"/>
+                        <outlet property="pageControl" destination="kaa-yn-GoW" id="xqp-4G-B7Q"/>
                         <outlet property="ppChart" destination="Agd-CT-Zsv" id="34W-bv-t72"/>
                         <outlet property="saChart" destination="2d8-a4-1fA" id="Jj5-NJ-QhS"/>
+                        <outlet property="scrollView" destination="qbL-MA-inh" id="lJX-pE-qYk"/>
                         <outlet property="ufpChart" destination="wme-xJ-rdx" id="nNo-z3-yns"/>
                         <segue destination="Eov-K8-Stz" kind="show" identifier="showPlantDetails" id="RhH-kM-YJw"/>
                     </connections>
@@ -324,7 +298,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAA-HU-DWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-235" y="-83"/>
+            <point key="canvasLocation" x="-236" y="-94"/>
         </scene>
         <!--Plant Details-->
         <scene sceneID="Dvd-xZ-8Cf">
@@ -389,7 +363,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="910.5" height="34"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-Yk-bj0">
-                                                        <rect key="frame" x="304" y="0.0" width="301" height="29"/>
+                                                        <rect key="frame" x="304.5" y="0.0" width="301" height="29"/>
                                                         <segments>
                                                             <segment title="Plants" width="150"/>
                                                             <segment title="Diagnostics" width="150"/>
@@ -487,7 +461,7 @@
                                         </connections>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="← Select a Plant Bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF3-rX-PbK">
-                                        <rect key="frame" x="150.5" y="470" width="154" height="21"/>
+                                        <rect key="frame" x="151" y="470" width="154" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -536,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpZ-jy-7B8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2240" y="-93"/>
+            <point key="canvasLocation" x="1349" y="-94"/>
         </scene>
     </scenes>
 </document>

@@ -11,7 +11,7 @@ import Charts
 import SwiftyJSON
 
 
-class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFormatter {
+class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewDelegate, IAxisValueFormatter {
 
     @IBOutlet weak var ppChart: PieChartView!
     @IBOutlet weak var fpChart: PieChartView!
@@ -19,17 +19,37 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
     @IBOutlet weak var ufpChart: PieChartView!
     @IBOutlet weak var saChart: PieChartView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
+    @IBOutlet weak var pageControl: UIPageControl!
     
-    @IBOutlet weak var currentMonthView: CurrentMonthView!
+    var currentMonthView: CurrentMonthView!
+    var diagnosticsView: UIView!
     
+    var scrollAreaWidth:CGFloat = 0.0
+    var scrollAreaHeight:CGFloat = 0.0
+
     
     var jsonData: JSON!
     var selectedPlant: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // "DEPLORABLE" PATCH FOR THE Storyboard Autolayout issues 
+        scrollAreaWidth = view.frame.width
+        scrollAreaHeight = (view.frame.height * 2 / 3) - (34 * 2) - 44
+        
+        currentMonthView = CurrentMonthView(frame: CGRect(x: 0, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
+        diagnosticsView = UIView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
+        diagnosticsView.backgroundColor = Constants.orangeLightColor
+        
+        scrollView.addSubview(currentMonthView)
+        scrollView.addSubview(diagnosticsView)
+        
+        scrollView.contentSize = CGSize(width: scrollAreaWidth * 2, height: scrollAreaHeight)
+        
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         jsonData = appDelegate.jsonData
@@ -196,20 +216,6 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         horizontalBarChartView.data = chartData
     }
     
-    @IBAction func onChangingGroupSelection(_ sender: Any) {
-//        switch groupSelectionSegment.selectedSegmentIndex {
-//        case 0:
-//            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Month"].intValue)
-//        case 1:
-//            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["6Months"].intValue)
-//        case 2:
-//            updateBarChartWithData(groupAccountingChart, value: jsonData["groupStatus"]["Avg1Y"].intValue)
-//        default:
-//            print("wrong!")
-//        }
-//        
-//        groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-    }
 
     @IBAction func onPublish(_ sender: Any) {
         print("Publish")
@@ -263,5 +269,32 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         }
     }
 
+    
+    @IBAction func onChangingGroupSelection(_ sender: Any) {
+        switch groupSelectionSegment.selectedSegmentIndex {
+        case 0:
+            pageControl.currentPage = 0
+            currentMonthView.groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        case 1:
+            pageControl.currentPage = 1
+            scrollView.setContentOffset(CGPoint(x: scrollAreaWidth, y: 0), animated: true)
+        default:
+            print("wrong!")
+        }
+    }
+
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 {
+            pageControl.currentPage = 0
+            groupSelectionSegment.selectedSegmentIndex = 0
+            currentMonthView.groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        }
+        else {
+            pageControl.currentPage = 1
+            groupSelectionSegment.selectedSegmentIndex = 1
+        }
+    }
 
 }

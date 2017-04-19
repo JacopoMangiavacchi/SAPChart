@@ -11,7 +11,7 @@ import Charts
 import SwiftyJSON
 
 
-class MonthEndViewController: UIViewController, ChartViewDelegate {
+class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFormatter {
 
     @IBOutlet weak var ppChart: PieChartView!
     @IBOutlet weak var fpChart: PieChartView!
@@ -122,12 +122,16 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         horizontalBarChartView.dragEnabled = false
         horizontalBarChartView.setScaleEnabled(false)
         horizontalBarChartView.pinchZoomEnabled = false
-        horizontalBarChartView.xAxis.labelPosition = .top
-        horizontalBarChartView.xAxis.labelTextColor  = UIColor.white
-        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
+        horizontalBarChartView.xAxis.labelPosition = .bottom
+        horizontalBarChartView.xAxis.labelTextColor  = UIColor.black
+        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 14.0)!
+        horizontalBarChartView.xAxis.labelCount = 5
+        horizontalBarChartView.xAxis.drawLabelsEnabled = true
         horizontalBarChartView.xAxis.drawAxisLineEnabled = true
         horizontalBarChartView.xAxis.drawGridLinesEnabled = false
         horizontalBarChartView.xAxis.granularity = 10.0
+        horizontalBarChartView.xAxis.valueFormatter = self
+        horizontalBarChartView.xAxis.forceLabelsEnabled = true
 
         horizontalBarChartView.drawBarShadowEnabled = false
         horizontalBarChartView.drawValueAboveBarEnabled = false
@@ -170,9 +174,9 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
         let sixMonth = jsonData["groupStatus"]["6Months"].intValue
         let averageYear = jsonData["groupStatus"]["Avg1Y"].intValue
         
-        let dataEntries = [BarChartDataEntry(x: 3.0, yValues: [Double(currentMonth), Double(100-currentMonth)]),
+        let dataEntries = [BarChartDataEntry(x: 1.0, yValues: [Double(averageYear), Double(100-averageYear)]),
                            BarChartDataEntry(x: 2.0, yValues: [Double(sixMonth), Double(100-sixMonth)]),
-                           BarChartDataEntry(x: 1.0, yValues: [Double(averageYear), Double(100-averageYear)])]
+                           BarChartDataEntry(x: 3.0, yValues: [Double(currentMonth), Double(100-currentMonth)])]
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
@@ -232,4 +236,23 @@ class MonthEndViewController: UIViewController, ChartViewDelegate {
             vc.plant = selectedPlant!
         }
     }
+
+    
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        
+        let intValue = Int(round(value))
+        
+        switch intValue {
+        case 1:
+            return " Average One Year    "
+        case 2:
+            return " Last Six Months    "
+        case 3:
+            return " Current Month    "
+        default:
+            return ""
+        }
+    }
+
+
 }

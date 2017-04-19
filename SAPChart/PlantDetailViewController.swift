@@ -207,12 +207,12 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     internal func updateBarChart(_ horizontalBarChartView: HorizontalBarChartView) {
         var dataEntries: [BarChartDataEntry] = []
 
-        if let plantsArray = jsonData["plantStatus"][plant]["plants"].array {
-            var plantX = Double(numPlants)
+        if let plantsArray = jsonData["plantStatus"][plant]["plants"].array?.reversed() {
+            var plantX = Double(1)
             for plantJson in plantsArray {
                 let value = plantJson["completition"].intValue
                 dataEntries.append(BarChartDataEntry(x: plantX, yValues: [Double(value), Double(100-value)]))
-                plantX -= Double(1.0)
+                plantX += Double(1.0)
             }
         }
         
@@ -234,7 +234,9 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
             plantMessages = nil
             animateTableView()
             
-            if let messagesArray = jsonData["plantStatus"][plant]["plants"][Int(entry.x)-1]["messages"].array {
+            let plantSelected = numPlants - Int(entry.x)
+            
+            if let messagesArray = jsonData["plantStatus"][plant]["plants"][plantSelected]["messages"].array {
                 plantMessages = messagesArray
             }
 

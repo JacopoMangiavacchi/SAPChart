@@ -32,11 +32,11 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         jsonData = appDelegate.jsonData
         
-        configPieChart(ppChart, label: "PP")
-        configPieChart(fpChart, label: "FP")
-        configPieChart(cpChart, label: "CP")
-        configPieChart(ufpChart, label: "UFP")
-        configPieChart(saChart, label: "SA")
+        configPieChart(ppChart, label: "\(jsonData["plantStatus"]["PP"]["completition"].intValue) %")
+        configPieChart(fpChart, label: "\(jsonData["plantStatus"]["FP"]["completition"].intValue) %")
+        configPieChart(cpChart, label: "\(jsonData["plantStatus"]["CP"]["completition"].intValue) %")
+        configPieChart(ufpChart, label: "\(jsonData["plantStatus"]["UFP"]["completition"].intValue) %")
+        configPieChart(saChart, label: "\(jsonData["plantStatus"]["SA"]["completition"].intValue) %")
 
         configBarChart(groupAccountingChart)
     }
@@ -49,11 +49,11 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         saChart.clear()
         groupAccountingChart.clear()
         
-        updatePieChartWithData(ppChart, value: jsonData["plantStatus"]["PP"]["completition"].intValue, label: "PP")
-        updatePieChartWithData(fpChart, value: jsonData["plantStatus"]["FP"]["completition"].intValue, label: "FP")
-        updatePieChartWithData(cpChart, value: jsonData["plantStatus"]["CP"]["completition"].intValue, label: "CP")
-        updatePieChartWithData(ufpChart, value: jsonData["plantStatus"]["UFP"]["completition"].intValue, label: "UFP")
-        updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"]["completition"].intValue, label: "SA")
+        updatePieChartWithData(ppChart, value: jsonData["plantStatus"]["PP"]["completition"].intValue)
+        updatePieChartWithData(fpChart, value: jsonData["plantStatus"]["FP"]["completition"].intValue)
+        updatePieChartWithData(cpChart, value: jsonData["plantStatus"]["CP"]["completition"].intValue)
+        updatePieChartWithData(ufpChart, value: jsonData["plantStatus"]["UFP"]["completition"].intValue)
+        updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"]["completition"].intValue)
         
         updateBarChart(groupAccountingChart)
 
@@ -125,7 +125,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         horizontalBarChartView.pinchZoomEnabled = false
         horizontalBarChartView.xAxis.labelPosition = .bottom
         horizontalBarChartView.xAxis.labelTextColor  = UIColor.black
-        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 14.0)!
+        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
         horizontalBarChartView.xAxis.labelCount = 5
         horizontalBarChartView.xAxis.drawLabelsEnabled = true
         horizontalBarChartView.xAxis.drawAxisLineEnabled = true
@@ -156,9 +156,9 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
     }
 
     
-    internal func updatePieChartWithData(_ pieChartView: PieChartView, value: Int, label: String) {
+    internal func updatePieChartWithData(_ pieChartView: PieChartView, value: Int) {
         let dataEntries = [PieChartDataEntry(value: Double(value), label: ""), PieChartDataEntry(value: Double(100-value), label: "")]
-        let chartDataSet = PieChartDataSet(values: dataEntries, label: label)
+        let chartDataSet = PieChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.sliceSpace = 2.0
         chartDataSet.colors = [Constants.darkColor, Constants.lightColor]

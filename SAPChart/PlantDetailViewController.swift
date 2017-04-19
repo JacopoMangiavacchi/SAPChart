@@ -22,6 +22,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var plantPieChart: PieChartView!
     
     @IBOutlet weak var plantsBarChart: HorizontalBarChartView!
+    @IBOutlet weak var barChartLabel: UILabel!
     
     @IBOutlet weak var rightBackgroundLabel: UILabel!
     
@@ -35,13 +36,14 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        barChartLabel.text = plant
         numPlants = jsonData["plantStatus"][plant]["plants"].array!.count
         
-        configPieChart(plantPieChart, label: plant)
+        configPieChart(plantPieChart, label: "\(jsonData["plantStatus"][plant]["completition"].intValue) %")
         
         configBarChart(plantsBarChart)
         
-        updatePieChartWithData(plantPieChart, value: jsonData["plantStatus"][plant]["completition"].intValue, label: plant)
+        updatePieChartWithData(plantPieChart, value: jsonData["plantStatus"][plant]["completition"].intValue)
         
         updateBarChart(plantsBarChart)
     }
@@ -161,7 +163,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         horizontalBarChartView.pinchZoomEnabled = false
         horizontalBarChartView.xAxis.labelPosition = .bottom
         horizontalBarChartView.xAxis.labelTextColor  = UIColor.black
-        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 14.0)!
+        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
         horizontalBarChartView.xAxis.labelCount = numPlants + 2
         horizontalBarChartView.xAxis.drawLabelsEnabled = true
         horizontalBarChartView.xAxis.drawAxisLineEnabled = true
@@ -192,9 +194,9 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    internal func updatePieChartWithData(_ pieChartView: PieChartView, value: Int, label: String) {
+    internal func updatePieChartWithData(_ pieChartView: PieChartView, value: Int) {
         let dataEntries = [PieChartDataEntry(value: Double(value), label: ""), PieChartDataEntry(value: Double(100-value), label: "")]
-        let chartDataSet = PieChartDataSet(values: dataEntries, label: label)
+        let chartDataSet = PieChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.sliceSpace = 2.0
         chartDataSet.colors = [Constants.darkColor, Constants.lightColor]

@@ -28,25 +28,145 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gyV-qi-Tp9">
                                         <rect key="frame" x="0.0" y="0.0" width="1366" height="320"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-CT-Zsv" userLabel="PP" customClass="PieChartView" customModule="Charts">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9E7-qF-VF0">
                                                 <rect key="frame" x="0.0" y="0.0" width="273" height="320"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-CT-Zsv" userLabel="PP" customClass="PieChartView" customModule="Charts">
+                                                        <rect key="frame" x="0.0" y="0.0" width="273" height="320"/>
+                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd7-U9-EZf">
+                                                        <rect key="frame" x="0.0" y="260" width="273" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="4Og-ec-27d"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Agd-CT-Zsv" secondAttribute="bottom" id="4hm-RB-hPm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Agd-CT-Zsv" secondAttribute="trailing" id="IO1-7p-0Ge"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rd7-U9-EZf" secondAttribute="bottom" id="Qvu-LC-4rz"/>
+                                                    <constraint firstItem="rd7-U9-EZf" firstAttribute="leading" secondItem="9E7-qF-VF0" secondAttribute="leading" id="ScS-EO-5Ig"/>
+                                                    <constraint firstItem="Agd-CT-Zsv" firstAttribute="leading" secondItem="9E7-qF-VF0" secondAttribute="leading" id="cis-fg-8G0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rd7-U9-EZf" secondAttribute="trailing" id="lfK-U3-vtP"/>
+                                                    <constraint firstItem="Agd-CT-Zsv" firstAttribute="top" secondItem="9E7-qF-VF0" secondAttribute="top" id="qU9-uK-jXn"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-Xy-gKd" userLabel="FP" customClass="PieChartView" customModule="Charts">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqF-1b-UFj">
                                                 <rect key="frame" x="273" y="0.0" width="273.5" height="320"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-Xy-gKd" userLabel="FP" customClass="PieChartView" customModule="Charts">
+                                                        <rect key="frame" x="0.0" y="0.0" width="274" height="320"/>
+                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtb-Yw-mal">
+                                                        <rect key="frame" x="0.0" y="260" width="273" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="JOG-d6-g4n"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Mtb-Yw-mal" secondAttribute="bottom" id="0cy-gQ-gcY"/>
+                                                    <constraint firstItem="Mtb-Yw-mal" firstAttribute="leading" secondItem="lqF-1b-UFj" secondAttribute="leading" id="HGM-TR-iqX"/>
+                                                    <constraint firstItem="Sh4-Xy-gKd" firstAttribute="leading" secondItem="lqF-1b-UFj" secondAttribute="leading" id="OYP-uA-hEU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Sh4-Xy-gKd" secondAttribute="bottom" id="Qab-gb-6Nz"/>
+                                                    <constraint firstItem="Sh4-Xy-gKd" firstAttribute="top" secondItem="lqF-1b-UFj" secondAttribute="top" id="e0l-gF-fCV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Sh4-Xy-gKd" secondAttribute="trailing" id="laO-XA-MQT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Mtb-Yw-mal" secondAttribute="trailing" id="ywZ-UM-MHO"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tf6-AG-f1M" userLabel="CP" customClass="PieChartView" customModule="Charts">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHl-gg-6e3">
                                                 <rect key="frame" x="546.5" y="0.0" width="273" height="320"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tf6-AG-f1M" userLabel="CP" customClass="PieChartView" customModule="Charts">
+                                                        <rect key="frame" x="-0.5" y="0.0" width="273.5" height="320"/>
+                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dka-rr-cqT">
+                                                        <rect key="frame" x="0.0" y="260" width="273" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="BZv-11-b4c"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="dka-rr-cqT" firstAttribute="leading" secondItem="jHl-gg-6e3" secondAttribute="leading" id="8is-d4-Ptr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tf6-AG-f1M" secondAttribute="trailing" id="O3n-jA-a3U"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dka-rr-cqT" secondAttribute="trailing" id="QNK-43-sro"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tf6-AG-f1M" secondAttribute="bottom" id="Ufr-WO-B5p"/>
+                                                    <constraint firstItem="tf6-AG-f1M" firstAttribute="leading" secondItem="jHl-gg-6e3" secondAttribute="leading" id="Xw1-Fs-HuR"/>
+                                                    <constraint firstItem="tf6-AG-f1M" firstAttribute="top" secondItem="jHl-gg-6e3" secondAttribute="top" id="kTd-fL-JV8"/>
+                                                    <constraint firstAttribute="bottom" secondItem="dka-rr-cqT" secondAttribute="bottom" id="mi5-mL-ghc"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wme-xJ-rdx" userLabel="UFP" customClass="PieChartView" customModule="Charts">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ErY-qD-TUC">
                                                 <rect key="frame" x="819.5" y="0.0" width="273.5" height="320"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wme-xJ-rdx" userLabel="UFP" customClass="PieChartView" customModule="Charts">
+                                                        <rect key="frame" x="-0.5" y="0.0" width="274" height="320"/>
+                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UFP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fg-WA-eZV">
+                                                        <rect key="frame" x="0.0" y="260" width="273" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="jh2-NK-95n"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="0fg-WA-eZV" firstAttribute="leading" secondItem="ErY-qD-TUC" secondAttribute="leading" id="9yw-UJ-DY6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wme-xJ-rdx" secondAttribute="bottom" id="BFe-FI-xax"/>
+                                                    <constraint firstItem="wme-xJ-rdx" firstAttribute="leading" secondItem="ErY-qD-TUC" secondAttribute="leading" id="HGc-W3-fdR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0fg-WA-eZV" secondAttribute="trailing" id="UTz-Hc-wIC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0fg-WA-eZV" secondAttribute="bottom" id="n3b-GD-cZf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wme-xJ-rdx" secondAttribute="trailing" id="nMl-F4-hWl"/>
+                                                    <constraint firstItem="wme-xJ-rdx" firstAttribute="top" secondItem="ErY-qD-TUC" secondAttribute="top" id="wgL-ae-Ifl"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2d8-a4-1fA" userLabel="SA" customClass="PieChartView" customModule="Charts">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L22-NV-EU2">
                                                 <rect key="frame" x="1093" y="0.0" width="273" height="320"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2d8-a4-1fA" userLabel="SA" customClass="PieChartView" customModule="Charts">
+                                                        <rect key="frame" x="-0.5" y="0.0" width="273.5" height="320"/>
+                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkj-qc-J3p">
+                                                        <rect key="frame" x="0.0" y="260" width="273" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="a0T-LK-VRI"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="bkj-qc-J3p" firstAttribute="leading" secondItem="L22-NV-EU2" secondAttribute="leading" id="96W-yA-IoJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2d8-a4-1fA" secondAttribute="bottom" id="Gqq-Hm-Dbw"/>
+                                                    <constraint firstItem="2d8-a4-1fA" firstAttribute="top" secondItem="L22-NV-EU2" secondAttribute="top" id="Lem-Qd-LbR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2d8-a4-1fA" secondAttribute="trailing" id="WUz-Xo-hNL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bkj-qc-J3p" secondAttribute="bottom" id="bYa-GT-9Ix"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bkj-qc-J3p" secondAttribute="trailing" id="g0V-C0-MUk"/>
+                                                    <constraint firstItem="2d8-a4-1fA" firstAttribute="leading" secondItem="L22-NV-EU2" secondAttribute="leading" id="yoN-Gw-ifQ"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -189,16 +309,42 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nco-JS-3ck" userLabel="TOP">
                                         <rect key="frame" x="0.0" y="0.0" width="910.5" height="320"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibh-ZC-a6T" userLabel="Plant Pie Chart" customClass="PieChartView" customModule="Charts">
-                                                <rect key="frame" x="0.0" y="0.0" width="273" height="320"/>
-                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmq-ws-p4X">
+                                                <rect key="frame" x="0.0" y="0.0" width="303.5" height="320"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibh-ZC-a6T" userLabel="Plant Pie Chart" customClass="PieChartView" customModule="Charts">
+                                                        <rect key="frame" x="0.0" y="0.0" width="303.5" height="320"/>
+                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnc-KH-EiT">
+                                                        <rect key="frame" x="0.0" y="260" width="303.5" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="bt1-hZ-tqa"/>
+                                                            <constraint firstAttribute="height" constant="60" id="kjV-dx-Djw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="ibh-ZC-a6T" firstAttribute="leading" secondItem="tmq-ws-p4X" secondAttribute="leading" id="21K-Ha-gnF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ibh-ZC-a6T" secondAttribute="trailing" id="A3w-bi-JcG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ibh-ZC-a6T" secondAttribute="bottom" id="JHD-uF-QH5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xnc-KH-EiT" secondAttribute="bottom" id="Xwj-jj-E8p"/>
+                                                    <constraint firstItem="ibh-ZC-a6T" firstAttribute="top" secondItem="tmq-ws-p4X" secondAttribute="top" id="gqL-ep-fVk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xnc-KH-EiT" secondAttribute="trailing" id="jfU-BI-bBb"/>
+                                                    <constraint firstItem="xnc-KH-EiT" firstAttribute="leading" secondItem="tmq-ws-p4X" secondAttribute="leading" id="xkm-au-laQ"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="ibh-ZC-a6T" secondAttribute="bottom" id="WYy-Xn-b9x"/>
-                                            <constraint firstItem="ibh-ZC-a6T" firstAttribute="top" secondItem="nco-JS-3ck" secondAttribute="top" id="Ydb-Lu-6uC"/>
-                                            <constraint firstItem="ibh-ZC-a6T" firstAttribute="leading" secondItem="nco-JS-3ck" secondAttribute="leading" id="tQL-mf-1vW"/>
+                                            <constraint firstAttribute="bottom" secondItem="tmq-ws-p4X" secondAttribute="bottom" id="9zZ-ks-HGc"/>
+                                            <constraint firstItem="tmq-ws-p4X" firstAttribute="top" secondItem="nco-JS-3ck" secondAttribute="top" id="Asm-gr-c4p"/>
+                                            <constraint firstItem="tmq-ws-p4X" firstAttribute="width" secondItem="nco-JS-3ck" secondAttribute="width" multiplier="1:3" id="Bqu-0U-sjI"/>
+                                            <constraint firstItem="tmq-ws-p4X" firstAttribute="leading" secondItem="nco-JS-3ck" secondAttribute="leading" id="ZkF-PB-RVj"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKd-t4-xj6" userLabel="BOTTOM">
@@ -328,7 +474,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ibh-ZC-a6T" firstAttribute="width" secondItem="x0U-8j-iJ5" secondAttribute="width" multiplier="1/5" id="5VA-AU-cy6"/>
                             <constraint firstItem="jYi-we-lsU" firstAttribute="leading" secondItem="x0U-8j-iJ5" secondAttribute="leading" id="65C-SZ-wgh"/>
                             <constraint firstItem="jya-uM-t0M" firstAttribute="leading" secondItem="jYi-we-lsU" secondAttribute="trailing" id="9r4-9K-yUK"/>
                             <constraint firstItem="jYi-we-lsU" firstAttribute="top" secondItem="fbe-gd-02x" secondAttribute="bottom" id="DjD-DC-FTo"/>
@@ -347,6 +492,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barChartLabel" destination="xnc-KH-EiT" id="wHu-Lg-1ek"/>
                         <outlet property="plantPieChart" destination="ibh-ZC-a6T" id="fU4-Qk-5im"/>
                         <outlet property="plantsBarChart" destination="Y9h-66-ji2" id="0Kc-F1-x4P"/>
                         <outlet property="rightBackgroundLabel" destination="zF3-rX-PbK" id="xL4-dV-NaF"/>

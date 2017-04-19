@@ -19,16 +19,10 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
     @IBOutlet weak var ufpChart: PieChartView!
     @IBOutlet weak var saChart: PieChartView!
     
-    @IBOutlet weak var groupAccountingChart: HorizontalBarChartView!
     
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
     
-    @IBOutlet weak var dayOfMonthLabel: UILabel!
-    @IBOutlet weak var ticketsOpenedLabel: UILabel!
-    @IBOutlet weak var ticketClosedLabel: UILabel!
-    @IBOutlet weak var ticketMissedLabel: UILabel!
-    @IBOutlet weak var completitionLabel: UILabel!
-    
+    @IBOutlet weak var currentMonthView: CurrentMonthView!
     
     
     var jsonData: JSON!
@@ -46,14 +40,13 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         configPieChart(ufpChart, label: "\(jsonData["plantStatus"]["UFP"]["completition"].intValue) %")
         configPieChart(saChart, label: "\(jsonData["plantStatus"]["SA"]["completition"].intValue) %")
 
-        configBarChart(groupAccountingChart)
+        configBarChart(currentMonthView.groupAccountingChart)
         
-
-        dayOfMonthLabel.text = jsonData["monthValues"]["dayOfMonthLabel"].stringValue
-        ticketsOpenedLabel.text = jsonData["monthValues"]["ticketsOpenedLabel"].stringValue
-        ticketClosedLabel.text = jsonData["monthValues"]["ticketClosedLabel"].stringValue
-        ticketMissedLabel.text = jsonData["monthValues"]["ticketMissedLabel"].stringValue
-        completitionLabel.text = jsonData["monthValues"]["completitionLabel"].stringValue
+        currentMonthView.dayOfMonthLabel.text = jsonData["monthValues"]["dayOfMonthLabel"].stringValue
+        currentMonthView.ticketsOpenedLabel.text = jsonData["monthValues"]["ticketsOpenedLabel"].stringValue
+        currentMonthView.ticketClosedLabel.text = jsonData["monthValues"]["ticketClosedLabel"].stringValue
+        currentMonthView.ticketMissedLabel.text = jsonData["monthValues"]["ticketMissedLabel"].stringValue
+        currentMonthView.completitionLabel.text = jsonData["monthValues"]["completitionLabel"].stringValue
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +55,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         cpChart.clear()
         ufpChart.clear()
         saChart.clear()
-        groupAccountingChart.clear()
+        currentMonthView.groupAccountingChart.clear()
         
         updatePieChartWithData(ppChart, value: jsonData["plantStatus"]["PP"]["completition"].intValue)
         updatePieChartWithData(fpChart, value: jsonData["plantStatus"]["FP"]["completition"].intValue)
@@ -70,7 +63,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         updatePieChartWithData(ufpChart, value: jsonData["plantStatus"]["UFP"]["completition"].intValue)
         updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"]["completition"].intValue)
         
-        updateBarChart(groupAccountingChart)
+        updateBarChart(currentMonthView.groupAccountingChart)
 
         ppChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         fpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
@@ -78,7 +71,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         ufpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         saChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         
-        groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        currentMonthView.groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
     }
     
     override func didReceiveMemoryWarning() {

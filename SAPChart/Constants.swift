@@ -10,8 +10,11 @@ import UIKit
 
 struct Constants {
 
-    static let darkColor = UIColor(red: 255/255.0, green: 105/255.0, blue: 1/255.0, alpha: 1.0)
-    static let lightColor = UIColor(red: 241/255.0, green: 167/255.0, blue: 138/255.0, alpha: 1.0)
+    static let orangeColor = UIColor(red: 255/255.0, green: 105/255.0, blue: 1/255.0, alpha: 1.0)
+    static let orangeLightColor = UIColor(red: 241/255.0, green: 167/255.0, blue: 138/255.0, alpha: 1.0)
+
+    static let darkColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
+    static let lightColor = UIColor(red: 241/255.0, green: 167/255.0, blue: 138/255.0, alpha: 1.0) //UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
     
     static let barColor1 = UIColor(red: 186/255.0, green: 97/255.0, blue: 37/255.0, alpha: 1.0)
     static let barColor2 = UIColor(red: 222/255.0, green: 117/255.0, blue: 45/255.0, alpha: 1.0)

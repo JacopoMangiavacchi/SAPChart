@@ -30,23 +30,23 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-CT-Zsv" userLabel="PP" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="0.0" width="273" height="320"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-Xy-gKd" userLabel="FP" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="273" y="0.0" width="273.5" height="320"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tf6-AG-f1M" userLabel="CP" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="546.5" y="0.0" width="273" height="320"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wme-xJ-rdx" userLabel="UFP" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="819.5" y="0.0" width="273.5" height="320"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2d8-a4-1fA" userLabel="SA" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="1093" y="0.0" width="273" height="320"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -66,9 +66,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1366" height="34"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="r1E-Pf-adt">
-                                                <rect key="frame" x="456.5" y="3" width="452" height="29"/>
+                                                <rect key="frame" x="532" y="3" width="301" height="29"/>
                                                 <segments>
-                                                    <segment title="Summary" width="150"/>
                                                     <segment title="Current Month" width="150"/>
                                                     <segment title="Diagnostics" width="150"/>
                                                 </segments>
@@ -78,7 +77,7 @@
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="2X5-br-46F"/>
                                             <constraint firstItem="r1E-Pf-adt" firstAttribute="centerX" secondItem="9gS-3H-xf4" secondAttribute="centerX" id="LxU-x9-cNm"/>
@@ -192,10 +191,10 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibh-ZC-a6T" userLabel="Plant Pie Chart" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="0.0" width="273" height="320"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="ibh-ZC-a6T" secondAttribute="bottom" id="WYy-Xn-b9x"/>
                                             <constraint firstItem="ibh-ZC-a6T" firstAttribute="top" secondItem="nco-JS-3ck" secondAttribute="top" id="Ydb-Lu-6uC"/>
@@ -208,17 +207,22 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhN-TS-5pj">
                                                 <rect key="frame" x="0.0" y="0.0" width="910.5" height="34"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz8-d5-3Tu">
-                                                        <rect key="frame" x="429.5" y="6" width="52.5" height="23"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-Yk-bj0">
+                                                        <rect key="frame" x="304" y="3" width="301" height="29"/>
+                                                        <segments>
+                                                            <segment title="Plants" width="150"/>
+                                                            <segment title="Diagnostics" width="150"/>
+                                                        </segments>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <connections>
+                                                            <action selector="onChangingGroupSelection:" destination="BYZ-38-t0r" eventType="valueChanged" id="mDm-2Z-u2P"/>
+                                                        </connections>
+                                                    </segmentedControl>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="Dz8-d5-3Tu" firstAttribute="centerX" secondItem="LhN-TS-5pj" secondAttribute="centerX" id="1lT-2j-JEY"/>
-                                                    <constraint firstItem="Dz8-d5-3Tu" firstAttribute="centerY" secondItem="LhN-TS-5pj" secondAttribute="centerY" id="eYn-jo-rk5"/>
+                                                    <constraint firstItem="hbq-Yk-bj0" firstAttribute="centerX" secondItem="LhN-TS-5pj" secondAttribute="centerX" id="OBy-1L-Ap9"/>
+                                                    <constraint firstItem="hbq-Yk-bj0" firstAttribute="centerY" secondItem="LhN-TS-5pj" secondAttribute="centerY" id="ZDv-SR-2Kj"/>
                                                     <constraint firstAttribute="height" constant="34" id="s2B-hd-o8u"/>
                                                 </constraints>
                                             </view>

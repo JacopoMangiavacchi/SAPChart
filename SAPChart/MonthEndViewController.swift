@@ -83,6 +83,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         pieChartView.transparentCircleRadiusPercent = 0.61
         pieChartView.setExtraOffsets(left: 5.0, top: 10.0, right: 5.0, bottom: 5.0)
         pieChartView.drawHoleEnabled = true
+        pieChartView.holeColor = UIColor.clear
         pieChartView.rotationAngle = 270.0
         pieChartView.rotationEnabled = true
         pieChartView.highlightPerTapEnabled = true
@@ -98,7 +99,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         
         let attrString = NSMutableAttributedString(string: label)
         attrString.setAttributes([
-            NSForegroundColorAttributeName: NSUIColor.black,
+            NSForegroundColorAttributeName: NSUIColor.white,
             NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20.0)!,
             NSParagraphStyleAttributeName: paragraphStyle
             ], range: NSMakeRange(0, attrString.length))
@@ -156,7 +157,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
 
     
     internal func updatePieChartWithData(_ pieChartView: PieChartView, value: Int, label: String) {
-        let dataEntries = [PieChartDataEntry(value: Double(value), label: "\(value)%"), PieChartDataEntry(value: Double(100-value), label: "\(100-value)%")]
+        let dataEntries = [PieChartDataEntry(value: Double(value), label: ""), PieChartDataEntry(value: Double(100-value), label: "")]
         let chartDataSet = PieChartDataSet(values: dataEntries, label: label)
         
         chartDataSet.sliceSpace = 2.0
@@ -180,7 +181,7 @@ class MonthEndViewController: UIViewController, ChartViewDelegate, IAxisValueFor
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
-        chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
+        chartDataSet.colors = [Constants.orangeColor, Constants.orangeLightColor]
         chartDataSet.drawValuesEnabled = false
         
         let chartData = BarChartData(dataSet: chartDataSet)

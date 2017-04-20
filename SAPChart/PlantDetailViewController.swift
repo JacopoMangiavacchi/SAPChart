@@ -29,6 +29,11 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var ticketsOpenedLabel: UILabel!
+    @IBOutlet weak var ticketClosedLabel: UILabel!
+    @IBOutlet weak var ticketMissedLabel: UILabel!
+    @IBOutlet weak var completitionLabel: UILabel!
+    
     var plantsView: PlantsView!
     var diagnosticsView: UIView!
     
@@ -376,7 +381,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if scrollView.contentOffset.x == 0 {
             pageControl.currentPage = 0
             groupSelectionSegment.selectedSegmentIndex = 0
-            plantsView.plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+            //plantsView.plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         }
         else {
             pageControl.currentPage = 1

@@ -67,11 +67,11 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         
         configBarChart(currentMonthView.groupAccountingChart)
         
-        currentMonthView.dayOfMonthLabel.text = jsonData["monthValues"]["dayOfMonthLabel"].stringValue
-        currentMonthView.ticketsOpenedLabel.text = jsonData["monthValues"]["ticketsOpenedLabel"].stringValue
-        currentMonthView.ticketClosedLabel.text = jsonData["monthValues"]["ticketClosedLabel"].stringValue
-        currentMonthView.ticketMissedLabel.text = jsonData["monthValues"]["ticketMissedLabel"].stringValue
-        currentMonthView.completitionLabel.text = jsonData["monthValues"]["completitionLabel"].stringValue
+        currentMonthView.dayOfMonthLabel.text = jsonData["globalMonthValues"]["dayOfMonthLabel"].stringValue
+        currentMonthView.ticketsOpenedLabel.text = jsonData["globalMonthValues"]["ticketsOpenedLabel"].stringValue
+        currentMonthView.ticketClosedLabel.text = jsonData["globalMonthValues"]["ticketClosedLabel"].stringValue
+        currentMonthView.ticketMissedLabel.text = jsonData["globalMonthValues"]["ticketMissedLabel"].stringValue
+        currentMonthView.completitionLabel.text = jsonData["globalMonthValues"]["completitionLabel"].stringValue
     }
     
 
@@ -295,7 +295,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         if scrollView.contentOffset.x == 0 {
             pageControl.currentPage = 0
             groupSelectionSegment.selectedSegmentIndex = 0
-            currentMonthView.groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+            //currentMonthView.groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         }
         else {
             pageControl.currentPage = 1

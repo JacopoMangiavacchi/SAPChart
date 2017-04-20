@@ -2,6 +2,12 @@
     "divisionStatus" : {
         "PP" : {
             "completition" : 80,
+            "monthValues" : {
+                "ticketsOpenedLabel" : "40",
+                "ticketClosedLabel" : "20",
+                "ticketMissedLabel" : "5",
+                "completitionLabel" : "20%"
+            },
             "plants" : [
                         {
                         "name" : "  Plant 1  ",
@@ -88,6 +94,12 @@
         },
         "FP" : {
             "completition" : 15,
+            "monthValues" : {
+                "ticketsOpenedLabel" : "40",
+                "ticketClosedLabel" : "20",
+                "ticketMissedLabel" : "5",
+                "completitionLabel" : "20%"
+            },
             "plants" : [
                         {
                         "name" : "  Plant 1  ",
@@ -174,6 +186,12 @@
         },
         "CP" : {
             "completition" : 45,
+            "monthValues" : {
+                "ticketsOpenedLabel" : "40",
+                "ticketClosedLabel" : "20",
+                "ticketMissedLabel" : "5",
+                "completitionLabel" : "20%"
+            },
             "plants" : [
                         {
                         "name" : "  Plant 1  ",
@@ -264,6 +282,12 @@
         },
         "UFP" : {
             "completition" : 87,
+            "monthValues" : {
+                "ticketsOpenedLabel" : "40",
+                "ticketClosedLabel" : "20",
+                "ticketMissedLabel" : "5",
+                "completitionLabel" : "20%"
+            },
             "plants" : [
                         {
                         "name" : "  Plant 1  ",
@@ -350,6 +374,12 @@
         },
         "SA" : {
             "completition" : 80,
+            "monthValues" : {
+                "ticketsOpenedLabel" : "40",
+                "ticketClosedLabel" : "20",
+                "ticketMissedLabel" : "5",
+                "completitionLabel" : "20%"
+            },
             "plants" : [
                         {
                         "name" : "  Plant 1  ",
@@ -422,7 +452,7 @@
         "6Months" : 15,
         "Avg1Y" : 45
     },
-    "monthValues" : {
+    "globalMonthValues" : {
         "dayOfMonthLabel" : "2",
         "ticketsOpenedLabel" : "40",
         "ticketClosedLabel" : "20",

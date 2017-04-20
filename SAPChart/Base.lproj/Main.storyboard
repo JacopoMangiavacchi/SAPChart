@@ -545,7 +545,38 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeX-U4-kXT" userLabel="faces">
                                                 <rect key="frame" x="637.5" y="0.0" width="455.5" height="320"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eL1-Nh-pPw">
+                                                        <rect key="frame" x="30" y="40" width="395.5" height="230"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mFj-eL-RzY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="395.5" height="105"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puv-su-Ouv" userLabel="user1">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="395.5" height="105"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CHz-qp-wt9">
+                                                                <rect key="frame" x="0.0" y="125" width="395.5" height="105"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmz-HN-b6O" userLabel="user2">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="395.5" height="105"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="eL1-Nh-pPw" secondAttribute="trailing" constant="30" id="35f-2G-QLS"/>
+                                                    <constraint firstItem="eL1-Nh-pPw" firstAttribute="leading" secondItem="JeX-U4-kXT" secondAttribute="leading" constant="30" id="TXh-ru-8Kl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eL1-Nh-pPw" secondAttribute="bottom" constant="50" id="bJg-nk-8OX"/>
+                                                    <constraint firstItem="eL1-Nh-pPw" firstAttribute="top" secondItem="JeX-U4-kXT" secondAttribute="top" constant="40" id="leU-2V-NzO"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

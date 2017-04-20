@@ -33,7 +33,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
     var scrollAreaHeight:CGFloat = 0.0
     
     var jsonData: JSON!
-    var selectedPlant: String?
+    var selectedDivision: String?
     
     
     override func viewDidLoad() {
@@ -59,11 +59,11 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         
         scrollView.contentSize = CGSize(width: scrollAreaWidth * 2, height: scrollAreaHeight)
         
-        configPieChart(ppChart, label: "\(jsonData["plantStatus"]["PP"]["completition"].intValue) %")
-        configPieChart(fpChart, label: "\(jsonData["plantStatus"]["FP"]["completition"].intValue) %")
-        configPieChart(cpChart, label: "\(jsonData["plantStatus"]["CP"]["completition"].intValue) %")
-        configPieChart(ufpChart, label: "\(jsonData["plantStatus"]["UFP"]["completition"].intValue) %")
-        configPieChart(saChart, label: "\(jsonData["plantStatus"]["SA"]["completition"].intValue) %")
+        configPieChart(ppChart, label: "\(jsonData["divisionStatus"]["PP"]["completition"].intValue)%")
+        configPieChart(fpChart, label: "\(jsonData["divisionStatus"]["FP"]["completition"].intValue)%")
+        configPieChart(cpChart, label: "\(jsonData["divisionStatus"]["CP"]["completition"].intValue)%")
+        configPieChart(ufpChart, label: "\(jsonData["divisionStatus"]["UFP"]["completition"].intValue)%")
+        configPieChart(saChart, label: "\(jsonData["divisionStatus"]["SA"]["completition"].intValue)%")
         
         configBarChart(currentMonthView.groupAccountingChart)
         
@@ -83,11 +83,11 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         saChart.clear()
         currentMonthView.groupAccountingChart.clear()
         
-        updatePieChartWithData(ppChart, value: jsonData["plantStatus"]["PP"]["completition"].intValue)
-        updatePieChartWithData(fpChart, value: jsonData["plantStatus"]["FP"]["completition"].intValue)
-        updatePieChartWithData(cpChart, value: jsonData["plantStatus"]["CP"]["completition"].intValue)
-        updatePieChartWithData(ufpChart, value: jsonData["plantStatus"]["UFP"]["completition"].intValue)
-        updatePieChartWithData(saChart, value: jsonData["plantStatus"]["SA"]["completition"].intValue)
+        updatePieChartWithData(ppChart, value: jsonData["divisionStatus"]["PP"]["completition"].intValue)
+        updatePieChartWithData(fpChart, value: jsonData["divisionStatus"]["FP"]["completition"].intValue)
+        updatePieChartWithData(cpChart, value: jsonData["divisionStatus"]["CP"]["completition"].intValue)
+        updatePieChartWithData(ufpChart, value: jsonData["divisionStatus"]["UFP"]["completition"].intValue)
+        updatePieChartWithData(saChart, value: jsonData["divisionStatus"]["SA"]["completition"].intValue)
         
         updateBarChart(currentMonthView.groupAccountingChart)
 
@@ -134,7 +134,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         let attrString = NSMutableAttributedString(string: label)
         attrString.setAttributes([
             NSForegroundColorAttributeName: NSUIColor.white,
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20.0)!,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 32.0)!,
             NSParagraphStyleAttributeName: paragraphStyle
             ], range: NSMakeRange(0, attrString.length))
 
@@ -231,17 +231,17 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         switch chartView {
         case ppChart:
-            selectedPlant = "PP"
+            selectedDivision = "PP"
         case fpChart:
-            selectedPlant = "FP"
+            selectedDivision = "FP"
         case cpChart:
-            selectedPlant = "CP"
+            selectedDivision = "CP"
         case ufpChart:
-            selectedPlant = "UFP"
+            selectedDivision = "UFP"
         case saChart:
-            selectedPlant = "SA"
+            selectedDivision = "SA"
         default:
-            selectedPlant = nil
+            selectedDivision = nil
         }
         
         performSegue(withIdentifier: "showPlantDetails", sender: nil)
@@ -254,7 +254,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         if segue.identifier == "showPlantDetails" {
             let vc: PlantDetailViewController = segue.destination as! PlantDetailViewController
             vc.jsonData = jsonData
-            vc.plant = selectedPlant!
+            vc.selectedDivision = selectedDivision!
         }
     }
 

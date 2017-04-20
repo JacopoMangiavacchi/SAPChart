@@ -29,21 +29,21 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     
     var jsonData: JSON!
-    var plant: String!
+    var selectedDivision: String!
     var numPlants:Int = 0
     var plantMessages:[JSON]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        barChartLabel.text = plant
-        numPlants = jsonData["plantStatus"][plant]["plants"].array!.count
+        barChartLabel.text = Constants.divisions[selectedDivision]
+        numPlants = jsonData["divisionStatus"][selectedDivision]["plants"].array!.count
         
-        configPieChart(plantPieChart, label: "\(jsonData["plantStatus"][plant]["completition"].intValue) %")
+        configPieChart(plantPieChart, label: "\(jsonData["divisionStatus"][selectedDivision]["completition"].intValue)%")
         
         configBarChart(plantsBarChart)
         
-        updatePieChartWithData(plantPieChart, value: jsonData["plantStatus"][plant]["completition"].intValue)
+        updatePieChartWithData(plantPieChart, value: jsonData["divisionStatus"][selectedDivision]["completition"].intValue)
         
         updateBarChart(plantsBarChart)
     }
@@ -138,7 +138,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let attrString = NSMutableAttributedString(string: label)
         attrString.setAttributes([
             NSForegroundColorAttributeName: NSUIColor.white,
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20.0)!,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 32.0)!,
             NSParagraphStyleAttributeName: paragraphStyle
             ], range: NSMakeRange(0, attrString.length))
         
@@ -210,7 +210,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     internal func updateBarChart(_ horizontalBarChartView: HorizontalBarChartView) {
         var dataEntries: [BarChartDataEntry] = []
 
-        if let plantsArray = jsonData["plantStatus"][plant]["plants"].array?.reversed() {
+        if let plantsArray = jsonData["divisionStatus"][selectedDivision]["plants"].array?.reversed() {
             var plantX = Double(1)
             for plantJson in plantsArray {
                 let value = plantJson["completition"].intValue
@@ -239,7 +239,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
             
             let plantSelected = numPlants - Int(entry.x)
             
-            if let messagesArray = jsonData["plantStatus"][plant]["plants"][plantSelected]["messages"].array {
+            if let messagesArray = jsonData["divisionStatus"][selectedDivision]["plants"][plantSelected]["messages"].array {
                 plantMessages = messagesArray
             }
 
@@ -265,7 +265,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let intValue = Int(round(value))
         
         if intValue > 0 && intValue <= numPlants {
-            return jsonData["plantStatus"][plant]["plants"][numPlants - intValue]["name"].stringValue
+            return jsonData["divisionStatus"][selectedDivision]["plants"][numPlants - intValue]["name"].stringValue
             //return " Plant \(intValue)  "
         }
         

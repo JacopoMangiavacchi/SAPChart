@@ -267,9 +267,11 @@
                         <outlet property="fpChart" destination="Sh4-Xy-gKd" id="D6g-dI-r2K"/>
                         <outlet property="groupSelectionSegment" destination="r1E-Pf-adt" id="k8t-6S-FvM"/>
                         <outlet property="pageControl" destination="kaa-yn-GoW" id="xqp-4G-B7Q"/>
+                        <outlet property="pageControlView" destination="L4L-H6-HXv" id="ENp-sH-SGF"/>
                         <outlet property="ppChart" destination="Agd-CT-Zsv" id="34W-bv-t72"/>
                         <outlet property="saChart" destination="2d8-a4-1fA" id="Jj5-NJ-QhS"/>
                         <outlet property="scrollView" destination="qbL-MA-inh" id="lJX-pE-qYk"/>
+                        <outlet property="segmentControlView" destination="9gS-3H-xf4" id="sCI-oV-GWr"/>
                         <outlet property="ufpChart" destination="wme-xJ-rdx" id="nNo-z3-yns"/>
                         <segue destination="Eov-K8-Stz" kind="show" identifier="showPlantDetails" id="RhH-kM-YJw"/>
                     </connections>

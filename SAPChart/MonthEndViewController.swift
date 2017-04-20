@@ -19,7 +19,9 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
     @IBOutlet weak var ufpChart: PieChartView!
     @IBOutlet weak var saChart: PieChartView!
     
+    @IBOutlet weak var segmentControlView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControlView: UIView!
     
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -29,17 +31,24 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
     
     var scrollAreaWidth:CGFloat = 0.0
     var scrollAreaHeight:CGFloat = 0.0
-
     
     var jsonData: JSON!
     var selectedPlant: String?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // "DEPLORABLE" PATCH FOR THE Storyboard Autolayout issues 
-        scrollAreaWidth = view.frame.width
-        scrollAreaHeight = (view.frame.height * 2 / 3) - (34 * 2) - 44
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        jsonData = appDelegate.jsonData
+    }
+
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        scrollAreaWidth = scrollView.superview!.frame.width
+        scrollAreaHeight = scrollView.superview!.frame.height - segmentControlView.frame.height - pageControlView.frame.height
         
         currentMonthView = CurrentMonthView(frame: CGRect(x: 0, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
         diagnosticsView = UIView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
@@ -50,16 +59,12 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         
         scrollView.contentSize = CGSize(width: scrollAreaWidth * 2, height: scrollAreaHeight)
         
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        jsonData = appDelegate.jsonData
-        
         configPieChart(ppChart, label: "\(jsonData["plantStatus"]["PP"]["completition"].intValue) %")
         configPieChart(fpChart, label: "\(jsonData["plantStatus"]["FP"]["completition"].intValue) %")
         configPieChart(cpChart, label: "\(jsonData["plantStatus"]["CP"]["completition"].intValue) %")
         configPieChart(ufpChart, label: "\(jsonData["plantStatus"]["UFP"]["completition"].intValue) %")
         configPieChart(saChart, label: "\(jsonData["plantStatus"]["SA"]["completition"].intValue) %")
-
+        
         configBarChart(currentMonthView.groupAccountingChart)
         
         currentMonthView.dayOfMonthLabel.text = jsonData["monthValues"]["dayOfMonthLabel"].stringValue
@@ -68,6 +73,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         currentMonthView.ticketMissedLabel.text = jsonData["monthValues"]["ticketMissedLabel"].stringValue
         currentMonthView.completitionLabel.text = jsonData["monthValues"]["completitionLabel"].stringValue
     }
+    
 
     override func viewDidAppear(_ animated: Bool) {
         ppChart.clear()

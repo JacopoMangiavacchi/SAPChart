@@ -17,16 +17,24 @@ extension UIDevice {
     }
 }
 
-class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, ChartViewDelegate, IAxisValueFormatter {
+class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, ChartViewDelegate, IAxisValueFormatter {
     
     @IBOutlet weak var plantPieChart: PieChartView!
+    @IBOutlet weak var pieChartLabel: UILabel!
     
-    @IBOutlet weak var plantsBarChart: HorizontalBarChartView!
-    @IBOutlet weak var barChartLabel: UILabel!
+    @IBOutlet weak var segmentControlView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControlView: UIView!
     
-    @IBOutlet weak var rightBackgroundLabel: UILabel!
+    @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
+    @IBOutlet weak var pageControl: UIPageControl!
     
-    @IBOutlet weak var tableView: UITableView!
+    var plantsView: PlantsView!
+    var diagnosticsView: UIView!
+    
+    var scrollAreaWidth:CGFloat = 0.0
+    var scrollAreaHeight:CGFloat = 0.0
+    
     
     var jsonData: JSON!
     var selectedDivision: String!
@@ -35,22 +43,45 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        scrollAreaWidth = scrollView.superview!.frame.width
+        scrollAreaHeight = scrollView.superview!.frame.height - segmentControlView.frame.height - pageControlView.frame.height
+        
+        plantsView = PlantsView(frame: CGRect(x: 0, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
+        plantsView.tableView.delegate = self
+        plantsView.tableView.dataSource = self
+        plantsView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "messageCell")
 
-        barChartLabel.text = Constants.divisions[selectedDivision]
+        
+        diagnosticsView = UIView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
+        diagnosticsView.backgroundColor = Constants.orangeLightColor
+        
+        scrollView.addSubview(plantsView)
+        scrollView.addSubview(diagnosticsView)
+        
+        scrollView.contentSize = CGSize(width: scrollAreaWidth * 2, height: scrollAreaHeight)
+        
+        pieChartLabel.text = Constants.divisions[selectedDivision]
         numPlants = jsonData["divisionStatus"][selectedDivision]["plants"].array!.count
         
         configPieChart(plantPieChart, label: "\(jsonData["divisionStatus"][selectedDivision]["completition"].intValue)%")
         
-        configBarChart(plantsBarChart)
+        configBarChart(plantsView.plantsBarChart)
         
         updatePieChartWithData(plantPieChart, value: jsonData["divisionStatus"][selectedDivision]["completition"].intValue)
         
-        updateBarChart(plantsBarChart)
+        updateBarChart(plantsView.plantsBarChart)
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         plantPieChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-        plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        plantsView.plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
     }
     
     override func didReceiveMemoryWarning() {
@@ -230,9 +261,9 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        if chartView == plantsBarChart {
-            rightBackgroundLabel.isHidden = true
-            tableView.isHidden = false
+        if chartView == plantsView.plantsBarChart {
+            plantsView.rightBackgroundLabel.isHidden = true
+            plantsView.tableView.isHidden = false
 
             plantMessages = nil
             animateTableView()
@@ -248,15 +279,15 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     internal func animateTableView() {
-        let range = NSMakeRange(0, self.tableView.numberOfSections)
+        let range = NSMakeRange(0, plantsView.tableView.numberOfSections)
         let sections = NSIndexSet(indexesIn: range)
-        tableView.reloadSections(sections as IndexSet, with: .automatic)
+        plantsView.tableView.reloadSections(sections as IndexSet, with: .automatic)
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        if chartView == plantsBarChart {
-            rightBackgroundLabel.isHidden = false
-            tableView.isHidden = true
+        if chartView == plantsView.plantsBarChart {
+            plantsView.rightBackgroundLabel.isHidden = false
+            plantsView.tableView.isHidden = true
         }
     }
     
@@ -324,4 +355,34 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
             self.dismiss(animated: true, completion: nil)
         }
     }
+
+
+    @IBAction func onChangingGroupSelection(_ sender: Any) {
+        switch groupSelectionSegment.selectedSegmentIndex {
+        case 0:
+            pageControl.currentPage = 0
+            plantsView.plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        case 1:
+            pageControl.currentPage = 1
+            scrollView.setContentOffset(CGPoint(x: scrollAreaWidth, y: 0), animated: true)
+        default:
+            print("wrong!")
+        }
+    }
+    
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 {
+            pageControl.currentPage = 0
+            groupSelectionSegment.selectedSegmentIndex = 0
+            plantsView.plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        }
+        else {
+            pageControl.currentPage = 1
+            groupSelectionSegment.selectedSegmentIndex = 1
+        }
+    }
 }
+
+

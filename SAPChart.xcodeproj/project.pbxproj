@@ -13,6 +13,8 @@
 		EA2B00901EA7DDD600AD6535 /* CurrentMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2B008F1EA7DDD600AD6535 /* CurrentMonthView.swift */; };
 		EAAB4EEF1E9E251F002DF3DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB4EEE1E9E251F002DF3DB /* Constants.swift */; };
 		EAAB4EF41E9E7D81002DF3DB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = EAAB4EF31E9E7C9F002DF3DB /* data.json */; };
+		EAD7473E1EA8FBDE00D94648 /* PlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */; };
+		EAD747401EA9013A00D94648 /* PlantsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD7473F1EA9013A00D94648 /* PlantsView.xib */; };
 		EAD791641E9BA97300CA208B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD791631E9BA97300CA208B /* AppDelegate.swift */; };
 		EAD791661E9BA97300CA208B /* MonthEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD791651E9BA97300CA208B /* MonthEndViewController.swift */; };
 		EAD791691E9BA97300CA208B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD791671E9BA97300CA208B /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		EA2B008F1EA7DDD600AD6535 /* CurrentMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentMonthView.swift; sourceTree = "<group>"; };
 		EAAB4EEE1E9E251F002DF3DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAAB4EF31E9E7C9F002DF3DB /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsView.swift; sourceTree = "<group>"; };
+		EAD7473F1EA9013A00D94648 /* PlantsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlantsView.xib; sourceTree = SOURCE_ROOT; };
 		EAD791601E9BA97300CA208B /* SAPChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAPChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD791631E9BA97300CA208B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAD791651E9BA97300CA208B /* MonthEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthEndViewController.swift; sourceTree = "<group>"; };
@@ -93,9 +97,11 @@
 				EAD791631E9BA97300CA208B /* AppDelegate.swift */,
 				EAD791651E9BA97300CA208B /* MonthEndViewController.swift */,
 				EA048BCF1E9EA46300C3D429 /* PlantDetailViewController.swift */,
+				EA2B008F1EA7DDD600AD6535 /* CurrentMonthView.swift */,
+				EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */,
 				EAD791671E9BA97300CA208B /* Main.storyboard */,
 				EA2B008D1EA7DCE800AD6535 /* CurrentMonthView.xib */,
-				EA2B008F1EA7DDD600AD6535 /* CurrentMonthView.swift */,
+				EAD7473F1EA9013A00D94648 /* PlantsView.xib */,
 				EAD7916A1E9BA97300CA208B /* Assets.xcassets */,
 				EAD7916C1E9BA97300CA208B /* LaunchScreen.storyboard */,
 				EAD7916F1E9BA97300CA208B /* Info.plist */,
@@ -170,6 +176,7 @@
 				EA2B008E1EA7DCE800AD6535 /* CurrentMonthView.xib in Resources */,
 				EAD7916B1E9BA97300CA208B /* Assets.xcassets in Resources */,
 				EAD791691E9BA97300CA208B /* Main.storyboard in Resources */,
+				EAD747401EA9013A00D94648 /* PlantsView.xib in Resources */,
 				EAAB4EF41E9E7D81002DF3DB /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +238,7 @@
 			files = (
 				EAD791661E9BA97300CA208B /* MonthEndViewController.swift in Sources */,
 				EAD791641E9BA97300CA208B /* AppDelegate.swift in Sources */,
+				EAD7473E1EA8FBDE00D94648 /* PlantsView.swift in Sources */,
 				EA048BD01E9EA46300C3D429 /* PlantDetailViewController.swift in Sources */,
 				EA2B00901EA7DDD600AD6535 /* CurrentMonthView.swift in Sources */,
 				EAAB4EEF1E9E251F002DF3DB /* Constants.swift in Sources */,

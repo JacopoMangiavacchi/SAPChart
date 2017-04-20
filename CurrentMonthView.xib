@@ -29,16 +29,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVt-ct-IYg" customClass="HorizontalBarChartView" customModule="Charts">
-                            <rect key="frame" x="10" y="14" width="355" height="493"/>
+                            <rect key="frame" x="90" y="50" width="145" height="417"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="oVt-ct-IYg" secondAttribute="bottom" id="2v4-bt-8JU"/>
-                        <constraint firstItem="oVt-ct-IYg" firstAttribute="top" secondItem="LvJ-wD-WRN" secondAttribute="top" constant="14" id="UpW-xY-sVi"/>
-                        <constraint firstAttribute="trailing" secondItem="oVt-ct-IYg" secondAttribute="trailing" constant="10" id="j9i-di-Lvc"/>
-                        <constraint firstItem="oVt-ct-IYg" firstAttribute="leading" secondItem="LvJ-wD-WRN" secondAttribute="leading" constant="10" id="zmE-Fn-Se4"/>
+                        <constraint firstAttribute="bottom" secondItem="oVt-ct-IYg" secondAttribute="bottom" constant="40" id="2v4-bt-8JU"/>
+                        <constraint firstItem="oVt-ct-IYg" firstAttribute="top" secondItem="LvJ-wD-WRN" secondAttribute="top" constant="50" id="UpW-xY-sVi"/>
+                        <constraint firstAttribute="trailing" secondItem="oVt-ct-IYg" secondAttribute="trailing" constant="140" id="j9i-di-Lvc"/>
+                        <constraint firstItem="oVt-ct-IYg" firstAttribute="leading" secondItem="LvJ-wD-WRN" secondAttribute="leading" constant="90" id="zmE-Fn-Se4"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lap-lq-RfE" userLabel="CurrentMonthView">
@@ -357,7 +357,6 @@
                         <constraint firstAttribute="trailing" secondItem="pVP-Vv-Pug" secondAttribute="trailing" id="0Hx-cA-G00"/>
                         <constraint firstItem="pVP-Vv-Pug" firstAttribute="leading" secondItem="lap-lq-RfE" secondAttribute="leading" id="RDw-Jd-emi"/>
                         <constraint firstItem="pVP-Vv-Pug" firstAttribute="top" secondItem="lap-lq-RfE" secondAttribute="top" id="Xsu-Yd-X5G"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="d5q-6D-xay"/>
                         <constraint firstAttribute="bottom" secondItem="pVP-Vv-Pug" secondAttribute="bottom" id="oWb-6Y-EVa"/>
                         <constraint firstAttribute="height" constant="160" id="wZn-pw-VLD"/>
                     </constraints>

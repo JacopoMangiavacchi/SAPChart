@@ -29,10 +29,10 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var groupSelectionSegment: UISegmentedControl!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    @IBOutlet weak var ticketsOpenedLabel: UILabel!
-    @IBOutlet weak var ticketClosedLabel: UILabel!
-    @IBOutlet weak var ticketMissedLabel: UILabel!
-    @IBOutlet weak var completitionLabel: UILabel!
+    @IBOutlet weak var ticketsOpenedBox: BoxView!
+    @IBOutlet weak var ticketClosedBox: BoxView!
+    @IBOutlet weak var ticketMissedBox: BoxView!
+    @IBOutlet weak var completitionBox: BoxView!
     
     @IBOutlet weak var user1ImageView: UIImageView!
     @IBOutlet weak var user2ImageView: UIImageView!
@@ -53,10 +53,15 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ticketsOpenedLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketsOpenedLabel"].stringValue
-        ticketClosedLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketClosedLabel"].stringValue
-        ticketMissedLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketMissedLabel"].stringValue
-        completitionLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["completitionLabel"].stringValue
+        ticketsOpenedBox.topLabel.text = Constants.boxesLabel["ticketsOpenedLabel"]
+        ticketClosedBox.topLabel.text = Constants.boxesLabel["ticketClosedLabel"]
+        ticketMissedBox.topLabel.text = Constants.boxesLabel["ticketMissedLabel"]
+        completitionBox.topLabel.text = Constants.boxesLabel["completitionLabel"]
+        
+        ticketsOpenedBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketsOpenedLabel"].stringValue
+        ticketClosedBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketClosedLabel"].stringValue
+        ticketMissedBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketMissedLabel"].stringValue
+        completitionBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["completitionLabel"].stringValue
 }
     
     

@@ -27,7 +27,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
     @IBOutlet weak var pageControl: UIPageControl!
     
     var currentMonthView: CurrentMonthView!
-    var diagnosticsView: UIView!
+    var diagnosticsView: DiagnosticView!
     
     var scrollAreaWidth:CGFloat = 0.0
     var scrollAreaHeight:CGFloat = 0.0
@@ -51,8 +51,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         scrollAreaHeight = scrollView.superview!.frame.height - segmentControlView.frame.height - pageControlView.frame.height
         
         currentMonthView = CurrentMonthView(frame: CGRect(x: 0, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
-        diagnosticsView = UIView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
-        diagnosticsView.backgroundColor = Constants.whiteColor
+        diagnosticsView = DiagnosticView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
         
         scrollView.addSubview(currentMonthView)
         scrollView.addSubview(diagnosticsView)

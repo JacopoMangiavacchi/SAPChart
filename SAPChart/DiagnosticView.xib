@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiagnosticView" customModule="SAPChart" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="mNo-1v-Dg2" id="2nQ-AG-Dsi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="mNo-1v-Dg2" userLabel="view">
+            <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bu-4K-DeQ" userLabel="DiagnosticView">
+                    <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diagnostic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPP-4G-CAX">
+                            <rect key="frame" x="635" y="500" width="95.5" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="pPP-4G-CAX" firstAttribute="centerX" secondItem="6bu-4K-DeQ" secondAttribute="centerX" id="RiX-0Y-QjH"/>
+                        <constraint firstItem="pPP-4G-CAX" firstAttribute="centerY" secondItem="6bu-4K-DeQ" secondAttribute="centerY" id="WMl-y4-vqz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="6bu-4K-DeQ" firstAttribute="top" secondItem="mNo-1v-Dg2" secondAttribute="top" id="apW-JZ-Etu"/>
+                <constraint firstItem="6bu-4K-DeQ" firstAttribute="leading" secondItem="mNo-1v-Dg2" secondAttribute="leading" id="bGu-YY-sVY"/>
+                <constraint firstAttribute="trailing" secondItem="6bu-4K-DeQ" secondAttribute="trailing" id="qNt-VN-vnv"/>
+                <constraint firstAttribute="bottom" secondItem="6bu-4K-DeQ" secondAttribute="bottom" id="vDg-qJ-hvM"/>
+            </constraints>
+            <point key="canvasLocation" x="119" y="53"/>
+        </view>
+    </objects>
+</document>

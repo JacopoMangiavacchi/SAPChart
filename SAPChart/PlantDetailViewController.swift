@@ -39,7 +39,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     var plantsView: PlantsView!
-    var diagnosticsView: UIView!
+    var diagnosticsView: DiagnosticView!
     
     var scrollAreaWidth:CGFloat = 0.0
     var scrollAreaHeight:CGFloat = 0.0
@@ -71,9 +71,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         plantsView.tableView.dataSource = self
         plantsView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "messageCell")
 
-        
-        diagnosticsView = UIView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
-        diagnosticsView.backgroundColor = Constants.whiteColor
+        diagnosticsView = DiagnosticView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
         
         scrollView.addSubview(plantsView)
         scrollView.addSubview(diagnosticsView)

@@ -24,15 +24,15 @@ class CurrentMonthView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        Bundle.main.loadNibNamed("CurrentMonthView", owner: self, options: nil)?.first as! UIView
+        let _ = Bundle.main.loadNibNamed("CurrentMonthView", owner: self, options: nil)?.first as! UIView
         self.addSubview(view)
         view.frame = self.bounds
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        Bundle.main.loadNibNamed("CurrentMonthView", owner: self, options: nil)?.first as! UIView
-        view.frame = frame
+        let _ = Bundle.main.loadNibNamed("CurrentMonthView", owner: self, options: nil)?.first as! UIView
+        view.frame = self.bounds
         self.addSubview(view)
     }
 }

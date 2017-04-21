@@ -20,6 +20,10 @@
 		EAD791691E9BA97300CA208B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD791671E9BA97300CA208B /* Main.storyboard */; };
 		EAD7916B1E9BA97300CA208B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAD7916A1E9BA97300CA208B /* Assets.xcassets */; };
 		EAD7916E1E9BA97300CA208B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD7916C1E9BA97300CA208B /* LaunchScreen.storyboard */; };
+		EAECEEE21EAA117300F237D5 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAECEEDE1EAA117300F237D5 /* 4.png */; };
+		EAECEEE31EAA117300F237D5 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = EAECEEDF1EAA117300F237D5 /* 3.png */; };
+		EAECEEE41EAA117300F237D5 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = EAECEEE01EAA117300F237D5 /* 2.png */; };
+		EAECEEE51EAA117300F237D5 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = EAECEEE11EAA117300F237D5 /* 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		EAD7916A1E9BA97300CA208B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAD7916D1E9BA97300CA208B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAD7916F1E9BA97300CA208B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAECEEDE1EAA117300F237D5 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		EAECEEDF1EAA117300F237D5 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		EAECEEE01EAA117300F237D5 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		EAECEEE11EAA117300F237D5 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,7 @@
 		EAD791621E9BA97300CA208B /* SAPChart */ = {
 			isa = PBXGroup;
 			children = (
+				EAECEEDD1EAA116000F237D5 /* Images */,
 				EAAB4EF31E9E7C9F002DF3DB /* data.json */,
 				EAAB4EEE1E9E251F002DF3DB /* Constants.swift */,
 				EAD791631E9BA97300CA208B /* AppDelegate.swift */,
@@ -107,6 +116,17 @@
 				EAD7916F1E9BA97300CA208B /* Info.plist */,
 			);
 			path = SAPChart;
+			sourceTree = "<group>";
+		};
+		EAECEEDD1EAA116000F237D5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EAECEEDE1EAA117300F237D5 /* 4.png */,
+				EAECEEDF1EAA117300F237D5 /* 3.png */,
+				EAECEEE01EAA117300F237D5 /* 2.png */,
+				EAECEEE11EAA117300F237D5 /* 1.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,11 +193,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD7916E1E9BA97300CA208B /* LaunchScreen.storyboard in Resources */,
+				EAECEEE21EAA117300F237D5 /* 4.png in Resources */,
 				EA2B008E1EA7DCE800AD6535 /* CurrentMonthView.xib in Resources */,
+				EAECEEE31EAA117300F237D5 /* 3.png in Resources */,
 				EAD7916B1E9BA97300CA208B /* Assets.xcassets in Resources */,
 				EAD791691E9BA97300CA208B /* Main.storyboard in Resources */,
+				EAECEEE41EAA117300F237D5 /* 2.png in Resources */,
 				EAD747401EA9013A00D94648 /* PlantsView.xib in Resources */,
 				EAAB4EF41E9E7D81002DF3DB /* data.json in Resources */,
+				EAECEEE51EAA117300F237D5 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

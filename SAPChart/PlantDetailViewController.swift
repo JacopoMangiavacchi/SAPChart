@@ -34,6 +34,10 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var ticketMissedLabel: UILabel!
     @IBOutlet weak var completitionLabel: UILabel!
     
+    @IBOutlet weak var user1ImageView: UIImageView!
+    @IBOutlet weak var user2ImageView: UIImageView!
+    
+    
     var plantsView: PlantsView!
     var diagnosticsView: UIView!
     
@@ -69,7 +73,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
         
         diagnosticsView = UIView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
-        diagnosticsView.backgroundColor = Constants.orangeLightColor
+        diagnosticsView.backgroundColor = Constants.lightColor
         
         scrollView.addSubview(plantsView)
         scrollView.addSubview(diagnosticsView)
@@ -98,6 +102,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func onAction(_ sender: Any) {
         // Create the AlertController and add its actions like button in ActionSheet
@@ -144,7 +149,8 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         actionSheetController.addAction(deleteActionButton)
         
         // We need to provide a popover sourceView when using it on iPad
-        actionSheetController.popoverPresentationController?.sourceView = (sender as! UIBarButtonItem).value(forKey: "view") as? UIView
+        actionSheetController.popoverPresentationController?.sourceView = sender as? UIView
+        actionSheetController.popoverPresentationController?.sourceRect = CGRect(x: (sender as! UIView).bounds.midX, y: (sender as! UIView).bounds.midY, width: 0, height: 0)
         
         self.present(actionSheetController, animated: true, completion: nil)
     }
@@ -240,7 +246,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let chartDataSet = PieChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.sliceSpace = 2.0
-        chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
+        chartDataSet.colors = [Constants.whiteColor, Constants.lightColor]
         chartDataSet.drawValuesEnabled = false
         
         let chartData = PieChartData(dataSet: chartDataSet)
@@ -262,7 +268,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
-        chartDataSet.colors = [Constants.orangeColor, Constants.orangeLightColor]
+        chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
         chartDataSet.drawValuesEnabled = false
         
         let chartData = BarChartData(dataSet: chartDataSet)
@@ -284,6 +290,9 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 plantMessages = messagesArray
             }
 
+            user1ImageView.image = UIImage(named: "3.png")
+            user2ImageView.image = UIImage(named: "4.png")
+            
             animateTableView()
         }
     }
@@ -298,6 +307,9 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if chartView == plantsView.plantsBarChart {
             plantsView.rightBackgroundLabel.isHidden = false
             plantsView.tableView.isHidden = true
+
+            user1ImageView.image = UIImage(named: "1.png")
+            user2ImageView.image = UIImage(named: "2.png")
         }
     }
     

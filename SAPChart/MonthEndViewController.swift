@@ -52,7 +52,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         
         currentMonthView = CurrentMonthView(frame: CGRect(x: 0, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
         diagnosticsView = UIView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
-        diagnosticsView.backgroundColor = Constants.orangeLightColor
+        diagnosticsView.backgroundColor = Constants.lightColor
         
         scrollView.addSubview(currentMonthView)
         scrollView.addSubview(diagnosticsView)
@@ -195,7 +195,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         let chartDataSet = PieChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.sliceSpace = 2.0
-        chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
+        chartDataSet.colors = [Constants.whiteColor, Constants.lightColor]
         chartDataSet.drawValuesEnabled = false
         
         let chartData = PieChartData(dataSet: chartDataSet)
@@ -215,7 +215,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
-        chartDataSet.colors = [Constants.orangeColor, Constants.orangeLightColor]
+        chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
         chartDataSet.drawValuesEnabled = false
         
         let chartData = BarChartData(dataSet: chartDataSet)

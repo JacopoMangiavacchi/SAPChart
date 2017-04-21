@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
             <connections>
+                <outlet property="centerLabel" destination="7aH-Qk-zDj" id="P30-IC-o39"/>
+                <outlet property="topLabel" destination="RhU-jL-gOP" id="ls5-0u-1sh"/>
                 <outlet property="view" destination="mNo-1v-Dg2" id="2nQ-AG-Dsi"/>
             </connections>
         </placeholder>
@@ -18,7 +20,57 @@
         <view contentMode="scaleToFill" id="mNo-1v-Dg2" userLabel="view">
             <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZF2-od-lLT">
+                    <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhU-jL-gOP">
+                            <rect key="frame" x="0.0" y="0.0" width="667" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="97f-Y3-CqT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJy-XC-rqK">
+                            <rect key="frame" x="0.0" y="335" width="667" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="P1t-pu-evT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aH-Qk-zDj">
+                            <rect key="frame" x="0.0" y="50" width="667" height="285"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="7aH-Qk-zDj" secondAttribute="trailing" id="6Az-ij-OTj"/>
+                        <constraint firstItem="uJy-XC-rqK" firstAttribute="leading" secondItem="ZF2-od-lLT" secondAttribute="leading" id="A66-Wk-sRf"/>
+                        <constraint firstItem="7aH-Qk-zDj" firstAttribute="leading" secondItem="ZF2-od-lLT" secondAttribute="leading" id="JVe-DJ-WEH"/>
+                        <constraint firstItem="RhU-jL-gOP" firstAttribute="leading" secondItem="ZF2-od-lLT" secondAttribute="leading" id="XcV-cA-HQ9"/>
+                        <constraint firstAttribute="trailing" secondItem="uJy-XC-rqK" secondAttribute="trailing" id="cLI-gd-tqQ"/>
+                        <constraint firstAttribute="trailing" secondItem="RhU-jL-gOP" secondAttribute="trailing" id="dWi-GR-vJZ"/>
+                        <constraint firstItem="RhU-jL-gOP" firstAttribute="top" secondItem="ZF2-od-lLT" secondAttribute="top" id="eiJ-ox-Oru"/>
+                        <constraint firstItem="uJy-XC-rqK" firstAttribute="top" secondItem="7aH-Qk-zDj" secondAttribute="bottom" id="ibn-1j-wYb"/>
+                        <constraint firstAttribute="bottom" secondItem="uJy-XC-rqK" secondAttribute="bottom" id="mTW-Ho-Xd5"/>
+                        <constraint firstItem="7aH-Qk-zDj" firstAttribute="top" secondItem="RhU-jL-gOP" secondAttribute="bottom" id="vX5-0l-8yD"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ZF2-od-lLT" firstAttribute="leading" secondItem="mNo-1v-Dg2" secondAttribute="leading" id="6jx-2C-yUK"/>
+                <constraint firstAttribute="bottom" secondItem="ZF2-od-lLT" secondAttribute="bottom" id="O7c-Ur-whj"/>
+                <constraint firstAttribute="trailing" secondItem="ZF2-od-lLT" secondAttribute="trailing" id="evv-vF-60j"/>
+                <constraint firstItem="ZF2-od-lLT" firstAttribute="top" secondItem="mNo-1v-Dg2" secondAttribute="top" id="yZy-J4-ya2"/>
+            </constraints>
             <point key="canvasLocation" x="119.5" y="53.5"/>
         </view>
     </objects>

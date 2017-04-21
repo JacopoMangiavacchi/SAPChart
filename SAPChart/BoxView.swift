@@ -11,6 +11,8 @@ import UIKit
 class BoxView: UIView {
     
     @IBOutlet var view: BoxView!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var centerLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

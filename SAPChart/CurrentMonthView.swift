@@ -15,11 +15,11 @@ class CurrentMonthView: UIView {
 
     @IBOutlet weak var groupAccountingChart: HorizontalBarChartView!
 
-    @IBOutlet weak var dayOfMonthLabel: UILabel!
-    @IBOutlet weak var ticketsOpenedLabel: UILabel!
-    @IBOutlet weak var ticketClosedLabel: UILabel!
-    @IBOutlet weak var ticketMissedLabel: UILabel!
-    @IBOutlet weak var completitionLabel: UILabel!
+    @IBOutlet weak var dayOfMonthBox: BoxView!
+    @IBOutlet weak var ticketsOpenedBox: BoxView!
+    @IBOutlet weak var ticketClosedBox: BoxView!
+    @IBOutlet weak var ticketMissedBox: BoxView!
+    @IBOutlet weak var completitionBox: BoxView!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

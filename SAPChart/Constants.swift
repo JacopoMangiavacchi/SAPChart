@@ -22,4 +22,5 @@ struct Constants {
     static let animationTime = 1.5
 
     static let divisions = ["PP" : "Packaging Paper", "FP" : "Fibre Packaging", "CP" : "Consumer Packaging", "UFP" : "Uncoated Fine Paper", "SA" : "South Africa Division"]
+    static let boxesLabel = ["dayOfMonthLabel" : "Day of Month", "ticketsOpenedLabel" : "Tickets Opened", "ticketClosedLabel" : "Ticket Closed", "ticketMissedLabel" : "Ticket Missed", "completitionLabel" : "Completition"]
 }

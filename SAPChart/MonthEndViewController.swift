@@ -66,11 +66,17 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         
         configBarChart(currentMonthView.groupAccountingChart)
         
-        currentMonthView.dayOfMonthLabel.text = jsonData["globalMonthValues"]["dayOfMonthLabel"].stringValue
-        currentMonthView.ticketsOpenedLabel.text = jsonData["globalMonthValues"]["ticketsOpenedLabel"].stringValue
-        currentMonthView.ticketClosedLabel.text = jsonData["globalMonthValues"]["ticketClosedLabel"].stringValue
-        currentMonthView.ticketMissedLabel.text = jsonData["globalMonthValues"]["ticketMissedLabel"].stringValue
-        currentMonthView.completitionLabel.text = jsonData["globalMonthValues"]["completitionLabel"].stringValue
+        currentMonthView.dayOfMonthBox.topLabel.text = Constants.boxesLabel["dayOfMonthLabel"]
+        currentMonthView.ticketsOpenedBox.topLabel.text = Constants.boxesLabel["ticketsOpenedLabel"]
+        currentMonthView.ticketClosedBox.topLabel.text = Constants.boxesLabel["ticketClosedLabel"]
+        currentMonthView.ticketMissedBox.topLabel.text = Constants.boxesLabel["ticketMissedLabel"]
+        currentMonthView.completitionBox.topLabel.text = Constants.boxesLabel["completitionLabel"]
+
+        currentMonthView.dayOfMonthBox.centerLabel.text = jsonData["globalMonthValues"]["dayOfMonthLabel"].stringValue
+        currentMonthView.ticketsOpenedBox.centerLabel.text = jsonData["globalMonthValues"]["ticketsOpenedLabel"].stringValue
+        currentMonthView.ticketClosedBox.centerLabel.text = jsonData["globalMonthValues"]["ticketClosedLabel"].stringValue
+        currentMonthView.ticketMissedBox.centerLabel.text = jsonData["globalMonthValues"]["ticketMissedLabel"].stringValue
+        currentMonthView.completitionBox.centerLabel.text = jsonData["globalMonthValues"]["completitionLabel"].stringValue
     }
     
 

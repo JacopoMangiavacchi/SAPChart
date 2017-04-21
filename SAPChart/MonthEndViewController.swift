@@ -52,7 +52,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         
         currentMonthView = CurrentMonthView(frame: CGRect(x: 0, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
         diagnosticsView = UIView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
-        diagnosticsView.backgroundColor = Constants.lightColor
+        diagnosticsView.backgroundColor = Constants.whiteColor
         
         scrollView.addSubview(currentMonthView)
         scrollView.addSubview(diagnosticsView)

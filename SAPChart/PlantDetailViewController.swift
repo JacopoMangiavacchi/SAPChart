@@ -73,7 +73,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
         
         diagnosticsView = UIView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
-        diagnosticsView.backgroundColor = Constants.lightColor
+        diagnosticsView.backgroundColor = Constants.whiteColor
         
         scrollView.addSubview(plantsView)
         scrollView.addSubview(diagnosticsView)

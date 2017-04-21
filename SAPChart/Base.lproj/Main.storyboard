@@ -33,7 +33,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-CT-Zsv" userLabel="PP" customClass="PieChartView" customModule="Charts">
                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="320"/>
-                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Packaging Paper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="rd7-U9-EZf">
                                                         <rect key="frame" x="10" y="260" width="253" height="60"/>
@@ -45,7 +45,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="Agd-CT-Zsv" secondAttribute="bottom" id="4hm-RB-hPm"/>
                                                     <constraint firstAttribute="trailing" secondItem="Agd-CT-Zsv" secondAttribute="trailing" id="IO1-7p-0Ge"/>
@@ -61,7 +61,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-Xy-gKd" userLabel="FP" customClass="PieChartView" customModule="Charts">
                                                         <rect key="frame" x="0.0" y="0.0" width="273.5" height="320"/>
-                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fibre Packaging" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Mtb-Yw-mal">
                                                         <rect key="frame" x="10" y="260" width="253.5" height="60"/>
@@ -73,7 +73,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="Mtb-Yw-mal" secondAttribute="bottom" id="0cy-gQ-gcY"/>
                                                     <constraint firstItem="Mtb-Yw-mal" firstAttribute="leading" secondItem="lqF-1b-UFj" secondAttribute="leading" constant="10" id="HGM-TR-iqX"/>
@@ -89,7 +89,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tf6-AG-f1M" userLabel="CP" customClass="PieChartView" customModule="Charts">
                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="320"/>
-                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consumer Packaging" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="dka-rr-cqT">
                                                         <rect key="frame" x="10" y="260" width="253" height="60"/>
@@ -101,7 +101,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="dka-rr-cqT" firstAttribute="leading" secondItem="jHl-gg-6e3" secondAttribute="leading" constant="10" id="8is-d4-Ptr"/>
                                                     <constraint firstAttribute="trailing" secondItem="tf6-AG-f1M" secondAttribute="trailing" id="O3n-jA-a3U"/>
@@ -117,7 +117,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wme-xJ-rdx" userLabel="UFP" customClass="PieChartView" customModule="Charts">
                                                         <rect key="frame" x="0.0" y="0.0" width="273.5" height="320"/>
-                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uncoated Fine Paper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="0fg-WA-eZV">
                                                         <rect key="frame" x="10" y="260" width="253.5" height="60"/>
@@ -129,7 +129,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="0fg-WA-eZV" firstAttribute="leading" secondItem="ErY-qD-TUC" secondAttribute="leading" constant="10" id="9yw-UJ-DY6"/>
                                                     <constraint firstAttribute="bottom" secondItem="wme-xJ-rdx" secondAttribute="bottom" id="BFe-FI-xax"/>
@@ -145,7 +145,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2d8-a4-1fA" userLabel="SA" customClass="PieChartView" customModule="Charts">
                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="320"/>
-                                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="South Africa Division" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="bkj-qc-J3p">
                                                         <rect key="frame" x="10" y="260" width="253" height="60"/>
@@ -157,7 +157,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="bkj-qc-J3p" firstAttribute="leading" secondItem="L22-NV-EU2" secondAttribute="leading" constant="10" id="96W-yA-IoJ"/>
                                                     <constraint firstAttribute="bottom" secondItem="2d8-a4-1fA" secondAttribute="bottom" id="Gqq-Hm-Dbw"/>
@@ -171,7 +171,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="gyV-qi-Tp9" secondAttribute="bottom" id="lkk-bS-jda"/>
                                     <constraint firstAttribute="trailing" secondItem="gyV-qi-Tp9" secondAttribute="trailing" id="n3O-Pg-tD2"/>
@@ -186,22 +186,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1366" height="34"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="r1E-Pf-adt">
-                                                <rect key="frame" x="532" y="0.0" width="301" height="29"/>
+                                                <rect key="frame" x="532" y="5" width="301" height="29"/>
                                                 <segments>
                                                     <segment title="Current Month" width="150"/>
                                                     <segment title="Diagnostics" width="150"/>
                                                 </segments>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.1960784314" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="onChangingGroupSelection:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ljg-5P-QEe"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="r1E-Pf-adt" secondAttribute="bottom" constant="1" id="6eB-OP-jRE"/>
                                             <constraint firstItem="r1E-Pf-adt" firstAttribute="centerX" secondItem="9gS-3H-xf4" secondAttribute="centerX" id="Jvo-VX-6ZC"/>
                                             <constraint firstAttribute="height" constant="34" id="RFk-4m-Hmi"/>
-                                            <constraint firstItem="r1E-Pf-adt" firstAttribute="top" secondItem="9gS-3H-xf4" secondAttribute="top" id="yzP-8I-Vhu"/>
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbL-MA-inh">
@@ -215,8 +215,8 @@
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-yn-GoW">
                                                 <rect key="frame" x="671" y="0.0" width="23" height="37"/>
-                                                <color key="pageIndicatorTintColor" red="0.94509803920000002" green="0.65490196079999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="currentPageIndicatorTintColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="pageIndicatorTintColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="currentPageIndicatorTintColor" red="0.1960784314" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -285,11 +285,11 @@
             <objects>
                 <navigationController id="0nO-jU-fm9" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Z4v-BN-82Q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Z4v-BN-82Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.99813157320022583" green="0.41040986776351929" blue="0.0026881264057010412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.1960784314" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -322,7 +322,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibh-ZC-a6T" userLabel="Plant Pie Chart" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="0.0" width="273" height="320"/>
-                                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="xnc-KH-EiT">
                                                 <rect key="frame" x="10" y="260" width="253" height="60"/>
@@ -385,7 +385,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" red="0.94509803920000002" green="0.65490196079999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstItem="cma-ln-UyR" firstAttribute="top" secondItem="wrX-sc-eqi" secondAttribute="bottom" id="AxZ-IG-EAT"/>
                                                                             <constraint firstAttribute="trailing" secondItem="Q0h-go-snZ" secondAttribute="trailing" id="GGH-SF-r0h"/>
@@ -403,7 +403,7 @@
                                                                         <rect key="frame" x="299" y="0.0" width="278.5" height="105"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets Closed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlC-xe-v1i">
-                                                                                <rect key="frame" x="0.5" y="0.0" width="278.5" height="50"/>
+                                                                                <rect key="frame" x="1" y="0.0" width="278.5" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="50" id="Vof-l3-YuX"/>
                                                                                 </constraints>
@@ -412,13 +412,13 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dBt-de-FIM">
-                                                                                <rect key="frame" x="0.5" y="50" width="278.5" height="35"/>
+                                                                                <rect key="frame" x="1" y="50" width="278.5" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoC-1l-xhk">
-                                                                                <rect key="frame" x="0.5" y="85" width="278.5" height="20"/>
+                                                                                <rect key="frame" x="1" y="85" width="278.5" height="20"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="20" id="KiH-wj-azA"/>
                                                                                 </constraints>
@@ -427,7 +427,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" red="0.94509803920000002" green="0.65490196079999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstItem="NoC-1l-xhk" firstAttribute="top" secondItem="dBt-de-FIM" secondAttribute="bottom" id="0E1-TV-v5g"/>
                                                                             <constraint firstItem="dBt-de-FIM" firstAttribute="top" secondItem="NlC-xe-v1i" secondAttribute="bottom" id="9qV-jv-JXu"/>
@@ -474,7 +474,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" red="0.94509803920000002" green="0.65490196079999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="9b4-xs-HqF" secondAttribute="trailing" id="0L2-V5-drf"/>
                                                                             <constraint firstAttribute="trailing" secondItem="hsg-Lp-e6Z" secondAttribute="trailing" id="BYs-Q2-gdb"/>
@@ -492,7 +492,7 @@
                                                                         <rect key="frame" x="299" y="0.0" width="278.5" height="105"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOL-hm-NlL">
-                                                                                <rect key="frame" x="0.5" y="0.0" width="278.5" height="50"/>
+                                                                                <rect key="frame" x="1" y="0.0" width="278.5" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="50" id="0um-JO-UVN"/>
                                                                                 </constraints>
@@ -501,13 +501,13 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cDz-GT-n3o">
-                                                                                <rect key="frame" x="0.5" y="50" width="278.5" height="35"/>
+                                                                                <rect key="frame" x="1" y="50" width="278.5" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCo-LT-EmF">
-                                                                                <rect key="frame" x="0.5" y="85" width="278.5" height="20"/>
+                                                                                <rect key="frame" x="1" y="85" width="278.5" height="20"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="20" id="TIV-ME-R6f"/>
                                                                                 </constraints>
@@ -516,7 +516,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" red="0.94509803920000002" green="0.65490196079999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstItem="vCo-LT-EmF" firstAttribute="leading" secondItem="dru-kn-Jr4" secondAttribute="leading" id="1i9-aV-uej"/>
                                                                             <constraint firstAttribute="trailing" secondItem="YOL-hm-NlL" secondAttribute="trailing" id="5Tv-VT-2tc"/>
@@ -633,7 +633,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Enq-w1-915" firstAttribute="leading" secondItem="C6b-W2-vaE" secondAttribute="trailing" id="7la-Hq-91P"/>
                                     <constraint firstAttribute="bottom" secondItem="C6b-W2-vaE" secondAttribute="bottom" id="DzX-9O-Shr"/>
@@ -653,23 +653,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1366" height="34"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="34V-1j-3vp">
-                                                <rect key="frame" x="532" y="0.0" width="301" height="29"/>
+                                                <rect key="frame" x="532" y="5" width="301" height="29"/>
                                                 <segments>
                                                     <segment title="Current Month" width="150"/>
                                                     <segment title="Diagnostics" width="150"/>
                                                 </segments>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.1960784314" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="onChangingGroupSelection:" destination="Eov-K8-Stz" eventType="valueChanged" id="vIJ-Uz-ijL"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="34V-1j-3vp" firstAttribute="centerX" secondItem="oXl-8F-2Zt" secondAttribute="centerX" id="NHt-7X-Rye"/>
+                                            <constraint firstAttribute="bottom" secondItem="34V-1j-3vp" secondAttribute="bottom" constant="1" id="Ssa-e7-fII"/>
                                             <constraint firstAttribute="height" constant="34" id="TEV-4i-F43"/>
-                                            <constraint firstItem="34V-1j-3vp" firstAttribute="top" secondItem="oXl-8F-2Zt" secondAttribute="top" id="Tgd-3E-6fg"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="h1K-WU-Rz0"/>
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o12-WN-l0K">
@@ -683,8 +682,8 @@
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="KZQ-0M-G08">
                                                 <rect key="frame" x="671" y="0.0" width="23" height="37"/>
-                                                <color key="pageIndicatorTintColor" red="0.94509803920000002" green="0.65490196079999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="currentPageIndicatorTintColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="pageIndicatorTintColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="currentPageIndicatorTintColor" red="0.1960784314" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

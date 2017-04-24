@@ -183,10 +183,10 @@
                                 <rect key="frame" x="0.0" y="320" width="1366" height="640"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gS-3H-xf4" userLabel="SegmentControlView">
-                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="80"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="r1E-Pf-adt">
-                                                <rect key="frame" x="532" y="21" width="301" height="29"/>
+                                                <rect key="frame" x="532" y="26" width="301" height="29"/>
                                                 <segments>
                                                     <segment title="Current Month" width="150"/>
                                                     <segment title="Diagnostics" width="150"/>
@@ -199,13 +199,13 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="r1E-Pf-adt" secondAttribute="bottom" constant="1" id="6eB-OP-jRE"/>
                                             <constraint firstItem="r1E-Pf-adt" firstAttribute="centerX" secondItem="9gS-3H-xf4" secondAttribute="centerX" id="Jvo-VX-6ZC"/>
-                                            <constraint firstAttribute="height" constant="50" id="RFk-4m-Hmi"/>
+                                            <constraint firstItem="r1E-Pf-adt" firstAttribute="centerY" secondItem="9gS-3H-xf4" secondAttribute="centerY" id="NcZ-L7-hml"/>
+                                            <constraint firstAttribute="height" constant="80" id="RFk-4m-Hmi"/>
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbL-MA-inh">
-                                        <rect key="frame" x="0.0" y="50" width="1366" height="556"/>
+                                        <rect key="frame" x="0.0" y="80" width="1366" height="526"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Ywo-el-Iq8"/>
                                         </connections>
@@ -215,7 +215,7 @@
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-yn-GoW">
                                                 <rect key="frame" x="671" y="0.0" width="23" height="37"/>
-                                                <color key="pageIndicatorTintColor" red="0.1961558759" green="0.19215551019999999" blue="0.19208222629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="pageIndicatorTintColor" red="0.4849341512" green="0.52923774720000005" blue="0.55019944909999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                         </subviews>
@@ -500,10 +500,10 @@
                                 <rect key="frame" x="0.0" y="320" width="1366" height="640"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXl-8F-2Zt" userLabel="SegmentControlView">
-                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="80"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="34V-1j-3vp">
-                                                <rect key="frame" x="532" y="21" width="301" height="29"/>
+                                                <rect key="frame" x="532" y="26" width="301" height="29"/>
                                                 <segments>
                                                     <segment title="Current Month" width="150"/>
                                                     <segment title="Diagnostics" width="150"/>
@@ -517,12 +517,12 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="34V-1j-3vp" firstAttribute="centerX" secondItem="oXl-8F-2Zt" secondAttribute="centerX" id="NHt-7X-Rye"/>
-                                            <constraint firstAttribute="bottom" secondItem="34V-1j-3vp" secondAttribute="bottom" constant="1" id="Ssa-e7-fII"/>
-                                            <constraint firstAttribute="height" constant="50" id="TEV-4i-F43"/>
+                                            <constraint firstItem="34V-1j-3vp" firstAttribute="centerY" secondItem="oXl-8F-2Zt" secondAttribute="centerY" id="SmX-FS-34R"/>
+                                            <constraint firstAttribute="height" constant="80" id="TEV-4i-F43"/>
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o12-WN-l0K">
-                                        <rect key="frame" x="0.0" y="50" width="1366" height="556"/>
+                                        <rect key="frame" x="0.0" y="80" width="1366" height="526"/>
                                         <connections>
                                             <outlet property="delegate" destination="Eov-K8-Stz" id="ED5-Qh-G8w"/>
                                         </connections>
@@ -532,13 +532,12 @@
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="KZQ-0M-G08">
                                                 <rect key="frame" x="671" y="0.0" width="23" height="37"/>
-                                                <color key="pageIndicatorTintColor" red="0.1961558759" green="0.19215551019999999" blue="0.19208222629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="pageIndicatorTintColor" red="0.4849341512" green="0.52923774720000005" blue="0.55019944909999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="N4h-8V-9Tw"/>
                                             <constraint firstItem="KZQ-0M-G08" firstAttribute="top" secondItem="hU3-ej-HUy" secondAttribute="top" id="WAq-uf-fxS"/>
                                             <constraint firstItem="KZQ-0M-G08" firstAttribute="centerX" secondItem="hU3-ej-HUy" secondAttribute="centerX" id="fpr-O9-uHf"/>
                                             <constraint firstAttribute="height" constant="34" id="kWD-SB-iGL"/>

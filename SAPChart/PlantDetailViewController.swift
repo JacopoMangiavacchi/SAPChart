@@ -83,7 +83,9 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         scrollView.contentSize = CGSize(width: scrollAreaWidth * 2, height: scrollAreaHeight)
         
-        pieChartLabel.text = Constants.divisions[selectedDivision]
+        //pieChartLabel.text = Constants.divisions[selectedDivision]
+        self.title = Constants.divisions[selectedDivision]
+        
         numPlants = jsonData["divisionStatus"][selectedDivision]["plants"].array!.count
         
         configPieChart(plantPieChart, label: "\(jsonData["divisionStatus"][selectedDivision]["completition"].intValue)%")
@@ -216,7 +218,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
         horizontalBarChartView.xAxis.labelCount = numPlants + 2
         horizontalBarChartView.xAxis.drawLabelsEnabled = true
-        horizontalBarChartView.xAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.xAxis.drawAxisLineEnabled = false
         horizontalBarChartView.xAxis.drawGridLinesEnabled = false
         horizontalBarChartView.xAxis.granularity = 10.0
         horizontalBarChartView.xAxis.valueFormatter = self
@@ -226,7 +228,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         horizontalBarChartView.drawValueAboveBarEnabled = false
         horizontalBarChartView.maxVisibleCount = 100;
         
-        horizontalBarChartView.leftAxis.enabled = true
+        horizontalBarChartView.leftAxis.enabled = false
         horizontalBarChartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
         horizontalBarChartView.leftAxis.drawAxisLineEnabled = true
         horizontalBarChartView.leftAxis.drawGridLinesEnabled = true
@@ -235,7 +237,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         horizontalBarChartView.rightAxis.enabled = true
         horizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
-        horizontalBarChartView.rightAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.rightAxis.drawAxisLineEnabled = false
         horizontalBarChartView.rightAxis.drawGridLinesEnabled = false
         horizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
         horizontalBarChartView.rightAxis.axisMaximum = 100.0

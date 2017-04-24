@@ -29,16 +29,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="1366" height="864"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVt-ct-IYg" customClass="HorizontalBarChartView" customModule="Charts">
-                            <rect key="frame" x="90" y="50" width="1136" height="774"/>
+                            <rect key="frame" x="110" y="40" width="1096" height="774"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="oVt-ct-IYg" secondAttribute="bottom" constant="40" id="2v4-bt-8JU"/>
-                        <constraint firstItem="oVt-ct-IYg" firstAttribute="top" secondItem="LvJ-wD-WRN" secondAttribute="top" constant="50" id="UpW-xY-sVi"/>
-                        <constraint firstAttribute="trailing" secondItem="oVt-ct-IYg" secondAttribute="trailing" constant="140" id="j9i-di-Lvc"/>
-                        <constraint firstItem="oVt-ct-IYg" firstAttribute="leading" secondItem="LvJ-wD-WRN" secondAttribute="leading" constant="90" id="zmE-Fn-Se4"/>
+                        <constraint firstAttribute="bottom" secondItem="oVt-ct-IYg" secondAttribute="bottom" constant="50" id="2v4-bt-8JU"/>
+                        <constraint firstItem="oVt-ct-IYg" firstAttribute="top" secondItem="LvJ-wD-WRN" secondAttribute="top" constant="40" id="UpW-xY-sVi"/>
+                        <constraint firstAttribute="trailing" secondItem="oVt-ct-IYg" secondAttribute="trailing" constant="160" id="j9i-di-Lvc"/>
+                        <constraint firstItem="oVt-ct-IYg" firstAttribute="leading" secondItem="LvJ-wD-WRN" secondAttribute="leading" constant="110" id="zmE-Fn-Se4"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lap-lq-RfE" userLabel="CurrentMonthView">

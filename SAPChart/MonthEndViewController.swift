@@ -167,7 +167,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
         horizontalBarChartView.xAxis.labelCount = 5
         horizontalBarChartView.xAxis.drawLabelsEnabled = true
-        horizontalBarChartView.xAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.xAxis.drawAxisLineEnabled = false
         horizontalBarChartView.xAxis.drawGridLinesEnabled = false
         horizontalBarChartView.xAxis.granularity = 10.0
         horizontalBarChartView.xAxis.valueFormatter = self
@@ -177,7 +177,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         horizontalBarChartView.drawValueAboveBarEnabled = false
         horizontalBarChartView.maxVisibleCount = 100;
         
-        horizontalBarChartView.leftAxis.enabled = true
+        horizontalBarChartView.leftAxis.enabled = false
         horizontalBarChartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
         horizontalBarChartView.leftAxis.drawAxisLineEnabled = true
         horizontalBarChartView.leftAxis.drawGridLinesEnabled = true
@@ -186,7 +186,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         
         horizontalBarChartView.rightAxis.enabled = true
         horizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
-        horizontalBarChartView.rightAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.rightAxis.drawAxisLineEnabled = false
         horizontalBarChartView.rightAxis.drawGridLinesEnabled = false
         horizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
         horizontalBarChartView.rightAxis.axisMaximum = 100.0

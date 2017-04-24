@@ -12,6 +12,10 @@ import Charts
 class DiagnosticView: UIView {
     
     @IBOutlet var view: DiagnosticView!
+
+    @IBOutlet weak var ticketsLineChartView: LineChartView!
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

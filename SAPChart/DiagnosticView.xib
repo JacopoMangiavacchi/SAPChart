@@ -5,13 +5,14 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12118"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiagnosticView" customModule="SAPChart" customModuleProvider="target">
             <connections>
+                <outlet property="ticketsLineChartView" destination="Vpu-81-Wxc" id="iY8-0z-UoM"/>
                 <outlet property="view" destination="mNo-1v-Dg2" id="2nQ-AG-Dsi"/>
             </connections>
         </placeholder>
@@ -23,15 +24,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bu-4K-DeQ" userLabel="DiagnosticView">
                     <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diagnostic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPP-4G-CAX">
-                            <rect key="frame" x="635" y="500" width="95.5" height="24"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5e-Bf-7Cq" userLabel="1">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5e-Bf-7Cq" userLabel="Tickets">
                             <rect key="frame" x="0.0" y="0.0" width="683" height="512"/>
-                            <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vpu-81-Wxc" customClass="LineChartView" customModule="Charts">
+                                    <rect key="frame" x="10" y="10" width="663" height="492"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Vpu-81-Wxc" secondAttribute="bottom" constant="10" id="ASV-2G-hI5"/>
+                                <constraint firstItem="Vpu-81-Wxc" firstAttribute="leading" secondItem="U5e-Bf-7Cq" secondAttribute="leading" constant="10" id="AjY-SS-9fy"/>
+                                <constraint firstItem="Vpu-81-Wxc" firstAttribute="top" secondItem="U5e-Bf-7Cq" secondAttribute="top" constant="10" id="Pda-QK-usU"/>
+                                <constraint firstAttribute="trailing" secondItem="Vpu-81-Wxc" secondAttribute="trailing" constant="10" id="z3Z-Sc-a5J"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-7A-XCt" userLabel="2">
                             <rect key="frame" x="683" y="0.0" width="683" height="512"/>
@@ -59,10 +66,8 @@
                         <constraint firstItem="2bv-nS-WhM" firstAttribute="top" secondItem="hlo-7A-XCt" secondAttribute="bottom" id="LTx-tY-3b1"/>
                         <constraint firstItem="2bv-nS-WhM" firstAttribute="leading" secondItem="ANW-Sf-cyb" secondAttribute="trailing" id="Muh-hS-zHk"/>
                         <constraint firstAttribute="trailing" secondItem="2bv-nS-WhM" secondAttribute="trailing" id="P1d-sA-2sA"/>
-                        <constraint firstItem="pPP-4G-CAX" firstAttribute="centerX" secondItem="6bu-4K-DeQ" secondAttribute="centerX" id="RiX-0Y-QjH"/>
                         <constraint firstItem="ANW-Sf-cyb" firstAttribute="width" secondItem="U5e-Bf-7Cq" secondAttribute="width" id="TBa-Ke-268"/>
                         <constraint firstItem="U5e-Bf-7Cq" firstAttribute="leading" secondItem="6bu-4K-DeQ" secondAttribute="leading" id="TrB-Es-Tn3"/>
-                        <constraint firstItem="pPP-4G-CAX" firstAttribute="centerY" secondItem="6bu-4K-DeQ" secondAttribute="centerY" id="WMl-y4-vqz"/>
                         <constraint firstItem="ANW-Sf-cyb" firstAttribute="top" secondItem="U5e-Bf-7Cq" secondAttribute="bottom" id="eYh-cm-SWB"/>
                         <constraint firstAttribute="bottom" secondItem="2bv-nS-WhM" secondAttribute="bottom" id="fM0-No-6NT"/>
                         <constraint firstItem="2bv-nS-WhM" firstAttribute="width" secondItem="U5e-Bf-7Cq" secondAttribute="width" id="g9R-BG-vcx"/>

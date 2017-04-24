@@ -15,6 +15,7 @@
 		EA42B5511EAA603400E176E7 /* DiagnosticView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA42B54F1EAA603400E176E7 /* DiagnosticView.xib */; };
 		EA42B5531EAA604E00E176E7 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42B5521EAA604E00E176E7 /* BoxView.swift */; };
 		EA42B5551EAA605D00E176E7 /* DiagnosticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42B5541EAA605D00E176E7 /* DiagnosticView.swift */; };
+		EA6990BC1EAE35EF000FD326 /* ParentDiagnosticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6990BB1EAE35EF000FD326 /* ParentDiagnosticViewController.swift */; };
 		EAAB4EEF1E9E251F002DF3DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB4EEE1E9E251F002DF3DB /* Constants.swift */; };
 		EAAB4EF41E9E7D81002DF3DB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = EAAB4EF31E9E7C9F002DF3DB /* data.json */; };
 		EAD7473E1EA8FBDE00D94648 /* PlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */; };
@@ -41,6 +42,7 @@
 		EA42B54F1EAA603400E176E7 /* DiagnosticView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiagnosticView.xib; sourceTree = "<group>"; };
 		EA42B5521EAA604E00E176E7 /* BoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		EA42B5541EAA605D00E176E7 /* DiagnosticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosticView.swift; sourceTree = "<group>"; };
+		EA6990BB1EAE35EF000FD326 /* ParentDiagnosticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentDiagnosticViewController.swift; sourceTree = "<group>"; };
 		EAAB4EEE1E9E251F002DF3DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAAB4EF31E9E7C9F002DF3DB /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				EAAB4EF31E9E7C9F002DF3DB /* data.json */,
 				EAAB4EEE1E9E251F002DF3DB /* Constants.swift */,
 				EAD791631E9BA97300CA208B /* AppDelegate.swift */,
+				EA6990BB1EAE35EF000FD326 /* ParentDiagnosticViewController.swift */,
 				EAD791651E9BA97300CA208B /* MonthEndViewController.swift */,
 				EA048BCF1E9EA46300C3D429 /* PlantDetailViewController.swift */,
 				EA2B008F1EA7DDD600AD6535 /* CurrentMonthView.swift */,
@@ -276,6 +279,7 @@
 			files = (
 				EA42B5531EAA604E00E176E7 /* BoxView.swift in Sources */,
 				EAD791661E9BA97300CA208B /* MonthEndViewController.swift in Sources */,
+				EA6990BC1EAE35EF000FD326 /* ParentDiagnosticViewController.swift in Sources */,
 				EAD791641E9BA97300CA208B /* AppDelegate.swift in Sources */,
 				EAD7473E1EA8FBDE00D94648 /* PlantsView.swift in Sources */,
 				EA048BD01E9EA46300C3D429 /* PlantDetailViewController.swift in Sources */,

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiagnosticView" customModule="SAPChart" customModuleProvider="target">
             <connections>
+                <outlet property="completitionLineChartView" destination="WeO-hH-HeV" id="e1A-in-8is"/>
                 <outlet property="ticketsLineChartView" destination="Vpu-81-Wxc" id="iY8-0z-UoM"/>
                 <outlet property="view" destination="mNo-1v-Dg2" id="2nQ-AG-Dsi"/>
             </connections>
@@ -40,9 +41,21 @@
                                 <constraint firstAttribute="trailing" secondItem="Vpu-81-Wxc" secondAttribute="trailing" constant="10" id="z3Z-Sc-a5J"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-7A-XCt" userLabel="2">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-7A-XCt" userLabel="Completition">
                             <rect key="frame" x="683" y="0.0" width="683" height="512"/>
-                            <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeO-hH-HeV" customClass="LineChartView" customModule="Charts">
+                                    <rect key="frame" x="10" y="10" width="663" height="492"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="WeO-hH-HeV" firstAttribute="leading" secondItem="hlo-7A-XCt" secondAttribute="leading" constant="10" id="0c8-Mm-Gti"/>
+                                <constraint firstAttribute="bottom" secondItem="WeO-hH-HeV" secondAttribute="bottom" constant="10" id="Ejz-2p-FkT"/>
+                                <constraint firstItem="WeO-hH-HeV" firstAttribute="top" secondItem="hlo-7A-XCt" secondAttribute="top" constant="10" id="jwR-1o-LeI"/>
+                                <constraint firstAttribute="trailing" secondItem="WeO-hH-HeV" secondAttribute="trailing" constant="10" id="oKw-br-udS"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANW-Sf-cyb" userLabel="3">
                             <rect key="frame" x="0.0" y="512" width="683" height="512"/>

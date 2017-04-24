@@ -11,7 +11,7 @@ import Charts
 import SwiftyJSON
 
 
-class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewDelegate, IAxisValueFormatter {
+class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelegate, ChartViewDelegate, IAxisValueFormatter {
 
     @IBOutlet weak var ppChart: PieChartView!
     @IBOutlet weak var fpChart: PieChartView!
@@ -27,8 +27,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
     @IBOutlet weak var pageControl: UIPageControl!
     
     var currentMonthView: CurrentMonthView!
-    var diagnosticsView: DiagnosticView!
-    
+
     var scrollAreaWidth:CGFloat = 0.0
     var scrollAreaHeight:CGFloat = 0.0
     
@@ -45,8 +44,6 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
 
     
     override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
         scrollAreaWidth = scrollView.superview!.frame.width
         scrollAreaHeight = scrollView.superview!.frame.height - segmentControlView.frame.height - pageControlView.frame.height
         
@@ -77,8 +74,8 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         currentMonthView.ticketClosedBox.centerLabel.text = jsonData["globalMonthValues"]["ticketClosedLabel"].stringValue
         currentMonthView.ticketMissedBox.centerLabel.text = jsonData["globalMonthValues"]["ticketMissedLabel"].stringValue
         currentMonthView.completitionBox.centerLabel.text = jsonData["globalMonthValues"]["completitionLabel"].stringValue
-        
-        configLineChart(diagnosticsView.ticketsLineChartView)
+    
+        super.viewDidLayoutSubviews()
     }
     
 
@@ -106,7 +103,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
         
         currentMonthView.groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         
-        updateLineChart(diagnosticsView.ticketsLineChartView)
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -199,32 +196,6 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
     }
 
     
-    internal func configLineChart(_ lineChartView: LineChartView) {
-        lineChartView.delegate = self
-        
-        lineChartView.highlightPerTapEnabled = false
-        
-        lineChartView.chartDescription?.enabled = false
-        lineChartView.chartDescription?.text = nil
-        lineChartView.legend.enabled = false
-        lineChartView.legend.setCustom(entries: [])
-        
-        
-        lineChartView.drawGridBackgroundEnabled = false
-        lineChartView.dragEnabled = false
-        lineChartView.setScaleEnabled(true)
-        lineChartView.pinchZoomEnabled = false
-        
-        lineChartView.setViewPortOffsets(left: 10.0, top: 0.0, right: 10.0, bottom: 0.0)
-        
-        lineChartView.leftAxis.enabled = false
-        lineChartView.leftAxis.spaceTop = 0.4
-        lineChartView.leftAxis.spaceBottom = 0.4
-        lineChartView.rightAxis.enabled = false
-        lineChartView.xAxis.enabled = false
-    }
-    
-    
     internal func updatePieChartWithData(_ pieChartView: PieChartView, value: Int) {
         let dataEntries = [PieChartDataEntry(value: Double(value), label: ""), PieChartDataEntry(value: Double(100-value), label: "")]
         let chartDataSet = PieChartDataSet(values: dataEntries, label: "")
@@ -258,36 +229,6 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, ChartViewD
     }
     
 
-    internal func updateLineChart(_ lineChartView: LineChartView) {
-        func setDataSet(_ chartDataSet: LineChartDataSet, color: UIColor) {
-            chartDataSet.lineWidth = 1.75
-            chartDataSet.circleRadius = 10.0
-            chartDataSet.circleHoleRadius = 8
-            chartDataSet.setColor(color)
-            chartDataSet.setCircleColor(color)
-            chartDataSet.circleHoleColor = UIColor.white
-            chartDataSet.highlightColor = UIColor.blue
-            
-            //chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
-            chartDataSet.drawValuesEnabled = false
-        }
-        
-        let dataEntries1 = [ChartDataEntry(x: 0.0, y: 3.0), ChartDataEntry(x: 1.0, y: 1.0), ChartDataEntry(x: 2.0, y: 7.0), ChartDataEntry(x: 3.0, y: 3.0), ChartDataEntry(x: 4.0, y: 1.0), ChartDataEntry(x: 5.0, y: 7.0)]
-        let dataEntries2 = [ChartDataEntry(x: 0.0, y: 5.0), ChartDataEntry(x: 1.0, y: 13.0), ChartDataEntry(x: 2.0, y: 5.0), ChartDataEntry(x: 3.0, y: 10.0), ChartDataEntry(x: 4.0, y: 7.0), ChartDataEntry(x: 5.0, y: 11.0)]
-        
-
-        let chartDataSet1 = LineChartDataSet(values: dataEntries1, label: "")
-        let chartDataSet2 = LineChartDataSet(values: dataEntries2, label: "")
-
-        setDataSet(chartDataSet1, color:Constants.darkColor)
-        setDataSet(chartDataSet2, color:Constants.lightColor)
-        
-        let chartData = LineChartData(dataSets: [chartDataSet1, chartDataSet2])
-        lineChartView.data = chartData
-    }
-    
-    
-    
     @IBAction func onPublish(_ sender: Any) {
         print("Publish")
     }

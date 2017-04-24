@@ -458,5 +458,15 @@
         "ticketClosedLabel" : "20",
         "ticketMissedLabel" : "5",
         "completitionLabel" : "20%"
+    },
+    "globalDiagnostics" : {
+        "meTickets" : [[3, 1, 7, 3, 1, 7], [5, 13, 5, 10, 7, 11]],
+        "meCompletition" : [[3, 1, 7, 3, 1, 7], [6, 2, 14, 6, 2, 14]],
+        "quatiltyTickets" : "TODO",
+        "botResponses" : {
+            "noResponse" : 17,
+            "lateResponse" : 23,
+            "delay" : 21
+        }
     }
 }

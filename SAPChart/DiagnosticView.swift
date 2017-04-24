@@ -14,6 +14,7 @@ class DiagnosticView: UIView {
     @IBOutlet var view: DiagnosticView!
 
     @IBOutlet weak var ticketsLineChartView: LineChartView!
+    @IBOutlet weak var completitionLineChartView: LineChartView!
     
     
     

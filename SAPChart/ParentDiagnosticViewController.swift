@@ -1,5 +1,5 @@
 //
-//  DiagnosticViewController.swift
+//  ParentDiagnosticViewController.swift
 //  SAPChart
 //
 //  Created by Jacopo Mangiavacchi on 4/24/17.
@@ -11,7 +11,7 @@ import Charts
 import SwiftyJSON
 
 
-class DiagnosticViewController: UIViewController {
+class ParentDiagnosticViewController: UIViewController {
 
     var diagnosticsView: DiagnosticView!
 

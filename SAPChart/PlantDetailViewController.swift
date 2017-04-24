@@ -17,7 +17,7 @@ extension UIDevice {
     }
 }
 
-class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, ChartViewDelegate, IAxisValueFormatter {
+class PlantDetailViewController: ParentDiagnosticViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, ChartViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, IAxisValueFormatter {
     
     @IBOutlet weak var plantPieChart: PieChartView!
     @IBOutlet weak var pieChartLabel: UILabel!
@@ -39,7 +39,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     var plantsView: PlantsView!
-    var diagnosticsView: DiagnosticView!
     
     var scrollAreaWidth:CGFloat = 0.0
     var scrollAreaHeight:CGFloat = 0.0
@@ -66,8 +65,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
         scrollAreaWidth = scrollView.superview!.frame.width
         scrollAreaHeight = scrollView.superview!.frame.height - segmentControlView.frame.height - pageControlView.frame.height
         
@@ -95,12 +92,16 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         updatePieChartWithData(plantPieChart, value: jsonData["divisionStatus"][selectedDivision]["completition"].intValue)
         
         updateBarChart(plantsView.plantsBarChart)
+        
+        super.viewDidLayoutSubviews()
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         plantPieChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         plantsView.plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {

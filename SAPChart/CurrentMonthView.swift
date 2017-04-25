@@ -19,8 +19,8 @@ class CurrentMonthView: UIView {
     @IBOutlet weak var ticketsOpenedBox: BoxView!
     @IBOutlet weak var ticketClosedBox: BoxView!
     @IBOutlet weak var ticketMissedBox: BoxView!
-    @IBOutlet weak var completitionBox: BoxView!
-
+    @IBOutlet weak var completedPieChart: PieChartView!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

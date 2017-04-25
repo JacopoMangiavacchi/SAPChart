@@ -17,7 +17,7 @@ extension UIDevice {
     }
 }
 
-class PlantDetailViewController: ParentDiagnosticViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, ChartViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, IAxisValueFormatter {
+class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, DiagnosticProtocol, ChartViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, IAxisValueFormatter {
     
     @IBOutlet weak var plantPieChart: PieChartView!
     @IBOutlet weak var pieChartLabel: UILabel!
@@ -39,6 +39,7 @@ class PlantDetailViewController: ParentDiagnosticViewController, UITableViewDele
     
     
     var plantsView: PlantsView!
+    var diagnosticsView: DiagnosticView!
     
     var scrollAreaWidth:CGFloat = 0.0
     var scrollAreaHeight:CGFloat = 0.0
@@ -65,6 +66,8 @@ class PlantDetailViewController: ParentDiagnosticViewController, UITableViewDele
     
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
         scrollAreaWidth = scrollView.superview!.frame.width
         scrollAreaHeight = scrollView.superview!.frame.height - segmentControlView.frame.height - pageControlView.frame.height
         
@@ -93,15 +96,17 @@ class PlantDetailViewController: ParentDiagnosticViewController, UITableViewDele
         
         updateBarChart(plantsView.plantsBarChart)
         
-        super.viewDidLayoutSubviews()
+        configCharts(diagnosticsView: diagnosticsView)
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
         plantPieChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         plantsView.plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-        
-        super.viewDidAppear(animated)
+
+        updateChart(diagnosticsView: diagnosticsView, animated: animated)
     }
     
     override func didReceiveMemoryWarning() {

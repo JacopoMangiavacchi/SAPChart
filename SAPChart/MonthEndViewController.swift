@@ -11,7 +11,7 @@ import Charts
 import SwiftyJSON
 
 
-class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelegate, ChartViewDelegate, IAxisValueFormatter {
+class MonthEndViewController: UIViewController, UIScrollViewDelegate, DiagnosticProtocol, ChartViewDelegate, IAxisValueFormatter {
 
     @IBOutlet weak var ppChart: PieChartView!
     @IBOutlet weak var fpChart: PieChartView!
@@ -27,7 +27,8 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
     @IBOutlet weak var pageControl: UIPageControl!
     
     var currentMonthView: CurrentMonthView!
-
+    var diagnosticsView: DiagnosticView!
+    
     var scrollAreaWidth:CGFloat = 0.0
     var scrollAreaHeight:CGFloat = 0.0
     
@@ -44,6 +45,8 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
 
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         scrollAreaWidth = scrollView.superview!.frame.width
         scrollAreaHeight = scrollView.superview!.frame.height - segmentControlView.frame.height - pageControlView.frame.height
         
@@ -55,11 +58,11 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         
         scrollView.contentSize = CGSize(width: scrollAreaWidth * 2, height: scrollAreaHeight)
         
-        configPieChart(ppChart, label: "\(jsonData["divisionStatus"]["PP"]["completition"].intValue)%")
-        configPieChart(fpChart, label: "\(jsonData["divisionStatus"]["FP"]["completition"].intValue)%")
-        configPieChart(cpChart, label: "\(jsonData["divisionStatus"]["CP"]["completition"].intValue)%")
-        configPieChart(ufpChart, label: "\(jsonData["divisionStatus"]["UFP"]["completition"].intValue)%")
-        configPieChart(saChart, label: "\(jsonData["divisionStatus"]["SA"]["completition"].intValue)%")
+        configPieChart(ppChart, enableTouch: true, label: "\(jsonData["divisionStatus"]["PP"]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)
+        configPieChart(fpChart, enableTouch: true, label: "\(jsonData["divisionStatus"]["FP"]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)
+        configPieChart(cpChart, enableTouch: true, label: "\(jsonData["divisionStatus"]["CP"]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)
+        configPieChart(ufpChart, enableTouch: true, label: "\(jsonData["divisionStatus"]["UFP"]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)
+        configPieChart(saChart, enableTouch: true, label: "\(jsonData["divisionStatus"]["SA"]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)
         
         configBarChart(currentMonthView.groupAccountingChart)
         
@@ -67,19 +70,21 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         currentMonthView.ticketsOpenedBox.topLabel.text = Constants.boxesLabel["ticketsOpenedLabel"]
         currentMonthView.ticketClosedBox.topLabel.text = Constants.boxesLabel["ticketClosedLabel"]
         currentMonthView.ticketMissedBox.topLabel.text = Constants.boxesLabel["ticketMissedLabel"]
-        currentMonthView.completitionBox.topLabel.text = Constants.boxesLabel["completitionLabel"]
 
         currentMonthView.dayOfMonthBox.centerLabel.text = jsonData["globalMonthValues"]["dayOfMonthLabel"].stringValue
         currentMonthView.ticketsOpenedBox.centerLabel.text = jsonData["globalMonthValues"]["ticketsOpenedLabel"].stringValue
         currentMonthView.ticketClosedBox.centerLabel.text = jsonData["globalMonthValues"]["ticketClosedLabel"].stringValue
         currentMonthView.ticketMissedBox.centerLabel.text = jsonData["globalMonthValues"]["ticketMissedLabel"].stringValue
-        currentMonthView.completitionBox.centerLabel.text = jsonData["globalMonthValues"]["completitionLabel"].stringValue
+
+        configPieChart(currentMonthView.completedPieChart, enableTouch: false, label: "\(jsonData["globalMonthValues"]["completitionValue"].intValue)%", labelFontSize: 48.0, labelFontColor: Constants.darkColor)
     
-        super.viewDidLayoutSubviews()
+        configCharts(diagnosticsView: diagnosticsView)
     }
     
 
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
         ppChart.clear()
         fpChart.clear()
         cpChart.clear()
@@ -95,6 +100,8 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         
         updateBarChart(currentMonthView.groupAccountingChart)
 
+        updatePieChartWithData(currentMonthView.completedPieChart, value: jsonData["globalMonthValues"]["completitionValue"].intValue)
+
         ppChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         fpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         cpChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
@@ -103,7 +110,9 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         
         currentMonthView.groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         
-        super.viewDidAppear(animated)
+        currentMonthView.completedPieChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        
+        updateChart(diagnosticsView: diagnosticsView, animated: animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -111,7 +120,7 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         // Dispose of any resources that can be recreated.
     }
 
-    internal func configPieChart(_ pieChartView: PieChartView, label: String) {
+    internal func configPieChart(_ pieChartView: PieChartView, enableTouch: Bool, label: String, labelFontSize: Float, labelFontColor: UIColor) {
         pieChartView.delegate = self
         
         pieChartView.entryLabelColor = UIColor.white
@@ -125,8 +134,8 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         pieChartView.drawHoleEnabled = true
         pieChartView.holeColor = UIColor.clear
         pieChartView.rotationAngle = 270.0
-        pieChartView.rotationEnabled = true
-        pieChartView.highlightPerTapEnabled = true
+        pieChartView.rotationEnabled = false
+        pieChartView.highlightPerTapEnabled = enableTouch
         
         pieChartView.chartDescription?.text = nil
     
@@ -139,8 +148,8 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         
         let attrString = NSMutableAttributedString(string: label)
         attrString.setAttributes([
-            NSForegroundColorAttributeName: NSUIColor.white,
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 48.0)!,
+            NSForegroundColorAttributeName: labelFontColor,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: CGFloat(labelFontSize))!,
             NSParagraphStyleAttributeName: paragraphStyle
             ], range: NSMakeRange(0, attrString.length))
 
@@ -243,19 +252,22 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         switch chartView {
         case ppChart:
             selectedDivision = "PP"
+            performSegue(withIdentifier: "showPlantDetails", sender: nil)
         case fpChart:
             selectedDivision = "FP"
+            performSegue(withIdentifier: "showPlantDetails", sender: nil)
         case cpChart:
             selectedDivision = "CP"
+            performSegue(withIdentifier: "showPlantDetails", sender: nil)
         case ufpChart:
             selectedDivision = "UFP"
+            performSegue(withIdentifier: "showPlantDetails", sender: nil)
         case saChart:
             selectedDivision = "SA"
+            performSegue(withIdentifier: "showPlantDetails", sender: nil)
         default:
             selectedDivision = nil
         }
-        
-        performSegue(withIdentifier: "showPlantDetails", sender: nil)
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
@@ -292,6 +304,7 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         case 0:
             pageControl.currentPage = 0
             currentMonthView.groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+            currentMonthView.completedPieChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
             scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         case 1:
             pageControl.currentPage = 1
@@ -307,6 +320,7 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
             pageControl.currentPage = 0
             groupSelectionSegment.selectedSegmentIndex = 0
             //currentMonthView.groupAccountingChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+            //currentMonthView.completedPieChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         }
         else {
             pageControl.currentPage = 1

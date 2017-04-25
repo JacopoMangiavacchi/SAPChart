@@ -18,8 +18,8 @@ class BoxView: UIView {
         super.init(coder: aDecoder)
         
         let _ = Bundle.main.loadNibNamed("BoxView", owner: self, options: nil)?.first as! UIView
-        self.addSubview(view)
         view.frame = self.bounds
+        self.addSubview(view)
     }
     
     public override init(frame: CGRect) {

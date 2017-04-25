@@ -1,5 +1,5 @@
 //
-//  ParentDiagnosticViewController.swift
+//  DiagnosticProtocol.swift
 //  SAPChart
 //
 //  Created by Jacopo Mangiavacchi on 4/24/17.
@@ -10,27 +10,24 @@ import UIKit
 import Charts
 import SwiftyJSON
 
-
-class ParentDiagnosticViewController: UIViewController {
-
-    var diagnosticsView: DiagnosticView!
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
+protocol DiagnosticProtocol {
+    func configCharts(diagnosticsView: DiagnosticView)
+    func updateChart(diagnosticsView: DiagnosticView, animated: Bool)
+}
+    
+extension DiagnosticProtocol {
+    func configCharts(diagnosticsView: DiagnosticView) {
         configTicketLineChart(diagnosticsView.ticketsLineChartView)
         configCompletitionLineChart(diagnosticsView.completitionLineChartView)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    func updateChart(diagnosticsView: DiagnosticView, animated: Bool) {
         updateTicketLineChart(diagnosticsView.ticketsLineChartView)
         updateCompletitionLineChart(diagnosticsView.completitionLineChartView)
     }
 
     
-    func configTicketLineChart(_ lineChartView: LineChartView) {
+    internal func configTicketLineChart(_ lineChartView: LineChartView) {
         lineChartView.highlightPerTapEnabled = false
         
         lineChartView.chartDescription?.enabled = false
@@ -54,7 +51,7 @@ class ParentDiagnosticViewController: UIViewController {
     }
     
     
-    func configCompletitionLineChart(_ lineChartView: LineChartView) {
+    internal func configCompletitionLineChart(_ lineChartView: LineChartView) {
         lineChartView.highlightPerTapEnabled = false
         
         lineChartView.chartDescription?.enabled = false
@@ -78,8 +75,7 @@ class ParentDiagnosticViewController: UIViewController {
     }
     
     
-
-    func updateTicketLineChart(_ lineChartView: LineChartView) {
+    internal func updateTicketLineChart(_ lineChartView: LineChartView) {
         func setDataSet(_ chartDataSet: LineChartDataSet, color: UIColor) {
             chartDataSet.lineWidth = 1.75
             chartDataSet.circleRadius = 10.0
@@ -107,7 +103,7 @@ class ParentDiagnosticViewController: UIViewController {
     }
 
     
-    func updateCompletitionLineChart(_ lineChartView: LineChartView) {
+    internal func updateCompletitionLineChart(_ lineChartView: LineChartView) {
         func setDataSet(_ chartDataSet: LineChartDataSet, color: UIColor) {
             chartDataSet.lineWidth = 1.75
             chartDataSet.drawCirclesEnabled = false

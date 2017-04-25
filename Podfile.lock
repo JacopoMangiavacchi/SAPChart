@@ -5,13 +5,22 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Charts (~> 3.0.1)
+  - Charts (from `https://github.com/JacopoMangiavacchi/Charts.git`)
   - SwiftyJSON
 
+EXTERNAL SOURCES:
+  Charts:
+    :git: https://github.com/JacopoMangiavacchi/Charts.git
+
+CHECKOUT OPTIONS:
+  Charts:
+    :commit: 24275ae99056d904bc3937f4675c48ca037cebb0
+    :git: https://github.com/JacopoMangiavacchi/Charts.git
+
 SPEC CHECKSUMS:
-  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  Charts: e955b9a241a14a8971d70143002c8ab1610d26b6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 3a2b5505a4564b09c673dbab515991f1683a2d5c
+PODFILE CHECKSUM: ea5845eff696a591e95236f7257004654ccc56ff
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

@@ -6,7 +6,7 @@ target 'SAPChart' do
   use_frameworks!
 
   # Pods for SAPChart
-  pod 'Charts', '~> 3.0.1'
+  pod 'Charts', :git => 'https://github.com/JacopoMangiavacchi/Charts.git'
   pod 'SwiftyJSON'
   
 end

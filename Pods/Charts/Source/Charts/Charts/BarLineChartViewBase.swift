@@ -39,6 +39,9 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     open var borderColor = NSUIColor.black
     open var borderLineWidth: CGFloat = 1.0
     
+    /// flag indicating if the grid lines should be drawn on top
+    open var drawGridLinesOnTopEnabled = false
+    
     /// flag indicating if the grid background should be drawn or not
     open var drawGridBackgroundEnabled = false
     
@@ -199,11 +202,12 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
         _leftYAxisRenderer?.renderAxisLine(context: context)
         _rightYAxisRenderer?.renderAxisLine(context: context)
 
-        //JACOPO: Moved on Top
-//        // The renderers are responsible for clipping, to account for line-width center etc.
-//        _xAxisRenderer?.renderGridLines(context: context)
-//        _leftYAxisRenderer?.renderGridLines(context: context)
-//        _rightYAxisRenderer?.renderGridLines(context: context)
+        if !isdrawGridLinesOnTopEnabled {
+            // The renderers are responsible for clipping, to account for line-width center etc.
+            _xAxisRenderer?.renderGridLines(context: context)
+            _leftYAxisRenderer?.renderGridLines(context: context)
+            _rightYAxisRenderer?.renderGridLines(context: context)
+        }
         
         if _xAxis.isEnabled && _xAxis.isDrawLimitLinesBehindDataEnabled
         {
@@ -232,14 +236,14 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
         }
         
         context.restoreGState()
+        
+        if isdrawGridLinesOnTopEnabled {
+            // The renderers are responsible for clipping, to account for line-width center etc.
+            _xAxisRenderer?.renderGridLines(context: context)
+            _leftYAxisRenderer?.renderGridLines(context: context)
+            _rightYAxisRenderer?.renderGridLines(context: context)
+        }
 
-        //JACOPO: Moved on Top
-        // The renderers are responsible for clipping, to account for line-width center etc.
-        _xAxisRenderer?.renderGridLines(context: context)
-        _leftYAxisRenderer?.renderGridLines(context: context)
-        _rightYAxisRenderer?.renderGridLines(context: context)
-        
-        
         renderer!.drawExtras(context: context)
         
         if _xAxis.isEnabled && !_xAxis.isDrawLimitLinesBehindDataEnabled
@@ -1621,6 +1625,13 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     open var isHighlightPerDragEnabled: Bool
     {
         return highlightPerDragEnabled
+    }
+    
+    /// **default**: true
+    /// - returns: `true` if drawing the lines on top is enabled, `false` ifnot.
+    open var isdrawGridLinesOnTopEnabled: Bool
+    {
+        return drawGridLinesOnTopEnabled
     }
     
     /// **default**: true

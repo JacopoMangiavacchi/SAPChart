@@ -158,7 +158,7 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         horizontalBarChartView.chartDescription?.text = nil
         horizontalBarChartView.legend.setCustom(entries: [])
         
-        
+        horizontalBarChartView.drawGridLinesOnTopEnabled = true   //NB: JACOPO: PATCHED Charts Library to draw Grid Line on top (BarLineChartViewBase.swift::draw(_:))
         horizontalBarChartView.drawGridBackgroundEnabled = false
         horizontalBarChartView.dragEnabled = false
         horizontalBarChartView.setScaleEnabled(false)
@@ -194,7 +194,6 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         horizontalBarChartView.rightAxis.gridColor = UIColor.white
         horizontalBarChartView.rightAxis.gridLineWidth = 5.0
         horizontalBarChartView.rightAxis.drawGridLinesEnabled = true
-        //NB: JACOPO: PATCHED Charts Library to draw Grid Line on top (BarLineChartViewBase.swift::draw(_:))
         horizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
         horizontalBarChartView.rightAxis.axisMaximum = 100.0
         

@@ -199,10 +199,11 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
         _leftYAxisRenderer?.renderAxisLine(context: context)
         _rightYAxisRenderer?.renderAxisLine(context: context)
 
-        // The renderers are responsible for clipping, to account for line-width center etc.
-        _xAxisRenderer?.renderGridLines(context: context)
-        _leftYAxisRenderer?.renderGridLines(context: context)
-        _rightYAxisRenderer?.renderGridLines(context: context)
+        //JACOPO: Moved on Top
+//        // The renderers are responsible for clipping, to account for line-width center etc.
+//        _xAxisRenderer?.renderGridLines(context: context)
+//        _leftYAxisRenderer?.renderGridLines(context: context)
+//        _rightYAxisRenderer?.renderGridLines(context: context)
         
         if _xAxis.isEnabled && _xAxis.isDrawLimitLinesBehindDataEnabled
         {
@@ -231,6 +232,13 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
         }
         
         context.restoreGState()
+
+        //JACOPO: Moved on Top
+        // The renderers are responsible for clipping, to account for line-width center etc.
+        _xAxisRenderer?.renderGridLines(context: context)
+        _leftYAxisRenderer?.renderGridLines(context: context)
+        _rightYAxisRenderer?.renderGridLines(context: context)
+        
         
         renderer!.drawExtras(context: context)
         

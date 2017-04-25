@@ -26,43 +26,55 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvJ-wD-WRN" userLabel="BarChartView">
-                    <rect key="frame" x="0.0" y="0.0" width="1366" height="864"/>
+                    <rect key="frame" x="0.0" y="0.0" width="1366" height="774"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVt-ct-IYg" customClass="HorizontalBarChartView" customModule="Charts">
-                            <rect key="frame" x="110" y="20" width="1096" height="794"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcY-XN-8mG" userLabel="Horizontal Bar Chart View Container">
+                            <rect key="frame" x="200" y="20" width="966" height="724"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVt-ct-IYg" customClass="HorizontalBarChartView" customModule="Charts">
+                                    <rect key="frame" x="20" y="0.0" width="906" height="724"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="oVt-ct-IYg" firstAttribute="leading" secondItem="RcY-XN-8mG" secondAttribute="leading" constant="20" id="2hx-zd-DjP"/>
+                                <constraint firstItem="oVt-ct-IYg" firstAttribute="top" secondItem="RcY-XN-8mG" secondAttribute="top" id="Buf-Yx-q2c"/>
+                                <constraint firstAttribute="trailing" secondItem="oVt-ct-IYg" secondAttribute="trailing" constant="40" id="tim-MS-BTm"/>
+                                <constraint firstAttribute="bottom" secondItem="oVt-ct-IYg" secondAttribute="bottom" id="uwo-XJ-ZCf"/>
+                            </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="oVt-ct-IYg" secondAttribute="bottom" constant="50" id="2v4-bt-8JU"/>
-                        <constraint firstItem="oVt-ct-IYg" firstAttribute="top" secondItem="LvJ-wD-WRN" secondAttribute="top" constant="20" id="UpW-xY-sVi"/>
-                        <constraint firstAttribute="trailing" secondItem="oVt-ct-IYg" secondAttribute="trailing" constant="160" id="j9i-di-Lvc"/>
-                        <constraint firstItem="oVt-ct-IYg" firstAttribute="leading" secondItem="LvJ-wD-WRN" secondAttribute="leading" constant="110" id="zmE-Fn-Se4"/>
+                        <constraint firstAttribute="bottom" secondItem="RcY-XN-8mG" secondAttribute="bottom" constant="30" id="Ngd-ve-R3c"/>
+                        <constraint firstItem="RcY-XN-8mG" firstAttribute="leading" secondItem="LvJ-wD-WRN" secondAttribute="leading" constant="200" id="dLv-ii-0Qf"/>
+                        <constraint firstItem="RcY-XN-8mG" firstAttribute="top" secondItem="LvJ-wD-WRN" secondAttribute="top" constant="20" id="ocg-X9-VKe"/>
+                        <constraint firstAttribute="trailing" secondItem="RcY-XN-8mG" secondAttribute="trailing" constant="200" id="yyj-uq-p9Q"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lap-lq-RfE" userLabel="CurrentMonthView">
-                    <rect key="frame" x="0.0" y="864" width="1366" height="160"/>
+                    <rect key="frame" x="0.0" y="774" width="1366" height="250"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVP-Vv-Pug" userLabel="Filler Stack View">
-                            <rect key="frame" x="0.0" y="0.0" width="1366" height="160"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1366" height="250"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXM-NY-etT" userLabel="Left">
-                                    <rect key="frame" x="0.0" y="0.0" width="10" height="160"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="10" height="250"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="10" id="cBS-Kw-Yes"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cRu-8p-3ra" userLabel="Counters Stack View">
-                                    <rect key="frame" x="10" y="0.0" width="1346" height="160"/>
+                                    <rect key="frame" x="10" y="0.0" width="1346" height="250"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imZ-aN-mkj">
-                                            <rect key="frame" x="0.0" y="0.0" width="269" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="269" height="250"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zd-De-mHU" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249" height="150"/>
-                                                    <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="10" y="0.0" width="249" height="240"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -74,11 +86,11 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYq-0J-zK9">
-                                            <rect key="frame" x="269" y="0.0" width="269.5" height="160"/>
+                                            <rect key="frame" x="269" y="0.0" width="269.5" height="250"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVz-Av-d7x" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249.5" height="150"/>
-                                                    <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="10" y="0.0" width="249.5" height="240"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -90,11 +102,11 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDr-MN-Q3F">
-                                            <rect key="frame" x="538.5" y="0.0" width="269" height="160"/>
+                                            <rect key="frame" x="538.5" y="0.0" width="269" height="250"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZL-ct-bOs" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249" height="150"/>
-                                                    <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="10" y="0.0" width="249" height="240"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -106,11 +118,11 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMu-xJ-W6g">
-                                            <rect key="frame" x="807.5" y="0.0" width="269.5" height="160"/>
+                                            <rect key="frame" x="807.5" y="0.0" width="269.5" height="250"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hU7-9s-vBS" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249.5" height="150"/>
-                                                    <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="10" y="0.0" width="249.5" height="240"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -122,11 +134,11 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVM-Ew-Xad">
-                                            <rect key="frame" x="1077" y="0.0" width="269" height="160"/>
+                                            <rect key="frame" x="1077" y="0.0" width="269" height="250"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPR-2C-zFx" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249" height="150"/>
-                                                    <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="10" y="0.0" width="249" height="240"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -140,8 +152,8 @@
                                     </subviews>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bI-NS-4Pq" userLabel="Right">
-                                    <rect key="frame" x="1356" y="0.0" width="10" height="160"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <rect key="frame" x="1356" y="0.0" width="10" height="250"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="10" id="l75-hg-ahR"/>
                                     </constraints>
@@ -168,11 +180,11 @@
                         <constraint firstItem="pVP-Vv-Pug" firstAttribute="leading" secondItem="lap-lq-RfE" secondAttribute="leading" id="RDw-Jd-emi"/>
                         <constraint firstItem="pVP-Vv-Pug" firstAttribute="top" secondItem="lap-lq-RfE" secondAttribute="top" id="Xsu-Yd-X5G"/>
                         <constraint firstAttribute="bottom" secondItem="pVP-Vv-Pug" secondAttribute="bottom" id="oWb-6Y-EVa"/>
-                        <constraint firstAttribute="height" constant="160" id="wZn-pw-VLD"/>
+                        <constraint firstAttribute="height" constant="250" id="wZn-pw-VLD"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="LvJ-wD-WRN" secondAttribute="trailing" id="2yZ-6j-vPB"/>
                 <constraint firstItem="LvJ-wD-WRN" firstAttribute="leading" secondItem="mNo-1v-Dg2" secondAttribute="leading" id="Ees-xk-xHA"/>
@@ -182,7 +194,7 @@
                 <constraint firstAttribute="trailing" secondItem="lap-lq-RfE" secondAttribute="trailing" id="pE2-ep-dEf"/>
                 <constraint firstItem="lap-lq-RfE" firstAttribute="leading" secondItem="mNo-1v-Dg2" secondAttribute="leading" id="zEt-Fx-7Uo"/>
             </constraints>
-            <point key="canvasLocation" x="119.5" y="53.5"/>
+            <point key="canvasLocation" x="119" y="53"/>
         </view>
     </objects>
 </document>

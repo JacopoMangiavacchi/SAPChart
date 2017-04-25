@@ -119,7 +119,7 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
 
         pieChartView.usePercentValuesEnabled = true
         pieChartView.drawSlicesUnderHoleEnabled = false
-        pieChartView.holeRadiusPercent = 0.58
+        pieChartView.holeRadiusPercent = 0.7
         pieChartView.transparentCircleRadiusPercent = 0.61
         pieChartView.setExtraOffsets(left: 5.0, top: 10.0, right: 5.0, bottom: 5.0)
         pieChartView.drawHoleEnabled = true
@@ -140,7 +140,7 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         let attrString = NSMutableAttributedString(string: label)
         attrString.setAttributes([
             NSForegroundColorAttributeName: NSUIColor.white,
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 32.0)!,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 48.0)!,
             NSParagraphStyleAttributeName: paragraphStyle
             ], range: NSMakeRange(0, attrString.length))
 
@@ -164,8 +164,8 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         horizontalBarChartView.setScaleEnabled(false)
         horizontalBarChartView.pinchZoomEnabled = false
         horizontalBarChartView.xAxis.labelPosition = .bottom
-        horizontalBarChartView.xAxis.labelTextColor  = UIColor.black
-        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
+        horizontalBarChartView.xAxis.labelTextColor  = Constants.circleDarkColor
+        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
         horizontalBarChartView.xAxis.labelCount = 5
         horizontalBarChartView.xAxis.drawLabelsEnabled = true
         horizontalBarChartView.xAxis.drawAxisLineEnabled = false
@@ -186,9 +186,15 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         horizontalBarChartView.leftAxis.axisMaximum = 100.0
         
         horizontalBarChartView.rightAxis.enabled = true
-        horizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
-        horizontalBarChartView.rightAxis.drawAxisLineEnabled = false
-        horizontalBarChartView.rightAxis.drawGridLinesEnabled = false
+        horizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+        horizontalBarChartView.rightAxis.labelTextColor  = Constants.circleDarkColor
+        horizontalBarChartView.rightAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.rightAxis.axisLineColor = UIColor.white
+        horizontalBarChartView.rightAxis.axisLineWidth = 0.0
+        horizontalBarChartView.rightAxis.gridColor = UIColor.white
+        horizontalBarChartView.rightAxis.gridLineWidth = 5.0
+        horizontalBarChartView.rightAxis.drawGridLinesEnabled = true
+        //NB: JACOPO: PATCHED Charts Library to draw Grid Line on top (BarLineChartViewBase.swift::draw(_:))
         horizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
         horizontalBarChartView.rightAxis.axisMaximum = 100.0
         
@@ -201,7 +207,7 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         let chartDataSet = PieChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.sliceSpace = 2.0
-        chartDataSet.colors = [Constants.whiteColor, Constants.lightColor]
+        chartDataSet.colors = [Constants.circleLightColor, Constants.circleDarkColor]
         chartDataSet.drawValuesEnabled = false
         
         let chartData = PieChartData(dataSet: chartDataSet)
@@ -221,7 +227,7 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
-        chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
+        chartDataSet.colors = [Constants.darkColor, Constants.orangeLightColor]
         chartDataSet.drawValuesEnabled = false
         
         let chartData = BarChartData(dataSet: chartDataSet)
@@ -271,11 +277,11 @@ class MonthEndViewController: ParentDiagnosticViewController, UIScrollViewDelega
         
         switch intValue {
         case 1:
-            return " Average One Year    "
+            return "Year   "
         case 2:
-            return " Last Six Months    "
+            return "Past 6 Months   "
         case 3:
-            return " Current Month    "
+            return "Current   "
         default:
             return ""
         }

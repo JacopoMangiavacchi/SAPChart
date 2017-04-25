@@ -24,42 +24,39 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZF2-od-lLT">
                     <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SM6-d7-EpD">
+                            <rect key="frame" x="265.5" y="151" width="135" height="72"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
+                            <color key="textColor" red="0.2942872941493988" green="0.2862626314163208" blue="0.28614205121994019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhU-jL-gOP">
-                            <rect key="frame" x="0.0" y="0.0" width="667" height="30"/>
+                            <rect key="frame" x="311.5" y="223" width="43.5" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="97f-Y3-CqT"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SM6-d7-EpD">
-                            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                            <color key="textColor" red="0.2942872941493988" green="0.2862626314163208" blue="0.28614205121994019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.79607843140000001" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="SM6-d7-EpD" firstAttribute="leading" secondItem="ZF2-od-lLT" secondAttribute="leading" id="2bn-7U-RRm"/>
-                        <constraint firstAttribute="bottom" secondItem="SM6-d7-EpD" secondAttribute="bottom" id="Q6g-sg-q50"/>
-                        <constraint firstItem="RhU-jL-gOP" firstAttribute="leading" secondItem="ZF2-od-lLT" secondAttribute="leading" id="XcV-cA-HQ9"/>
-                        <constraint firstAttribute="trailing" secondItem="RhU-jL-gOP" secondAttribute="trailing" id="dWi-GR-vJZ"/>
-                        <constraint firstItem="RhU-jL-gOP" firstAttribute="top" secondItem="ZF2-od-lLT" secondAttribute="top" id="eiJ-ox-Oru"/>
-                        <constraint firstAttribute="trailing" secondItem="SM6-d7-EpD" secondAttribute="trailing" id="vwO-aT-iv3"/>
-                        <constraint firstItem="SM6-d7-EpD" firstAttribute="top" secondItem="ZF2-od-lLT" secondAttribute="top" id="y8Q-nw-Uzx"/>
+                        <constraint firstItem="SM6-d7-EpD" firstAttribute="centerX" secondItem="ZF2-od-lLT" secondAttribute="centerX" id="CQf-P2-06L"/>
+                        <constraint firstItem="RhU-jL-gOP" firstAttribute="centerX" secondItem="ZF2-od-lLT" secondAttribute="centerX" id="OYA-Sa-aGw"/>
+                        <constraint firstItem="SM6-d7-EpD" firstAttribute="centerY" secondItem="ZF2-od-lLT" secondAttribute="centerY" id="QWs-S4-XJ5"/>
+                        <constraint firstItem="RhU-jL-gOP" firstAttribute="top" secondItem="SM6-d7-EpD" secondAttribute="bottom" id="dI6-xA-hwF"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ZF2-od-lLT" firstAttribute="leading" secondItem="mNo-1v-Dg2" secondAttribute="leading" id="6jx-2C-yUK"/>
-                <constraint firstAttribute="bottom" secondItem="ZF2-od-lLT" secondAttribute="bottom" id="O7c-Ur-whj"/>
-                <constraint firstAttribute="trailing" secondItem="ZF2-od-lLT" secondAttribute="trailing" id="evv-vF-60j"/>
-                <constraint firstItem="ZF2-od-lLT" firstAttribute="top" secondItem="mNo-1v-Dg2" secondAttribute="top" id="yZy-J4-ya2"/>
+                <constraint firstAttribute="trailing" secondItem="ZF2-od-lLT" secondAttribute="trailing" id="7q7-d0-vP4"/>
+                <constraint firstItem="ZF2-od-lLT" firstAttribute="top" secondItem="mNo-1v-Dg2" secondAttribute="top" id="IOP-Kh-nU2"/>
+                <constraint firstItem="ZF2-od-lLT" firstAttribute="leading" secondItem="mNo-1v-Dg2" secondAttribute="leading" id="viZ-oV-PtX"/>
+                <constraint firstAttribute="bottom" secondItem="ZF2-od-lLT" secondAttribute="bottom" id="xgu-7W-3SM"/>
             </constraints>
-            <point key="canvasLocation" x="119.5" y="53.5"/>
+            <point key="canvasLocation" x="110.5" y="30.5"/>
         </view>
     </objects>
 </document>

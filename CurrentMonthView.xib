@@ -57,7 +57,7 @@
                     <rect key="frame" x="0.0" y="774" width="1366" height="250"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVP-Vv-Pug" userLabel="Filler Stack View">
-                            <rect key="frame" x="0.0" y="0.0" width="1366" height="250"/>
+                            <rect key="frame" x="200" y="0.0" width="966" height="250"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXM-NY-etT" userLabel="Left">
                                     <rect key="frame" x="0.0" y="0.0" width="10" height="250"/>
@@ -67,13 +67,13 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cRu-8p-3ra" userLabel="Counters Stack View">
-                                    <rect key="frame" x="10" y="0.0" width="1346" height="250"/>
+                                    <rect key="frame" x="10" y="0.0" width="946" height="250"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imZ-aN-mkj">
-                                            <rect key="frame" x="0.0" y="0.0" width="269" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="189" height="250"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zd-De-mHU" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249" height="240"/>
+                                                    <rect key="frame" x="10" y="0.0" width="169" height="240"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -86,10 +86,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYq-0J-zK9">
-                                            <rect key="frame" x="269" y="0.0" width="269.5" height="250"/>
+                                            <rect key="frame" x="189" y="0.0" width="189.5" height="250"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVz-Av-d7x" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249.5" height="240"/>
+                                                    <rect key="frame" x="10" y="0.0" width="169.5" height="240"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -101,11 +101,27 @@
                                                 <constraint firstItem="EVz-Av-d7x" firstAttribute="leading" secondItem="aYq-0J-zK9" secondAttribute="leading" constant="10" id="vfx-lx-u81"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVM-Ew-Xad">
+                                            <rect key="frame" x="378.5" y="0.0" width="189" height="250"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPR-2C-zFx" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="169" height="240"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="OPR-2C-zFx" firstAttribute="leading" secondItem="VVM-Ew-Xad" secondAttribute="leading" constant="10" id="PDi-zC-hXh"/>
+                                                <constraint firstAttribute="trailing" secondItem="OPR-2C-zFx" secondAttribute="trailing" constant="10" id="cEe-he-2HK"/>
+                                                <constraint firstItem="OPR-2C-zFx" firstAttribute="top" secondItem="VVM-Ew-Xad" secondAttribute="top" id="mRF-Hx-phk"/>
+                                                <constraint firstAttribute="bottom" secondItem="OPR-2C-zFx" secondAttribute="bottom" constant="10" id="mlV-To-K6i"/>
+                                            </constraints>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDr-MN-Q3F">
-                                            <rect key="frame" x="538.5" y="0.0" width="269" height="250"/>
+                                            <rect key="frame" x="567.5" y="0.0" width="189.5" height="250"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZL-ct-bOs" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249" height="240"/>
+                                                    <rect key="frame" x="10" y="0.0" width="169.5" height="240"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -118,10 +134,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMu-xJ-W6g">
-                                            <rect key="frame" x="807.5" y="0.0" width="269.5" height="250"/>
+                                            <rect key="frame" x="757" y="0.0" width="189" height="250"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hU7-9s-vBS" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249.5" height="240"/>
+                                                    <rect key="frame" x="10" y="0.0" width="169" height="240"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -133,26 +149,10 @@
                                                 <constraint firstItem="hU7-9s-vBS" firstAttribute="leading" secondItem="oMu-xJ-W6g" secondAttribute="leading" constant="10" id="ePH-4n-SUJ"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVM-Ew-Xad">
-                                            <rect key="frame" x="1077" y="0.0" width="269" height="250"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPR-2C-zFx" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="249" height="240"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="OPR-2C-zFx" firstAttribute="leading" secondItem="VVM-Ew-Xad" secondAttribute="leading" constant="10" id="PDi-zC-hXh"/>
-                                                <constraint firstAttribute="trailing" secondItem="OPR-2C-zFx" secondAttribute="trailing" constant="10" id="cEe-he-2HK"/>
-                                                <constraint firstItem="OPR-2C-zFx" firstAttribute="top" secondItem="VVM-Ew-Xad" secondAttribute="top" id="mRF-Hx-phk"/>
-                                                <constraint firstAttribute="bottom" secondItem="OPR-2C-zFx" secondAttribute="bottom" constant="10" id="mlV-To-K6i"/>
-                                            </constraints>
-                                        </view>
                                     </subviews>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bI-NS-4Pq" userLabel="Right">
-                                    <rect key="frame" x="1356" y="0.0" width="10" height="250"/>
+                                    <rect key="frame" x="956" y="0.0" width="10" height="250"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="10" id="l75-hg-ahR"/>
@@ -176,8 +176,8 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="pVP-Vv-Pug" secondAttribute="trailing" id="0Hx-cA-G00"/>
-                        <constraint firstItem="pVP-Vv-Pug" firstAttribute="leading" secondItem="lap-lq-RfE" secondAttribute="leading" id="RDw-Jd-emi"/>
+                        <constraint firstAttribute="trailing" secondItem="pVP-Vv-Pug" secondAttribute="trailing" constant="200" id="0Hx-cA-G00"/>
+                        <constraint firstItem="pVP-Vv-Pug" firstAttribute="leading" secondItem="lap-lq-RfE" secondAttribute="leading" constant="200" id="RDw-Jd-emi"/>
                         <constraint firstItem="pVP-Vv-Pug" firstAttribute="top" secondItem="lap-lq-RfE" secondAttribute="top" id="Xsu-Yd-X5G"/>
                         <constraint firstAttribute="bottom" secondItem="pVP-Vv-Pug" secondAttribute="bottom" id="oWb-6Y-EVa"/>
                         <constraint firstAttribute="height" constant="250" id="wZn-pw-VLD"/>

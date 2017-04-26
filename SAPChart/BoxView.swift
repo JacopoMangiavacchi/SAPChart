@@ -8,12 +8,22 @@
 
 import UIKit
 
-class BoxView: UIView {
+@IBDesignable class BoxView : UIView {
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+    }
     
     @IBOutlet var view: BoxView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var centerLabel: UILabel!
     
+    @IBInspectable var textColor: UIColor? {
+        didSet {
+                topLabel.textColor = textColor
+                centerLabel.textColor = textColor
+        }
+    }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

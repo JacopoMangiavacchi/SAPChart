@@ -5,8 +5,7 @@
             "monthValues" : {
                 "ticketsOpenedLabel" : "40",
                 "ticketClosedLabel" : "20",
-                "ticketMissedLabel" : "5",
-                "completitionLabel" : "20%"
+                "ticketMissedLabel" : "5"
             },
             "plants" : [
                         {
@@ -97,8 +96,7 @@
             "monthValues" : {
                 "ticketsOpenedLabel" : "40",
                 "ticketClosedLabel" : "20",
-                "ticketMissedLabel" : "5",
-                "completitionLabel" : "20%"
+                "ticketMissedLabel" : "5"
             },
             "plants" : [
                         {
@@ -189,8 +187,7 @@
             "monthValues" : {
                 "ticketsOpenedLabel" : "40",
                 "ticketClosedLabel" : "20",
-                "ticketMissedLabel" : "5",
-                "completitionLabel" : "20%"
+                "ticketMissedLabel" : "5"
             },
             "plants" : [
                         {
@@ -285,8 +282,7 @@
             "monthValues" : {
                 "ticketsOpenedLabel" : "40",
                 "ticketClosedLabel" : "20",
-                "ticketMissedLabel" : "5",
-                "completitionLabel" : "20%"
+                "ticketMissedLabel" : "5"
             },
             "plants" : [
                         {
@@ -377,8 +373,7 @@
             "monthValues" : {
                 "ticketsOpenedLabel" : "40",
                 "ticketClosedLabel" : "20",
-                "ticketMissedLabel" : "5",
-                "completitionLabel" : "20%"
+                "ticketMissedLabel" : "5"
             },
             "plants" : [
                         {

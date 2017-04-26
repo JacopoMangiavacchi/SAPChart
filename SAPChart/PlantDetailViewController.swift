@@ -32,7 +32,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var ticketsOpenedBox: BoxView!
     @IBOutlet weak var ticketClosedBox: BoxView!
     @IBOutlet weak var ticketMissedBox: BoxView!
-    @IBOutlet weak var completitionBox: BoxView!
     
     @IBOutlet weak var user1ImageView: UIImageView!
     @IBOutlet weak var user2ImageView: UIImageView!
@@ -56,12 +55,10 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         ticketsOpenedBox.topLabel.text = Constants.boxesLabel["ticketsOpenedLabel"]
         ticketClosedBox.topLabel.text = Constants.boxesLabel["ticketClosedLabel"]
         ticketMissedBox.topLabel.text = Constants.boxesLabel["ticketMissedLabel"]
-        completitionBox.topLabel.text = Constants.boxesLabel["completitionLabel"]
         
         ticketsOpenedBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketsOpenedLabel"].stringValue
         ticketClosedBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketClosedLabel"].stringValue
         ticketMissedBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketMissedLabel"].stringValue
-        completitionBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["completitionLabel"].stringValue
     }
     
     override func viewDidLayoutSubviews() {
@@ -87,7 +84,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         numPlants = jsonData["divisionStatus"][selectedDivision]["plants"].array!.count
         
-        configPieChart(plantPieChart, label: "\(jsonData["divisionStatus"][selectedDivision]["completition"].intValue)%")
+        configPieChart(plantPieChart, enableTouch: false, label: "\(jsonData["divisionStatus"][selectedDivision]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)
         
         configBarChart(plantsView.plantsBarChart)
         
@@ -167,7 +164,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    internal func configPieChart(_ pieChartView: PieChartView, label: String) {
+    internal func configPieChart(_ pieChartView: PieChartView, enableTouch: Bool, label: String, labelFontSize: Float, labelFontColor: UIColor) {
         pieChartView.delegate = self
         
         pieChartView.entryLabelColor = UIColor.white
@@ -175,14 +172,14 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         pieChartView.usePercentValuesEnabled = true
         pieChartView.drawSlicesUnderHoleEnabled = false
-        pieChartView.holeRadiusPercent = 0.58
+        pieChartView.holeRadiusPercent = 0.7
         pieChartView.transparentCircleRadiusPercent = 0.61
         pieChartView.setExtraOffsets(left: 5.0, top: 10.0, right: 5.0, bottom: 5.0)
         pieChartView.drawHoleEnabled = true
         pieChartView.holeColor = UIColor.clear
         pieChartView.rotationAngle = 270.0
-        pieChartView.rotationEnabled = true
-        pieChartView.highlightPerTapEnabled = false
+        pieChartView.rotationEnabled = false
+        pieChartView.highlightPerTapEnabled = enableTouch
         
         pieChartView.chartDescription?.text = nil
         
@@ -195,8 +192,8 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         let attrString = NSMutableAttributedString(string: label)
         attrString.setAttributes([
-            NSForegroundColorAttributeName: NSUIColor.white,
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 32.0)!,
+            NSForegroundColorAttributeName: labelFontColor,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: CGFloat(labelFontSize))!,
             NSParagraphStyleAttributeName: paragraphStyle
             ], range: NSMakeRange(0, attrString.length))
         
@@ -214,15 +211,15 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         horizontalBarChartView.chartDescription?.text = nil
         horizontalBarChartView.legend.setCustom(entries: [])
         
-        
+        horizontalBarChartView.drawGridLinesOnTopEnabled = true   //NB: JACOPO: PATCHED Charts Library to draw Grid Line on top (BarLineChartViewBase.swift::draw(_:))
         horizontalBarChartView.drawGridBackgroundEnabled = false
         horizontalBarChartView.dragEnabled = false
         horizontalBarChartView.setScaleEnabled(false)
         horizontalBarChartView.pinchZoomEnabled = false
         horizontalBarChartView.xAxis.labelPosition = .bottom
-        horizontalBarChartView.xAxis.labelTextColor  = UIColor.black
-        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
-        horizontalBarChartView.xAxis.labelCount = numPlants + 2
+        horizontalBarChartView.xAxis.labelTextColor  = Constants.circleDarkColor
+        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        horizontalBarChartView.xAxis.labelCount = 5
         horizontalBarChartView.xAxis.drawLabelsEnabled = true
         horizontalBarChartView.xAxis.drawAxisLineEnabled = false
         horizontalBarChartView.xAxis.drawGridLinesEnabled = false
@@ -242,9 +239,14 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         horizontalBarChartView.leftAxis.axisMaximum = 100.0
         
         horizontalBarChartView.rightAxis.enabled = true
-        horizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
-        horizontalBarChartView.rightAxis.drawAxisLineEnabled = false
-        horizontalBarChartView.rightAxis.drawGridLinesEnabled = false
+        horizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+        horizontalBarChartView.rightAxis.labelTextColor  = Constants.circleDarkColor
+        horizontalBarChartView.rightAxis.drawAxisLineEnabled = true
+        horizontalBarChartView.rightAxis.axisLineColor = UIColor.white
+        horizontalBarChartView.rightAxis.axisLineWidth = 0.0
+        horizontalBarChartView.rightAxis.gridColor = UIColor.white
+        horizontalBarChartView.rightAxis.gridLineWidth = 5.0
+        horizontalBarChartView.rightAxis.drawGridLinesEnabled = true
         horizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
         horizontalBarChartView.rightAxis.axisMaximum = 100.0
         
@@ -257,13 +259,13 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let chartDataSet = PieChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.sliceSpace = 2.0
-        chartDataSet.colors = [Constants.whiteColor, Constants.lightColor]
+        chartDataSet.colors = [Constants.circleLightColor, Constants.circleDarkColor]
         chartDataSet.drawValuesEnabled = false
         
         let chartData = PieChartData(dataSet: chartDataSet)
         pieChartView.data = chartData
     }
-    
+
     
     internal func updateBarChart(_ horizontalBarChartView: HorizontalBarChartView) {
         var dataEntries: [BarChartDataEntry] = []
@@ -279,7 +281,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
-        chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
+        chartDataSet.colors = [Constants.darkColor, Constants.orangeLightColor]
         chartDataSet.drawValuesEnabled = false
         
         let chartData = BarChartData(dataSet: chartDataSet)

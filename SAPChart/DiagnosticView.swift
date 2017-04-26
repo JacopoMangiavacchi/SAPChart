@@ -16,6 +16,9 @@ class DiagnosticView: UIView {
     @IBOutlet weak var ticketsLineChartView: LineChartView!
     @IBOutlet weak var completitionLineChartView: LineChartView!
     @IBOutlet weak var dataQualityChartView: LineChartView!
+    @IBOutlet weak var noResponseBoxView: BoxView!
+    @IBOutlet weak var lateResponseBoxView: BoxView!
+    @IBOutlet weak var delayNextStepBoxView: BoxView!
     
     
     required init?(coder aDecoder: NSCoder) {

@@ -112,7 +112,8 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, Diagnostic
         
         currentMonthView.completedPieChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
         
-        updateChart(diagnosticsView: diagnosticsView, animated: animated)
+        updateChart(diagnosticsView: diagnosticsView, animated: animated, json: jsonData["globalDiagnostics"])
+        animateChart(diagnosticsView: diagnosticsView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -308,6 +309,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, Diagnostic
             scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         case 1:
             pageControl.currentPage = 1
+            animateChart(diagnosticsView: diagnosticsView)
             scrollView.setContentOffset(CGPoint(x: scrollAreaWidth, y: 0), animated: true)
         default:
             print("wrong!")

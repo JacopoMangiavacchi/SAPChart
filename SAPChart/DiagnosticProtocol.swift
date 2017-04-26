@@ -12,23 +12,36 @@ import SwiftyJSON
 
 protocol DiagnosticProtocol {
     func configCharts(diagnosticsView: DiagnosticView)
-    func updateChart(diagnosticsView: DiagnosticView, animated: Bool)
+    func updateChart(diagnosticsView: DiagnosticView, animated: Bool,  json: JSON)
+    func animateChart(diagnosticsView: DiagnosticView)
 }
-    
+
 extension DiagnosticProtocol {
     func configCharts(diagnosticsView: DiagnosticView) {
         configTicketLineChart(diagnosticsView.ticketsLineChartView)
         configTicketLineChart(diagnosticsView.dataQualityChartView)
         configCompletitionLineChart(diagnosticsView.completitionLineChartView)
     }
-    
-    func updateChart(diagnosticsView: DiagnosticView, animated: Bool) {
-        updateTicketLineChart(diagnosticsView.ticketsLineChartView)
-        updateTicketLineChart(diagnosticsView.dataQualityChartView)
-        updateCompletitionLineChart(diagnosticsView.completitionLineChartView)
+
+    func updateChart(diagnosticsView: DiagnosticView, animated: Bool, json: JSON) {
+        updateTicketLineChart(diagnosticsView.ticketsLineChartView, json: json["meTickets"], colorArray: Constants.meTicketsColorArray)
+        updateTicketLineChart(diagnosticsView.dataQualityChartView, json: json["quatiltyTickets"], colorArray: Constants.qualityTicketsColorArray)
+        updateCompletitionLineChart(diagnosticsView.completitionLineChartView, json: json["meCompletition"], colorArray: Constants.qualityCompletitionColorArray)
+        
+        diagnosticsView.noResponseBoxView.topLabel.text = "No\nResponse"
+        diagnosticsView.noResponseBoxView.centerLabel.text = "\(json["botResponses"]["noResponse"].intValue)%"
+        diagnosticsView.lateResponseBoxView.topLabel.text = "Late\nResponse"
+        diagnosticsView.lateResponseBoxView.centerLabel.text = "\(json["botResponses"]["lateResponse"].intValue)%"
+        diagnosticsView.delayNextStepBoxView.topLabel.text = "Delay in\nNext Step"
+        diagnosticsView.delayNextStepBoxView.centerLabel.text = "\(json["botResponses"]["delay"].intValue)%"
     }
 
-    
+    func animateChart(diagnosticsView: DiagnosticView) {
+        diagnosticsView.ticketsLineChartView.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        diagnosticsView.dataQualityChartView.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+        diagnosticsView.completitionLineChartView.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
+    }
+
     internal func configTicketLineChart(_ lineChartView: LineChartView) {
         lineChartView.highlightPerTapEnabled = false
         
@@ -76,7 +89,7 @@ extension DiagnosticProtocol {
     }
     
     
-    internal func updateTicketLineChart(_ lineChartView: LineChartView) {
+    internal func updateTicketLineChart(_ lineChartView: LineChartView, json: JSON, colorArray: [UIColor]) {
         func setDataSet(_ chartDataSet: LineChartDataSet, color: UIColor) {
             chartDataSet.lineWidth = 1.75
             chartDataSet.circleRadius = 6.0
@@ -89,22 +102,30 @@ extension DiagnosticProtocol {
             chartDataSet.drawValuesEnabled = false
         }
         
-        let dataEntries1 = [ChartDataEntry(x: 0.0, y: 3.0), ChartDataEntry(x: 1.0, y: 1.0), ChartDataEntry(x: 2.0, y: 7.0), ChartDataEntry(x: 3.0, y: 3.0), ChartDataEntry(x: 4.0, y: 1.0), ChartDataEntry(x: 5.0, y: 7.0)]
-        let dataEntries2 = [ChartDataEntry(x: 0.0, y: 5.0), ChartDataEntry(x: 1.0, y: 13.0), ChartDataEntry(x: 2.0, y: 5.0), ChartDataEntry(x: 3.0, y: 10.0), ChartDataEntry(x: 4.0, y: 7.0), ChartDataEntry(x: 5.0, y: 11.0)]
+        var dataSets: [LineChartDataSet] = []
+        var dataSetIndex = 0
         
+        for arrayEntry in json.array! {
+            var dataEntries: [ChartDataEntry] = []
+            
+            var x = 0.0
+            for data in arrayEntry.array! {
+                dataEntries.append(ChartDataEntry(x: x, y: Double(data.intValue)))
+                x += 1.0
+            }
+            
+            let chartDataSet = LineChartDataSet(values: dataEntries, label: "")
+            setDataSet(chartDataSet, color: colorArray[dataSetIndex % colorArray.count])
+            dataSets.append(chartDataSet)
+            dataSetIndex += 1
+        }
         
-        let chartDataSet1 = LineChartDataSet(values: dataEntries1, label: "")
-        let chartDataSet2 = LineChartDataSet(values: dataEntries2, label: "")
-        
-        setDataSet(chartDataSet1, color:Constants.darkColor)
-        setDataSet(chartDataSet2, color:Constants.lightColor)
-        
-        let chartData = LineChartData(dataSets: [chartDataSet1, chartDataSet2])
+        let chartData = LineChartData(dataSets: dataSets)
         lineChartView.data = chartData
     }
 
     
-    internal func updateCompletitionLineChart(_ lineChartView: LineChartView) {
+    internal func updateCompletitionLineChart(_ lineChartView: LineChartView, json: JSON, colorArray: [UIColor]) {
         func setDataSet(_ chartDataSet: LineChartDataSet, color: UIColor) {
             chartDataSet.lineWidth = 1.75
             chartDataSet.drawCirclesEnabled = false
@@ -118,17 +139,26 @@ extension DiagnosticProtocol {
             chartDataSet.drawValuesEnabled = false
         }
         
-        let dataEntries1 = [ChartDataEntry(x: 0.0, y: 10.0), ChartDataEntry(x: 1.0, y: 26.0), ChartDataEntry(x: 2.0, y: 10.0), ChartDataEntry(x: 3.0, y: 20.0), ChartDataEntry(x: 4.0, y: 14.0), ChartDataEntry(x: 5.0, y: 22.0)]
-        let dataEntries2 = [ChartDataEntry(x: 0.0, y: 5.0), ChartDataEntry(x: 1.0, y: 13.0), ChartDataEntry(x: 2.0, y: 5.0), ChartDataEntry(x: 3.0, y: 10.0), ChartDataEntry(x: 4.0, y: 7.0), ChartDataEntry(x: 5.0, y: 11.0)]
         
+        var dataSets: [LineChartDataSet] = []
+        var dataSetIndex = 0
         
-        let chartDataSet1 = LineChartDataSet(values: dataEntries1, label: "")
-        let chartDataSet2 = LineChartDataSet(values: dataEntries2, label: "")
+        for arrayEntry in json.array! {
+            var dataEntries: [ChartDataEntry] = []
+            
+            var x = 0.0
+            for data in arrayEntry.array! {
+                dataEntries.append(ChartDataEntry(x: x, y: Double(data.intValue)))
+                x += 1.0
+            }
+            
+            let chartDataSet = LineChartDataSet(values: dataEntries, label: "")
+            setDataSet(chartDataSet, color: colorArray[dataSetIndex % colorArray.count])
+            dataSets.append(chartDataSet)
+            dataSetIndex += 1
+        }
         
-        setDataSet(chartDataSet1, color:Constants.darkColor)
-        setDataSet(chartDataSet2, color:Constants.lightColor)
-        
-        let chartData = LineChartData(dataSets: [chartDataSet1, chartDataSet2])
+        let chartData = LineChartData(dataSets: dataSets)
         lineChartView.data = chartData
     }
 }

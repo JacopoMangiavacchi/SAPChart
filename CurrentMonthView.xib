@@ -69,10 +69,36 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJA-rv-yhF" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="498"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                            <integer key="value" value="48"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="topTextColor">
+                                                            <color key="value" red="0.29428729409999999" green="0.28626263140000002" blue="0.28614205120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="centerTextColor">
+                                                            <color key="value" red="0.29428729409999999" green="0.28626263140000002" blue="0.28614205120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="topText" value="AAA"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="centerText" value="20"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8D-Yc-vdB" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
                                                     <rect key="frame" x="161" y="0.0" width="161" height="498"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                            <integer key="value" value="48"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="topTextColor">
+                                                            <color key="value" red="0.29428729409999999" green="0.28626263140000002" blue="0.28614205120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="centerTextColor">
+                                                            <color key="value" red="0.29428729409999999" green="0.28626263140000002" blue="0.28614205120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="topText" value="AAA"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="centerText" value="20"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -155,10 +181,36 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoJ-Do-ovB" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="498"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                            <integer key="value" value="48"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="topTextColor">
+                                                            <color key="value" red="0.29428729409999999" green="0.28626263140000002" blue="0.28614205120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="centerTextColor">
+                                                            <color key="value" red="0.29428729409999999" green="0.28626263140000002" blue="0.28614205120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="topText" value="AAA"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="centerText" value="20"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7d-f0-LFl" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
                                                     <rect key="frame" x="161" y="0.0" width="161" height="498"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                            <integer key="value" value="48"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="topTextColor">
+                                                            <color key="value" red="0.29428729409999999" green="0.28626263140000002" blue="0.28614205120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="centerTextColor">
+                                                            <color key="value" red="0.29428729409999999" green="0.28626263140000002" blue="0.28614205120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="topText" value="AAA"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="centerText" value="20"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

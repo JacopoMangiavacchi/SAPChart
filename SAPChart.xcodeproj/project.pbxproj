@@ -11,7 +11,6 @@
 		EA048BD01E9EA46300C3D429 /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA048BCF1E9EA46300C3D429 /* PlantDetailViewController.swift */; };
 		EA2B008E1EA7DCE800AD6535 /* CurrentMonthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2B008D1EA7DCE800AD6535 /* CurrentMonthView.xib */; };
 		EA2B00901EA7DDD600AD6535 /* CurrentMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2B008F1EA7DDD600AD6535 /* CurrentMonthView.swift */; };
-		EA42B5501EAA603400E176E7 /* BoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA42B54E1EAA603400E176E7 /* BoxView.xib */; };
 		EA42B5511EAA603400E176E7 /* DiagnosticView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA42B54F1EAA603400E176E7 /* DiagnosticView.xib */; };
 		EA42B5531EAA604E00E176E7 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42B5521EAA604E00E176E7 /* BoxView.swift */; };
 		EA42B5551EAA605D00E176E7 /* DiagnosticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42B5541EAA605D00E176E7 /* DiagnosticView.swift */; };
@@ -38,7 +37,6 @@
 		EA048BCF1E9EA46300C3D429 /* PlantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
 		EA2B008D1EA7DCE800AD6535 /* CurrentMonthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CurrentMonthView.xib; path = ../CurrentMonthView.xib; sourceTree = "<group>"; };
 		EA2B008F1EA7DDD600AD6535 /* CurrentMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentMonthView.swift; sourceTree = "<group>"; };
-		EA42B54E1EAA603400E176E7 /* BoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxView.xib; sourceTree = "<group>"; };
 		EA42B54F1EAA603400E176E7 /* DiagnosticView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiagnosticView.xib; sourceTree = "<group>"; };
 		EA42B5521EAA604E00E176E7 /* BoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		EA42B5541EAA605D00E176E7 /* DiagnosticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosticView.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				EA2B008D1EA7DCE800AD6535 /* CurrentMonthView.xib */,
 				EA42B54F1EAA603400E176E7 /* DiagnosticView.xib */,
 				EAD7473F1EA9013A00D94648 /* PlantsView.xib */,
-				EA42B54E1EAA603400E176E7 /* BoxView.xib */,
 				EAD7916A1E9BA97300CA208B /* Assets.xcassets */,
 				EAD7916C1E9BA97300CA208B /* LaunchScreen.storyboard */,
 				EAD7916F1E9BA97300CA208B /* Info.plist */,
@@ -210,7 +207,6 @@
 				EA42B5511EAA603400E176E7 /* DiagnosticView.xib in Resources */,
 				EAD7916E1E9BA97300CA208B /* LaunchScreen.storyboard in Resources */,
 				EAECEEE21EAA117300F237D5 /* 4.png in Resources */,
-				EA42B5501EAA603400E176E7 /* BoxView.xib in Resources */,
 				EA2B008E1EA7DCE800AD6535 /* CurrentMonthView.xib in Resources */,
 				EAECEEE31EAA117300F237D5 /* 3.png in Resources */,
 				EAD7916B1E9BA97300CA208B /* Assets.xcassets in Resources */,

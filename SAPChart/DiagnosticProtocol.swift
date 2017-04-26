@@ -18,11 +18,13 @@ protocol DiagnosticProtocol {
 extension DiagnosticProtocol {
     func configCharts(diagnosticsView: DiagnosticView) {
         configTicketLineChart(diagnosticsView.ticketsLineChartView)
+        configTicketLineChart(diagnosticsView.dataQualityChartView)
         configCompletitionLineChart(diagnosticsView.completitionLineChartView)
     }
     
     func updateChart(diagnosticsView: DiagnosticView, animated: Bool) {
         updateTicketLineChart(diagnosticsView.ticketsLineChartView)
+        updateTicketLineChart(diagnosticsView.dataQualityChartView)
         updateCompletitionLineChart(diagnosticsView.completitionLineChartView)
     }
 
@@ -59,7 +61,6 @@ extension DiagnosticProtocol {
         lineChartView.legend.enabled = false
         lineChartView.legend.setCustom(entries: [])
         
-        
         lineChartView.drawGridBackgroundEnabled = false
         lineChartView.dragEnabled = false
         lineChartView.setScaleEnabled(true)
@@ -78,11 +79,11 @@ extension DiagnosticProtocol {
     internal func updateTicketLineChart(_ lineChartView: LineChartView) {
         func setDataSet(_ chartDataSet: LineChartDataSet, color: UIColor) {
             chartDataSet.lineWidth = 1.75
-            chartDataSet.circleRadius = 10.0
+            chartDataSet.circleRadius = 6.0
             chartDataSet.circleHoleRadius = 8
             chartDataSet.setColor(color)
             chartDataSet.setCircleColor(color)
-            chartDataSet.circleHoleColor = UIColor.white
+            chartDataSet.circleHoleColor = color
             
             //chartDataSet.colors = [Constants.darkColor, Constants.lightColor]
             chartDataSet.drawValuesEnabled = false

@@ -62,8 +62,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         ticketClosedBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketClosedLabel"].stringValue
         ticketMissedBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["ticketMissedLabel"].stringValue
         completitionBox.centerLabel.text = jsonData["divisionStatus"][selectedDivision]["monthValues"]["completitionLabel"].stringValue
-}
-    
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

@@ -57,7 +57,7 @@ class MonthEndViewController: UIViewController, UIScrollViewDelegate, Diagnostic
         scrollView.addSubview(diagnosticsView)
         
         scrollView.contentSize = CGSize(width: scrollAreaWidth * 2, height: scrollAreaHeight)
-        
+       
         configPieChart(ppChart, enableTouch: true, label: "\(jsonData["divisionStatus"]["PP"]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)
         configPieChart(fpChart, enableTouch: true, label: "\(jsonData["divisionStatus"]["FP"]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)
         configPieChart(cpChart, enableTouch: true, label: "\(jsonData["divisionStatus"]["CP"]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)

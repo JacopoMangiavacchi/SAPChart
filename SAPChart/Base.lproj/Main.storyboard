@@ -227,7 +227,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.87049323320388794" green="0.87064296007156372" blue="0.87048381567001343" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92587939069094782" green="0.93504651337105615" blue="0.93504651337105615" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="qbL-MA-inh" firstAttribute="top" secondItem="9gS-3H-xf4" secondAttribute="bottom" id="Cz4-pI-UGc"/>
                                     <constraint firstItem="9gS-3H-xf4" firstAttribute="leading" secondItem="5EM-Xp-hi3" secondAttribute="leading" id="Dkr-8M-vOV"/>
@@ -286,7 +286,7 @@
             <objects>
                 <navigationController id="0nO-jU-fm9" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Z4v-BN-82Q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Z4v-BN-82Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99813157320000001" green="0.41040986779999999" blue="0.002688126406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -24,7 +24,11 @@ struct Constants {
     static let meTicketsColorArray = [darkColor, lightColor]
     static let qualityTicketsColorArray = [orangeLightColor, lightColor, darkColor, circleLightColor]
     static let qualityCompletitionColorArray = [lightColor, darkColor]
-    
+
+    static let meTicketsLabelArray = ["Missed SLA", "Tickets"]
+    static let qualityTicketsLabelArray = ["Customer", "Vendor", "Jail", "Cost Centres"]
+    static let qualityCompletitionLabelArray = ["Current", "Average"]
+
 //    static let barColor1 = UIColor(red: 186/255.0, green: 97/255.0, blue: 37/255.0, alpha: 1.0)
 //    static let barColor2 = UIColor(red: 222/255.0, green: 117/255.0, blue: 45/255.0, alpha: 1.0)
 //    static let barColor3 = UIColor(red: 240/255.0, green: 153/255.0, blue: 113/255.0, alpha: 1.0)

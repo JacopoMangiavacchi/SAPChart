@@ -13,9 +13,7 @@ class PlantsView: UIView {
     
     @IBOutlet var view: PlantsView!
     
-    @IBOutlet weak var plantsBarChart: HorizontalBarChartView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var rightBackgroundLabel: UILabel!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

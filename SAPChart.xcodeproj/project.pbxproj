@@ -24,6 +24,8 @@
 		EAA13E7C1EB218390015519F /* User2.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA13E751EB218390015519F /* User2.png */; };
 		EAA13E7D1EB218390015519F /* User3.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA13E761EB218390015519F /* User3.png */; };
 		EAA13E7E1EB218390015519F /* User4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA13E771EB218390015519F /* User4.png */; };
+		EAA13E811EB2527A0015519F /* PlantsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA13E7F1EB2527A0015519F /* PlantsViewCell.swift */; };
+		EAA13E821EB2527A0015519F /* PlantsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA13E801EB2527A0015519F /* PlantsViewCell.xib */; };
 		EAAB4EEF1E9E251F002DF3DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB4EEE1E9E251F002DF3DB /* Constants.swift */; };
 		EAAB4EF41E9E7D81002DF3DB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = EAAB4EF31E9E7C9F002DF3DB /* data.json */; };
 		EAD7473E1EA8FBDE00D94648 /* PlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */; };
@@ -55,6 +57,8 @@
 		EAA13E751EB218390015519F /* User2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User2.png; sourceTree = "<group>"; };
 		EAA13E761EB218390015519F /* User3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User3.png; sourceTree = "<group>"; };
 		EAA13E771EB218390015519F /* User4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User4.png; sourceTree = "<group>"; };
+		EAA13E7F1EB2527A0015519F /* PlantsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsViewCell.swift; sourceTree = "<group>"; };
+		EAA13E801EB2527A0015519F /* PlantsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlantsViewCell.xib; sourceTree = "<group>"; };
 		EAAB4EEE1E9E251F002DF3DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAAB4EF31E9E7C9F002DF3DB /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsView.swift; sourceTree = "<group>"; };
@@ -128,12 +132,14 @@
 				EA2B008F1EA7DDD600AD6535 /* CurrentMonthView.swift */,
 				EA42B5541EAA605D00E176E7 /* DiagnosticView.swift */,
 				EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */,
+				EAA13E7F1EB2527A0015519F /* PlantsViewCell.swift */,
 				EAA13E6F1EB210920015519F /* UserView.swift */,
 				EA42B5521EAA604E00E176E7 /* BoxView.swift */,
 				EAD791671E9BA97300CA208B /* Main.storyboard */,
 				EA2B008D1EA7DCE800AD6535 /* CurrentMonthView.xib */,
 				EA42B54F1EAA603400E176E7 /* DiagnosticView.xib */,
 				EAD7473F1EA9013A00D94648 /* PlantsView.xib */,
+				EAA13E801EB2527A0015519F /* PlantsViewCell.xib */,
 				EAA13E6D1EB2106D0015519F /* UserView.xib */,
 				EAD7916A1E9BA97300CA208B /* Assets.xcassets */,
 				EAD7916C1E9BA97300CA208B /* LaunchScreen.storyboard */,
@@ -222,6 +228,7 @@
 				EA42B5511EAA603400E176E7 /* DiagnosticView.xib in Resources */,
 				EAA13E791EB218390015519F /* Circle.png in Resources */,
 				EAD7916E1E9BA97300CA208B /* LaunchScreen.storyboard in Resources */,
+				EAA13E821EB2527A0015519F /* PlantsViewCell.xib in Resources */,
 				EAA13E7D1EB218390015519F /* User3.png in Resources */,
 				EAA13E6E1EB2106D0015519F /* UserView.xib in Resources */,
 				EAA13E7A1EB218390015519F /* Message.png in Resources */,
@@ -297,6 +304,7 @@
 				EA6990BC1EAE35EF000FD326 /* DiagnosticProtocol.swift in Sources */,
 				EAD791641E9BA97300CA208B /* AppDelegate.swift in Sources */,
 				EAD7473E1EA8FBDE00D94648 /* PlantsView.swift in Sources */,
+				EAA13E811EB2527A0015519F /* PlantsViewCell.swift in Sources */,
 				EA048BD01E9EA46300C3D429 /* PlantDetailViewController.swift in Sources */,
 				EA2B00901EA7DDD600AD6535 /* CurrentMonthView.swift in Sources */,
 				EAA13E701EB210920015519F /* UserView.swift in Sources */,

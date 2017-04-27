@@ -17,7 +17,7 @@ extension UIDevice {
     }
 }
 
-class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, DiagnosticProtocol, ChartViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, IAxisValueFormatter, UserViewProtocol {
+class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, DiagnosticProtocol, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, UserViewProtocol {
     
     @IBOutlet weak var plantPieChart: PieChartView!
     @IBOutlet weak var pieChartLabel: UILabel!
@@ -48,8 +48,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     var jsonData: JSON!
     var selectedDivision: String!
-    var numPlants:Int = 0
-    var plantMessages:[JSON]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +74,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         plantsView = PlantsView(frame: CGRect(x: 0, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
         plantsView.tableView.delegate = self
         plantsView.tableView.dataSource = self
-        plantsView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "messageCell")
+        plantsView.tableView.register(UINib(nibName: "PlantsViewCell", bundle: nil), forCellReuseIdentifier: "PlantsViewCell")
 
         diagnosticsView = DiagnosticView(frame: CGRect(x: scrollAreaWidth, y: 0, width: scrollAreaWidth, height: scrollAreaHeight))
         
@@ -88,15 +86,9 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         //pieChartLabel.text = Constants.divisions[selectedDivision]
         self.title = Constants.divisions[selectedDivision]
         
-        numPlants = jsonData["divisionStatus"][selectedDivision]["plants"].array!.count
-        
         configPieChart(plantPieChart, enableTouch: false, label: "\(jsonData["divisionStatus"][selectedDivision]["completition"].intValue)%", labelFontSize: 48.0, labelFontColor: NSUIColor.white)
         
-        configBarChart(plantsView.plantsBarChart)
-        
         updatePieChartWithData(plantPieChart, value: jsonData["divisionStatus"][selectedDivision]["completition"].intValue)
-        
-        updateBarChart(plantsView.plantsBarChart)
         
         configCharts(diagnosticsView: diagnosticsView)
     }
@@ -106,7 +98,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidAppear(animated)
 
         plantPieChart.animate(xAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
-        plantsView.plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
 
         updateChart(diagnosticsView: diagnosticsView, animated: animated, json: jsonData["globalDiagnostics"])
         animateChart(diagnosticsView: diagnosticsView)
@@ -171,8 +162,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     internal func configPieChart(_ pieChartView: PieChartView, enableTouch: Bool, label: String, labelFontSize: Float, labelFontColor: UIColor) {
-        pieChartView.delegate = self
-        
         pieChartView.entryLabelColor = UIColor.white
         pieChartView.entryLabelFont = UIFont(name: "HelveticaNeue-Light", size: 20.0)
         
@@ -210,10 +199,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     internal func configBarChart(_ horizontalBarChartView: HorizontalBarChartView) {
-        horizontalBarChartView.delegate = self
-        
-        horizontalBarChartView.highlightPerTapEnabled = true
-        horizontalBarChartView.highlightFullBarEnabled = true
+        horizontalBarChartView.highlightPerTapEnabled = false
         
         horizontalBarChartView.chartDescription?.text = nil
         horizontalBarChartView.legend.setCustom(entries: [])
@@ -223,41 +209,29 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         horizontalBarChartView.dragEnabled = false
         horizontalBarChartView.setScaleEnabled(false)
         horizontalBarChartView.pinchZoomEnabled = false
-        horizontalBarChartView.xAxis.labelPosition = .bottom
-        horizontalBarChartView.xAxis.labelTextColor  = Constants.circleDarkColor
-        horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
-        horizontalBarChartView.xAxis.labelCount = numPlants + 2
-        horizontalBarChartView.xAxis.drawLabelsEnabled = true
+        horizontalBarChartView.xAxis.drawLabelsEnabled = false
         horizontalBarChartView.xAxis.drawAxisLineEnabled = false
         horizontalBarChartView.xAxis.drawGridLinesEnabled = false
         horizontalBarChartView.xAxis.granularity = 10.0
-        horizontalBarChartView.xAxis.valueFormatter = self
-        horizontalBarChartView.xAxis.forceLabelsEnabled = true
         
         horizontalBarChartView.drawBarShadowEnabled = false
         horizontalBarChartView.drawValueAboveBarEnabled = false
         horizontalBarChartView.maxVisibleCount = 100;
         
         horizontalBarChartView.leftAxis.enabled = false
-        horizontalBarChartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightLight)
-        horizontalBarChartView.leftAxis.drawAxisLineEnabled = true
-        horizontalBarChartView.leftAxis.drawGridLinesEnabled = true
-        horizontalBarChartView.leftAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
-        horizontalBarChartView.leftAxis.axisMaximum = 100.0
         
         horizontalBarChartView.rightAxis.enabled = true
-        horizontalBarChartView.rightAxis.labelFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
-        horizontalBarChartView.rightAxis.labelTextColor  = Constants.circleDarkColor
+        horizontalBarChartView.rightAxis.drawLabelsEnabled = false
         horizontalBarChartView.rightAxis.drawAxisLineEnabled = true
         horizontalBarChartView.rightAxis.axisLineColor = UIColor.white
         horizontalBarChartView.rightAxis.axisLineWidth = 0.0
         horizontalBarChartView.rightAxis.gridColor = UIColor.white
         horizontalBarChartView.rightAxis.gridLineWidth = 5.0
         horizontalBarChartView.rightAxis.drawGridLinesEnabled = true
-        horizontalBarChartView.rightAxis.axisMinimum = 0.0 // this replaces startAtZero = YES
-        horizontalBarChartView.rightAxis.axisMaximum = 100.0
+        horizontalBarChartView.rightAxis.axisMinimum = -10.0 // this replaces startAtZero = YES
+        horizontalBarChartView.rightAxis.axisMaximum = 110.0
         
-        horizontalBarChartView.fitBars = true
+        //horizontalBarChartView.fitBars = true
     }
     
     
@@ -274,18 +248,8 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     
-    internal func updateBarChart(_ horizontalBarChartView: HorizontalBarChartView) {
-        var dataEntries: [BarChartDataEntry] = []
-
-        if let plantsArray = jsonData["divisionStatus"][selectedDivision]["plants"].array?.reversed() {
-            var plantX = Double(1)
-            for plantJson in plantsArray {
-                let value = plantJson["completition"].intValue
-                dataEntries.append(BarChartDataEntry(x: plantX, yValues: [Double(value), Double(100-value)]))
-                plantX += Double(1.0)
-            }
-        }
-        
+    internal func updateBarChart(_ horizontalBarChartView: HorizontalBarChartView, value: Int) {
+        let dataEntries = [BarChartDataEntry(x: 0.0, yValues: [Double(value), Double(100-value)])]
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
         
         chartDataSet.colors = [Constants.darkColor, Constants.orangeLightColor]
@@ -295,26 +259,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         horizontalBarChartView.data = chartData
     }
     
-    
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        if chartView == plantsView.plantsBarChart {
-            plantsView.rightBackgroundLabel.isHidden = true
-            plantsView.tableView.isHidden = false
-
-            plantMessages = nil
-            animateTableView()
-            
-            let plantSelected = numPlants - Int(entry.x)
-            
-            if let messagesArray = jsonData["divisionStatus"][selectedDivision]["plants"][plantSelected]["messages"].array {
-                plantMessages = messagesArray
-            }
-
-            _setPlantUsers()
-            
-            animateTableView()
-        }
-    }
     
     internal func _setDivisionUsers() {
         userView1.imageView.image = UIImage(named: "User1.png")
@@ -340,27 +284,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         plantsView.tableView.reloadSections(sections as IndexSet, with: .automatic)
     }
     
-    func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        if chartView == plantsView.plantsBarChart {
-            plantsView.rightBackgroundLabel.isHidden = false
-            plantsView.tableView.isHidden = true
-
-            _setDivisionUsers()
-        }
-    }
-    
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-    
-        let intValue = Int(round(value))
-        
-        if intValue > 0 && intValue <= numPlants {
-            return jsonData["divisionStatus"][selectedDivision]["plants"][numPlants - intValue]["name"].stringValue
-            //return " Plant \(intValue)  "
-        }
-        
-        return ""
-        
-    }
     
     
     // MARK: - Table view data source
@@ -370,15 +293,26 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plantMessages?.count ?? 0
+        return jsonData["divisionStatus"][selectedDivision]["plants"].array!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlantsViewCell", for: indexPath) as! PlantsViewCell
         
-        cell.textLabel?.text = plantMessages?[indexPath.row].stringValue ?? ""
+        cell.plantNameLabel?.text = "Plant \(indexPath.row + 1)"
+        cell.plantNotesLabel?.text = "\(jsonData["divisionStatus"][selectedDivision]["plants"][indexPath.row]["messages"].array!.count) Notes"
+        configBarChart(cell.horizonalBarView)
+        updateBarChart(cell.horizonalBarView, value: jsonData["divisionStatus"][selectedDivision]["plants"][indexPath.row]["completition"].intValue)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 58.0
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func call() {
@@ -437,7 +371,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         switch groupSelectionSegment.selectedSegmentIndex {
         case 0:
             pageControl.currentPage = 0
-            plantsView.plantsBarChart.animate(yAxisDuration: Constants.animationTime, easingOption: .easeOutBack)
             scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         case 1:
             pageControl.currentPage = 1

@@ -17,7 +17,7 @@ extension UIDevice {
     }
 }
 
-class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, DiagnosticProtocol, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, UserViewProtocol {
+class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, DiagnosticProtocol, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, UserViewProtocol, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var plantPieChart: PieChartView!
     @IBOutlet weak var pieChartLabel: UILabel!
@@ -313,7 +313,28 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let popController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MessageDetailViewController")
+        
+        popController.preferredContentSize = CGSize(width: 800, height: 600)
+
+        popController.modalPresentationStyle = UIModalPresentationStyle.popover
+        popController.popoverPresentationController?.backgroundColor = Constants.darkColor
+        popController.popoverPresentationController?.delegate = self
+        
+        popController.popoverPresentationController?.sourceView = self.view
+        popController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        
+        popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        
+        self.present(popController, animated: true, completion: nil)
     }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        // return UIModalPresentationStyle.FullScreen
+        return UIModalPresentationStyle.none
+    }
+    
     
     func call() {
         UIApplication.shared.open(URL(string: "facetime:user@example.com")!, options: [:], completionHandler: nil)

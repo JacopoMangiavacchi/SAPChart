@@ -14,6 +14,7 @@
 		EA42B5511EAA603400E176E7 /* DiagnosticView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA42B54F1EAA603400E176E7 /* DiagnosticView.xib */; };
 		EA42B5531EAA604E00E176E7 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42B5521EAA604E00E176E7 /* BoxView.swift */; };
 		EA42B5551EAA605D00E176E7 /* DiagnosticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42B5541EAA605D00E176E7 /* DiagnosticView.swift */; };
+		EA532FA11EB27BD700F5DB69 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA532FA01EB27BD700F5DB69 /* MessageDetailViewController.swift */; };
 		EA6990BC1EAE35EF000FD326 /* DiagnosticProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6990BB1EAE35EF000FD326 /* DiagnosticProtocol.swift */; };
 		EAA13E6E1EB2106D0015519F /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA13E6D1EB2106D0015519F /* UserView.xib */; };
 		EAA13E701EB210920015519F /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA13E6F1EB210920015519F /* UserView.swift */; };
@@ -47,6 +48,7 @@
 		EA42B54F1EAA603400E176E7 /* DiagnosticView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiagnosticView.xib; sourceTree = "<group>"; };
 		EA42B5521EAA604E00E176E7 /* BoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		EA42B5541EAA605D00E176E7 /* DiagnosticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosticView.swift; sourceTree = "<group>"; };
+		EA532FA01EB27BD700F5DB69 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		EA6990BB1EAE35EF000FD326 /* DiagnosticProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosticProtocol.swift; sourceTree = "<group>"; };
 		EAA13E6D1EB2106D0015519F /* UserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
 		EAA13E6F1EB210920015519F /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				EA6990BB1EAE35EF000FD326 /* DiagnosticProtocol.swift */,
 				EAD791651E9BA97300CA208B /* MonthEndViewController.swift */,
 				EA048BCF1E9EA46300C3D429 /* PlantDetailViewController.swift */,
+				EA532FA01EB27BD700F5DB69 /* MessageDetailViewController.swift */,
 				EA2B008F1EA7DDD600AD6535 /* CurrentMonthView.swift */,
 				EA42B5541EAA605D00E176E7 /* DiagnosticView.swift */,
 				EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */,
@@ -304,6 +307,7 @@
 				EA6990BC1EAE35EF000FD326 /* DiagnosticProtocol.swift in Sources */,
 				EAD791641E9BA97300CA208B /* AppDelegate.swift in Sources */,
 				EAD7473E1EA8FBDE00D94648 /* PlantsView.swift in Sources */,
+				EA532FA11EB27BD700F5DB69 /* MessageDetailViewController.swift in Sources */,
 				EAA13E811EB2527A0015519F /* PlantsViewCell.swift in Sources */,
 				EA048BD01E9EA46300C3D429 /* PlantDetailViewController.swift in Sources */,
 				EA2B00901EA7DDD600AD6535 /* CurrentMonthView.swift in Sources */,

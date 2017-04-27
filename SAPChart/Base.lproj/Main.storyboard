@@ -613,5 +613,37 @@
             </objects>
             <point key="canvasLocation" x="2068" y="-82"/>
         </scene>
+        <!--Message Detail View Controller-->
+        <scene sceneID="ttW-i3-ePd">
+            <objects>
+                <viewController storyboardIdentifier="MessageDetailViewController" id="UUo-KF-Wbh" customClass="MessageDetailViewController" customModule="SAPChart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kad-ST-45Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="fZF-En-YmE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gNp-dw-NsH">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtN-Ke-ild">
+                                <rect key="frame" x="179" y="136" width="1008" height="752"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="752" id="XzO-A3-1Dx"/>
+                                    <constraint firstAttribute="width" constant="1008" id="jT5-yl-RXL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mtN-Ke-ild" firstAttribute="centerY" secondItem="gNp-dw-NsH" secondAttribute="centerY" id="guc-Cu-v9f"/>
+                            <constraint firstItem="mtN-Ke-ild" firstAttribute="centerX" secondItem="gNp-dw-NsH" secondAttribute="centerX" id="wVV-MG-UtZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogb-i1-c9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2728.9897510980963" y="-86.1328125"/>
+        </scene>
     </scenes>
 </document>

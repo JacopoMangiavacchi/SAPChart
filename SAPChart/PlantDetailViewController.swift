@@ -17,7 +17,7 @@ extension UIDevice {
     }
 }
 
-class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, DiagnosticProtocol, ChartViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, IAxisValueFormatter {
+class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, DiagnosticProtocol, ChartViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, IAxisValueFormatter, UserViewProtocol {
     
     @IBOutlet weak var plantPieChart: PieChartView!
     @IBOutlet weak var pieChartLabel: UILabel!
@@ -35,6 +35,8 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var user1ImageView: UIImageView!
     @IBOutlet weak var user2ImageView: UIImageView!
+    @IBOutlet weak var userView1: UserView!
+    @IBOutlet weak var userView2: UserView!
     
     
     var plantsView: PlantsView!
@@ -51,6 +53,10 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _setDivisionUsers()
+        userView1.delegate = self
+        userView2.delegate = self
         
         ticketsOpenedBox.topLabel.text = Constants.boxesLabel["ticketsOpenedLabel"]
         ticketClosedBox.topLabel.text = Constants.boxesLabel["ticketClosedLabel"]
@@ -112,56 +118,56 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    @IBAction func onAction(_ sender: Any) {
-        // Create the AlertController and add its actions like button in ActionSheet
-        let actionSheetController = UIAlertController(title: "Please select", message: "Take Actions", preferredStyle: .actionSheet)
-        
-        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
-            print("Cancel")
-        }
-        actionSheetController.addAction(cancelActionButton)
-        
-        let saveActionButton = UIAlertAction(title: "Via Email", style: .default) { action -> Void in
-            if !UIDevice.isSimulator {
-                let mailVC = MFMailComposeViewController()
-                
-                mailVC.mailComposeDelegate = self
-                
-                // Configure the fields of the interface.
-                mailVC.setToRecipients([])
-                mailVC.setSubject("")
-                mailVC.setMessageBody("", isHTML: false)
-                
-                self.present(mailVC, animated: false, completion: nil)
-            }
-            else {
-                print("No Mail on Simulator")
-            }
-        }
-        actionSheetController.addAction(saveActionButton)
-        
-        let deleteActionButton = UIAlertAction(title: "Via iMessage", style: .default) { action -> Void in
-            if !UIDevice.isSimulator {
-                let messageVC = MFMessageComposeViewController()
-                
-                messageVC.body = "";
-                messageVC.recipients = []
-                messageVC.messageComposeDelegate = self;
-                
-                self.present(messageVC, animated: false, completion: nil)
-            }
-            else {
-                print("No iMessage on Simulator")
-            }
-        }
-        actionSheetController.addAction(deleteActionButton)
-        
-        // We need to provide a popover sourceView when using it on iPad
-        actionSheetController.popoverPresentationController?.sourceView = sender as? UIView
-        actionSheetController.popoverPresentationController?.sourceRect = CGRect(x: (sender as! UIView).bounds.midX, y: (sender as! UIView).bounds.midY, width: 0, height: 0)
-        
-        self.present(actionSheetController, animated: true, completion: nil)
-    }
+//    @IBAction func onAction(_ sender: Any) {
+//        // Create the AlertController and add its actions like button in ActionSheet
+//        let actionSheetController = UIAlertController(title: "Please select", message: "Take Actions", preferredStyle: .actionSheet)
+//        
+//        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+//            print("Cancel")
+//        }
+//        actionSheetController.addAction(cancelActionButton)
+//        
+//        let saveActionButton = UIAlertAction(title: "Via Email", style: .default) { action -> Void in
+//            if !UIDevice.isSimulator {
+//                let mailVC = MFMailComposeViewController()
+//                
+//                mailVC.mailComposeDelegate = self
+//                
+//                // Configure the fields of the interface.
+//                mailVC.setToRecipients([])
+//                mailVC.setSubject("")
+//                mailVC.setMessageBody("", isHTML: false)
+//                
+//                self.present(mailVC, animated: false, completion: nil)
+//            }
+//            else {
+//                print("No Mail on Simulator")
+//            }
+//        }
+//        actionSheetController.addAction(saveActionButton)
+//        
+//        let deleteActionButton = UIAlertAction(title: "Via iMessage", style: .default) { action -> Void in
+//            if !UIDevice.isSimulator {
+//                let messageVC = MFMessageComposeViewController()
+//                
+//                messageVC.body = "";
+//                messageVC.recipients = []
+//                messageVC.messageComposeDelegate = self;
+//                
+//                self.present(messageVC, animated: false, completion: nil)
+//            }
+//            else {
+//                print("No iMessage on Simulator")
+//            }
+//        }
+//        actionSheetController.addAction(deleteActionButton)
+//        
+//        // We need to provide a popover sourceView when using it on iPad
+//        actionSheetController.popoverPresentationController?.sourceView = sender as? UIView
+//        actionSheetController.popoverPresentationController?.sourceRect = CGRect(x: (sender as! UIView).bounds.midX, y: (sender as! UIView).bounds.midY, width: 0, height: 0)
+//        
+//        self.present(actionSheetController, animated: true, completion: nil)
+//    }
     
     
     internal func configPieChart(_ pieChartView: PieChartView, enableTouch: Bool, label: String, labelFontSize: Float, labelFontColor: UIColor) {
@@ -303,11 +309,28 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 plantMessages = messagesArray
             }
 
-            user1ImageView.image = UIImage(named: "3.png")
-            user2ImageView.image = UIImage(named: "4.png")
+            _setPlantUsers()
             
             animateTableView()
         }
+    }
+    
+    internal func _setDivisionUsers() {
+        userView1.imageView.image = UIImage(named: "User1.png")
+        userView1.nameLabel.text = "Rob Chan"
+        userView1.idLabel.text = "ID XCA657"
+        userView2.imageView.image = UIImage(named: "User2.png")
+        userView2.nameLabel.text = "David Hoffman"
+        userView2.idLabel.text = "ID XCA506"
+    }
+    
+    internal func _setPlantUsers() {
+        userView1.imageView.image = UIImage(named: "User3.png")
+        userView1.nameLabel.text = "Gina Cardosi"
+        userView1.idLabel.text = "ID XCA749"
+        userView2.imageView.image = UIImage(named: "User4.png")
+        userView2.nameLabel.text = "Maxwell Brown"
+        userView2.idLabel.text = "ID XCA312"
     }
     
     internal func animateTableView() {
@@ -321,8 +344,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
             plantsView.rightBackgroundLabel.isHidden = false
             plantsView.tableView.isHidden = true
 
-            user1ImageView.image = UIImage(named: "1.png")
-            user2ImageView.image = UIImage(named: "2.png")
+            _setDivisionUsers()
         }
     }
     
@@ -358,8 +380,26 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    // MARK: - Table view data source
+    func call() {
+        UIApplication.shared.open(URL(string: "facetime:user@example.com")!, options: [:], completionHandler: nil)
+    }
 
+    func message() {
+        if !UIDevice.isSimulator {
+            let messageVC = MFMessageComposeViewController()
+            
+            messageVC.body = "";
+            messageVC.recipients = []
+            messageVC.messageComposeDelegate = self;
+            
+            self.present(messageVC, animated: false, completion: nil)
+        }
+        else {
+            print("No iMessage on Simulator")
+        }
+    }
+    
+    
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         switch (result) {
         case .cancelled:

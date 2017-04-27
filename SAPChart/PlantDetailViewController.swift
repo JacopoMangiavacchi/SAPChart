@@ -213,6 +213,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         horizontalBarChartView.delegate = self
         
         horizontalBarChartView.highlightPerTapEnabled = true
+        horizontalBarChartView.highlightFullBarEnabled = true
         
         horizontalBarChartView.chartDescription?.text = nil
         horizontalBarChartView.legend.setCustom(entries: [])
@@ -225,7 +226,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         horizontalBarChartView.xAxis.labelPosition = .bottom
         horizontalBarChartView.xAxis.labelTextColor  = Constants.circleDarkColor
         horizontalBarChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
-        horizontalBarChartView.xAxis.labelCount = 5
+        horizontalBarChartView.xAxis.labelCount = numPlants + 2
         horizontalBarChartView.xAxis.drawLabelsEnabled = true
         horizontalBarChartView.xAxis.drawAxisLineEnabled = false
         horizontalBarChartView.xAxis.drawGridLinesEnabled = false

@@ -43,7 +43,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="DIS-xA-ZyP" firstAttribute="leading" secondItem="Fc0-9V-PI3" secondAttribute="leading" id="4lA-bB-fdB"/>
                         <constraint firstAttribute="trailing" secondItem="DIS-xA-ZyP" secondAttribute="trailing" id="PEV-mj-eB0"/>
@@ -73,7 +73,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="cAy-o2-4cd" firstAttribute="leading" secondItem="38L-g3-MbW" secondAttribute="leading" constant="2" id="25Y-KX-d1N"/>
                         <constraint firstItem="2QD-DI-9Yd" firstAttribute="centerY" secondItem="38L-g3-MbW" secondAttribute="centerY" id="KCk-Kd-FcB"/>
@@ -87,7 +87,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Fc0-9V-PI3" secondAttribute="bottom" id="2Ry-Pw-VyQ"/>
                 <constraint firstItem="Fc0-9V-PI3" firstAttribute="width" secondItem="mNo-1v-Dg2" secondAttribute="width" multiplier="2:3" id="56W-h8-Bg4"/>

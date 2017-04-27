@@ -7,6 +7,16 @@
                 "ticketClosedLabel" : "20",
                 "ticketMissedLabel" : "5"
             },
+            "diagnostics" : {
+                "meTickets" : [[1, 2, 1, 5, 4, 6], [3, 5, 6, 7, 7, 8]],
+                "meCompletition" : [[4, 3, 3, 4, 6, 7], [8, 5, 7, 8, 10, 10]],
+                "quatiltyTickets" : [[0, 0, 3, 2, 6, 8], [1, 2, 1, 5, 4, 6],[3, 4, 5, 7, 7, 8], [4, 7, 5, 6, 7, 8]],
+                "botResponses" : {
+                    "noResponse" : 17,
+                    "lateResponse" : 23,
+                    "delay" : 21
+                }
+            },
             "plants" : [
                         {
                         "name" : "  Plant 1  ",
@@ -98,6 +108,16 @@
                 "ticketClosedLabel" : "20",
                 "ticketMissedLabel" : "5"
             },
+            "diagnostics" : {
+                "meTickets" : [[1, 2, 1, 5, 4, 6], [3, 5, 6, 7, 7, 8]],
+                "meCompletition" : [[4, 3, 3, 4, 6, 7], [8, 5, 7, 8, 10, 10]],
+                "quatiltyTickets" : [[0, 0, 3, 2, 6, 8], [1, 2, 1, 5, 4, 6],[3, 4, 5, 7, 7, 8], [4, 7, 5, 6, 7, 8]],
+                "botResponses" : {
+                    "noResponse" : 17,
+                    "lateResponse" : 23,
+                    "delay" : 21
+                }
+            },
             "plants" : [
                         {
                         "name" : "  Plant 1  ",
@@ -188,6 +208,16 @@
                 "ticketsOpenedLabel" : "40",
                 "ticketClosedLabel" : "20",
                 "ticketMissedLabel" : "5"
+            },
+            "diagnostics" : {
+                "meTickets" : [[1, 2, 1, 5, 4, 6], [3, 5, 6, 7, 7, 8]],
+                "meCompletition" : [[4, 3, 3, 4, 6, 7], [8, 5, 7, 8, 10, 10]],
+                "quatiltyTickets" : [[0, 0, 3, 2, 6, 8], [1, 2, 1, 5, 4, 6],[3, 4, 5, 7, 7, 8], [4, 7, 5, 6, 7, 8]],
+                "botResponses" : {
+                    "noResponse" : 17,
+                    "lateResponse" : 23,
+                    "delay" : 21
+                }
             },
             "plants" : [
                         {
@@ -284,6 +314,16 @@
                 "ticketClosedLabel" : "20",
                 "ticketMissedLabel" : "5"
             },
+            "diagnostics" : {
+                "meTickets" : [[1, 2, 1, 5, 4, 6], [3, 5, 6, 7, 7, 8]],
+                "meCompletition" : [[4, 3, 3, 4, 6, 7], [8, 5, 7, 8, 10, 10]],
+                "quatiltyTickets" : [[0, 0, 3, 2, 6, 8], [1, 2, 1, 5, 4, 6],[3, 4, 5, 7, 7, 8], [4, 7, 5, 6, 7, 8]],
+                "botResponses" : {
+                    "noResponse" : 17,
+                    "lateResponse" : 23,
+                    "delay" : 21
+                }
+            },
             "plants" : [
                         {
                         "name" : "  Plant 1  ",
@@ -374,6 +414,16 @@
                 "ticketsOpenedLabel" : "40",
                 "ticketClosedLabel" : "20",
                 "ticketMissedLabel" : "5"
+            },
+            "diagnostics" : {
+                "meTickets" : [[1, 2, 1, 5, 4, 6], [3, 5, 6, 7, 7, 8]],
+                "meCompletition" : [[4, 3, 3, 4, 6, 7], [8, 5, 7, 8, 10, 10]],
+                "quatiltyTickets" : [[0, 0, 3, 2, 6, 8], [1, 2, 1, 5, 4, 6],[3, 4, 5, 7, 7, 8], [4, 7, 5, 6, 7, 8]],
+                "botResponses" : {
+                    "noResponse" : 17,
+                    "lateResponse" : 23,
+                    "delay" : 21
+                }
             },
             "plants" : [
                         {

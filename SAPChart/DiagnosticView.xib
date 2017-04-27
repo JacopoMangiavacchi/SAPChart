@@ -42,7 +42,7 @@
                                     <rect key="frame" x="60" y="40" width="412" height="324"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQ4-kS-jkt" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="137.5" height="299"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="137.5" height="274"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
@@ -62,7 +62,7 @@ Response</string>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZ7-mJ-KQa" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                            <rect key="frame" x="137.5" y="0.0" width="137.5" height="299"/>
+                                            <rect key="frame" x="137.5" y="0.0" width="137.5" height="274"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
@@ -82,7 +82,7 @@ Response</string>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Emy-Sb-Hun" customClass="BoxView" customModule="SAPChart" customModuleProvider="target">
-                                            <rect key="frame" x="275" y="0.0" width="137" height="299"/>
+                                            <rect key="frame" x="275" y="0.0" width="137" height="274"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
@@ -123,16 +123,16 @@ Next Step</string>
                                         <constraint firstAttribute="trailing" secondItem="Emy-Sb-Hun" secondAttribute="trailing" id="1mr-4O-96c"/>
                                         <constraint firstItem="Emy-Sb-Hun" firstAttribute="top" secondItem="gjk-bB-drk" secondAttribute="top" id="AWs-R2-yGc"/>
                                         <constraint firstItem="QPD-mQ-dCy" firstAttribute="leading" secondItem="Emy-Sb-Hun" secondAttribute="leading" id="B1v-Os-ik5"/>
-                                        <constraint firstAttribute="bottom" secondItem="LZ7-mJ-KQa" secondAttribute="bottom" constant="25" id="I9e-FG-by4"/>
+                                        <constraint firstAttribute="bottom" secondItem="LZ7-mJ-KQa" secondAttribute="bottom" constant="50" id="I9e-FG-by4"/>
                                         <constraint firstItem="LZ7-mJ-KQa" firstAttribute="top" secondItem="gjk-bB-drk" secondAttribute="top" id="JXl-sI-Xt9"/>
                                         <constraint firstItem="qQ4-kS-jkt" firstAttribute="leading" secondItem="gjk-bB-drk" secondAttribute="leading" id="VIv-aU-qv2"/>
                                         <constraint firstItem="qQ4-kS-jkt" firstAttribute="top" secondItem="gjk-bB-drk" secondAttribute="top" id="YBr-a1-1MG"/>
                                         <constraint firstItem="LZ7-mJ-KQa" firstAttribute="centerX" secondItem="gjk-bB-drk" secondAttribute="centerX" id="Ypx-Bv-gu3"/>
                                         <constraint firstItem="QPD-mQ-dCy" firstAttribute="centerY" secondItem="gjk-bB-drk" secondAttribute="centerY" id="Zfs-zk-4Kp"/>
                                         <constraint firstItem="Tcx-WS-pFJ" firstAttribute="leading" secondItem="LZ7-mJ-KQa" secondAttribute="leading" id="fqL-QT-BGL"/>
-                                        <constraint firstAttribute="bottom" secondItem="Emy-Sb-Hun" secondAttribute="bottom" constant="25" id="jX7-Hi-ppO"/>
+                                        <constraint firstAttribute="bottom" secondItem="Emy-Sb-Hun" secondAttribute="bottom" constant="50" id="jX7-Hi-ppO"/>
                                         <constraint firstItem="LZ7-mJ-KQa" firstAttribute="leading" secondItem="qQ4-kS-jkt" secondAttribute="trailing" id="jxt-0N-T7C"/>
-                                        <constraint firstAttribute="bottom" secondItem="qQ4-kS-jkt" secondAttribute="bottom" constant="25" id="kjR-MY-cbu"/>
+                                        <constraint firstAttribute="bottom" secondItem="qQ4-kS-jkt" secondAttribute="bottom" constant="50" id="kjR-MY-cbu"/>
                                         <constraint firstItem="Tcx-WS-pFJ" firstAttribute="centerY" secondItem="gjk-bB-drk" secondAttribute="centerY" id="nPp-XA-9PC"/>
                                         <constraint firstItem="LZ7-mJ-KQa" firstAttribute="width" secondItem="gjk-bB-drk" secondAttribute="width" multiplier="1:3" id="pwT-WU-UF1"/>
                                         <constraint firstItem="Emy-Sb-Hun" firstAttribute="leading" secondItem="LZ7-mJ-KQa" secondAttribute="trailing" id="qJe-5l-StW"/>

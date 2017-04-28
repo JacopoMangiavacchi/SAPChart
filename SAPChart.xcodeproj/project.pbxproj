@@ -29,6 +29,8 @@
 		EAA13E821EB2527A0015519F /* PlantsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA13E801EB2527A0015519F /* PlantsViewCell.xib */; };
 		EAAB4EEF1E9E251F002DF3DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB4EEE1E9E251F002DF3DB /* Constants.swift */; };
 		EAAB4EF41E9E7D81002DF3DB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = EAAB4EF31E9E7C9F002DF3DB /* data.json */; };
+		EAB056321EB3943A00F64A6F /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB056311EB3943A00F64A6F /* NoteCell.swift */; };
+		EAB056341EB3973800F64A6F /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = EAB056331EB3973800F64A6F /* data.json */; };
 		EAD7473E1EA8FBDE00D94648 /* PlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */; };
 		EAD747401EA9013A00D94648 /* PlantsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD7473F1EA9013A00D94648 /* PlantsView.xib */; };
 		EAD791641E9BA97300CA208B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD791631E9BA97300CA208B /* AppDelegate.swift */; };
@@ -63,6 +65,8 @@
 		EAA13E801EB2527A0015519F /* PlantsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlantsViewCell.xib; sourceTree = "<group>"; };
 		EAAB4EEE1E9E251F002DF3DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAAB4EF31E9E7C9F002DF3DB /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		EAB056311EB3943A00F64A6F /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		EAB056331EB3973800F64A6F /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsView.swift; sourceTree = "<group>"; };
 		EAD7473F1EA9013A00D94648 /* PlantsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlantsView.xib; sourceTree = SOURCE_ROOT; };
 		EAD791601E9BA97300CA208B /* SAPChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAPChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +128,7 @@
 		EAD791621E9BA97300CA208B /* SAPChart */ = {
 			isa = PBXGroup;
 			children = (
+				EAB056331EB3973800F64A6F /* data.json */,
 				EAECEEDD1EAA116000F237D5 /* Images */,
 				EAAB4EF31E9E7C9F002DF3DB /* data.json */,
 				EAAB4EEE1E9E251F002DF3DB /* Constants.swift */,
@@ -136,6 +141,7 @@
 				EA42B5541EAA605D00E176E7 /* DiagnosticView.swift */,
 				EAD7473D1EA8FBDE00D94648 /* PlantsView.swift */,
 				EAA13E7F1EB2527A0015519F /* PlantsViewCell.swift */,
+				EAB056311EB3943A00F64A6F /* NoteCell.swift */,
 				EAA13E6F1EB210920015519F /* UserView.swift */,
 				EA42B5521EAA604E00E176E7 /* BoxView.swift */,
 				EAD791671E9BA97300CA208B /* Main.storyboard */,
@@ -238,6 +244,7 @@
 				EA2B008E1EA7DCE800AD6535 /* CurrentMonthView.xib in Resources */,
 				EAA13E7E1EB218390015519F /* User4.png in Resources */,
 				EAD7916B1E9BA97300CA208B /* Assets.xcassets in Resources */,
+				EAB056341EB3973800F64A6F /* data.json in Resources */,
 				EAD791691E9BA97300CA208B /* Main.storyboard in Resources */,
 				EAA13E781EB218390015519F /* Call.png in Resources */,
 				EAA13E7B1EB218390015519F /* User1.png in Resources */,
@@ -303,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA42B5531EAA604E00E176E7 /* BoxView.swift in Sources */,
+				EAB056321EB3943A00F64A6F /* NoteCell.swift in Sources */,
 				EAD791661E9BA97300CA208B /* MonthEndViewController.swift in Sources */,
 				EA6990BC1EAE35EF000FD326 /* DiagnosticProtocol.swift in Sources */,
 				EAD791641E9BA97300CA208B /* AppDelegate.swift in Sources */,

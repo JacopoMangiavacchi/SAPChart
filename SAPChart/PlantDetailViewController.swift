@@ -310,6 +310,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let popController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MessageDetailViewController") as! MessageDetailViewController
         
         popController.plantName = jsonData["divisionStatus"][selectedDivision]["plants"][indexPath.row]["name"].stringValue
+        popController.notesArray = jsonData["divisionStatus"][selectedDivision]["plants"][indexPath.row]["messages"]
         
         popController.preferredContentSize = CGSize(width: 800, height: 700)
 

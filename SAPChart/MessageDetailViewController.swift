@@ -8,21 +8,27 @@
 
 import UIKit
 import MessageUI
+import SwiftyJSON
 
-class MessageDetailViewController: UIViewController, UserViewProtocol, MFMessageComposeViewControllerDelegate {
+class MessageDetailViewController: UIViewController, UserViewProtocol, MFMessageComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var plantNameLabel: UILabel!
     @IBOutlet weak var userView1: UserView!
     @IBOutlet weak var userView2: UserView!
+    @IBOutlet weak var tableView: UITableView!
     
     var plantName: String!
+    var notesArray: JSON!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         plantNameLabel.text = plantName
         _setPlantUsers()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,4 +96,30 @@ class MessageDetailViewController: UIViewController, UserViewProtocol, MFMessage
     }
     */
 
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notesArray.array?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath) as! NoteCell
+        
+        cell.bodyLabel.text = notesArray[indexPath.row]["body"].stringValue
+        cell.dateTimeLabel.text = notesArray[indexPath.row]["dateTime"].stringValue
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

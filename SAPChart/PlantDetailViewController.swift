@@ -53,8 +53,6 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         _setDivisionUsers()
-        userView1.delegate = self
-        userView2.delegate = self
         
         ticketsOpenedBox.topLabel.text = Constants.boxesLabel["ticketsOpenedLabel"]
         ticketClosedBox.topLabel.text = Constants.boxesLabel["ticketClosedLabel"]
@@ -261,23 +259,18 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     internal func _setDivisionUsers() {
+        userView1.delegate = self
         userView1.imageView.image = UIImage(named: "User1.png")
         userView1.nameLabel.text = "Rob Chan"
         userView1.idLabel.text = "ID XCA657"
+
+        userView2.delegate = self
         userView2.imageView.image = UIImage(named: "User2.png")
         userView2.nameLabel.text = "David Hoffman"
         userView2.idLabel.text = "ID XCA506"
     }
     
-    internal func _setPlantUsers() {
-        userView1.imageView.image = UIImage(named: "User3.png")
-        userView1.nameLabel.text = "Gina Cardosi"
-        userView1.idLabel.text = "ID XCA749"
-        userView2.imageView.image = UIImage(named: "User4.png")
-        userView2.nameLabel.text = "Maxwell Brown"
-        userView2.idLabel.text = "ID XCA312"
-    }
-    
+
     internal func animateTableView() {
         let range = NSMakeRange(0, plantsView.tableView.numberOfSections)
         let sections = NSIndexSet(indexesIn: range)
@@ -299,7 +292,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlantsViewCell", for: indexPath) as! PlantsViewCell
         
-        cell.plantNameLabel?.text = "Plant \(indexPath.row + 1)"
+        cell.plantNameLabel?.text = jsonData["divisionStatus"][selectedDivision]["plants"][indexPath.row]["name"].stringValue
         cell.plantNotesLabel?.text = "\(jsonData["divisionStatus"][selectedDivision]["plants"][indexPath.row]["messages"].array!.count) Notes"
         configBarChart(cell.horizonalBarView)
         updateBarChart(cell.horizonalBarView, value: jsonData["divisionStatus"][selectedDivision]["plants"][indexPath.row]["completition"].intValue)
@@ -314,16 +307,18 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let popController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MessageDetailViewController")
+        let popController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MessageDetailViewController") as! MessageDetailViewController
         
-        popController.preferredContentSize = CGSize(width: 800, height: 600)
+        popController.plantName = jsonData["divisionStatus"][selectedDivision]["plants"][indexPath.row]["name"].stringValue
+        
+        popController.preferredContentSize = CGSize(width: 800, height: 700)
 
         popController.modalPresentationStyle = UIModalPresentationStyle.popover
         popController.popoverPresentationController?.backgroundColor = Constants.darkColor
         popController.popoverPresentationController?.delegate = self
         
         popController.popoverPresentationController?.sourceView = self.view
-        popController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        popController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY - 100, width: 0, height: 0)
         
         popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
         
@@ -337,7 +332,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func call() {
-        UIApplication.shared.open(URL(string: "facetime:user@example.com")!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: "facetime:\(Constants.facetimeID)")!, options: [:], completionHandler: nil)
     }
 
     func message() {
@@ -345,7 +340,7 @@ class PlantDetailViewController: UIViewController, UITableViewDelegate, UITableV
             let messageVC = MFMessageComposeViewController()
             
             messageVC.body = "";
-            messageVC.recipients = []
+            messageVC.recipients = [Constants.facetimeID]
             messageVC.messageComposeDelegate = self;
             
             self.present(messageVC, animated: false, completion: nil)

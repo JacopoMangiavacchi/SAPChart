@@ -28,6 +28,8 @@ struct Constants {
     static let meTicketsLabelArray = ["Missed SLA", "Tickets"]
     static let qualityTicketsLabelArray = ["Customer", "Vendor", "Jail", "Cost Centres"]
     static let qualityCompletitionLabelArray = ["Current", "Average"]
+    
+    static let facetimeID = "user@example.com"
 
 //    static let barColor1 = UIColor(red: 186/255.0, green: 97/255.0, blue: 37/255.0, alpha: 1.0)
 //    static let barColor2 = UIColor(red: 222/255.0, green: 117/255.0, blue: 45/255.0, alpha: 1.0)
